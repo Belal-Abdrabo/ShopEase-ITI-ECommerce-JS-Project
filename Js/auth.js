@@ -144,13 +144,13 @@ window.addEventListener('load', function(){
                         // Redirect based on role
                         switch (user.role) {
                             case "admin":
-                                window.location.href = "pages/admin-dashboard.html";
+                                window.location.href = "./admin-dashboard.html";
                                 break;
                             case "seller":
-                                window.location.href = "pages/seller-dashboard.html";
+                                window.location.href = "./seller-dashboard.html";
                                 break;
                             case "customer":
-                                window.location.href = "pages/products.html";
+                                window.location.href = "./products.html";
                                 break;
                             default:
                                 alert("Unknown user role");
@@ -161,13 +161,13 @@ window.addEventListener('load', function(){
                     }
                 } else {
                     loginErrorMessage.style.display = "block";
-                    loginErrorMessage.textContent = "❌ No user found with this email.";
+                    loginErrorMessage.textContent = "❌ invalid login credentials";
                 }
             })
             .catch((err) => {
                 console.error("❌ Fetch error:", err);
                 loginErrorMessage.style.display = "block";
-                loginErrorMessage.textContent = "❌ Login failed. Please try again.";
+                loginErrorMessage.textContent = "❌ Login failed. Please try again";
             });
     };
     

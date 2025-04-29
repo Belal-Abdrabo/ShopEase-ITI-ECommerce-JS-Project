@@ -1,64 +1,387 @@
 {
-    "users": [
-      { "id": 1, "userName": "belal","email":"fafaf@fafafa.com", "password": "1234", "role": "admin" },
-      { "id": 2, "userName": "ahmed","email":"fafaf@fafafa.com", "password": "adminpass", "role": "admin" }
-    ],
-    "products": [
-      { "productsId": 1, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId": 1 },
-      { "productsId": 2, "name": "Smartphone", "price": 9000, "image": "smartphone.jpg", "categoryId": 1 },
-      { "productsId": 3, "name": "Headphones", "price": 600, "image": "headphones.jpg", "categoryId": 2 },
-      { "productsId": 4, "name": "Gaming Mouse", "price": 350, "image": "mouse.jpg", "categoryId": 2 },
-      { "productsId": 5, "name": "JavaScript Book", "price": 250, "image": "jsbook.jpg", "categoryId": 3 },
-      { "productsId": 6, "name": "Power Bank", "price": 400, "image": "powerbank.jpg", "categoryId": 2 },
-      { "productsId": 7, "name": "Smartwatch", "price": 1200, "image": "smartwatch.jpg", "categoryId": 1 },
-      { "productsId": 8, "name": "USB-C Cable", "price": 100, "image": "cable.jpg", "categoryId": 2 },
-      { "productsId": 9, "name": "HTML & CSS Book", "price": 230, "image": "htmlcssbook.jpg", "categoryId": 3 },
-      { "productsId": 10, "name": "Bluetooth Speaker", "price": 750, "image": "speaker.jpg", "categoryId": 2 },    
-      {"productsId": 11, "name": "Tablet", "price": 7000, "image": "tablet.jpg", "categoryId": 1 },
-      { "productsId": 12, "name": "Wireless Keyboard", "price": 450, "image": "keyboard.jpg", "categoryId": 2 },
-      { "productsId": 13, "name": "C++ Programming Book", "price": 280, "image": "cppbook.jpg", "categoryId": 3 },
-      { "productsId": 14, "name": "Monitor 24in", "price": 3000, "image": "monitor.jpg", "categoryId": 1 },
-      { "productsId": 15, "name": "Flash Drive 64GB", "price": 150, "image": "flashdrive.jpg", "categoryId": 2 },
-      { "productsId": 16, "name": "Python Crash Course", "price": 320, "image": "pythonbook.jpg", "categoryId": 3 },
-      { "productsId": 17, "name": "Wi-Fi Router", "price": 1100, "image": "router.jpg", "categoryId": 1 },
-      { "productsId": 18, "name": "Webcam 1080p", "price": 850, "image": "webcam.jpg", "categoryId": 2 },
-      { "productsId": 19, "name": "Data Structures Book", "price": 300, "image": "dsbook.jpg", "categoryId": 3 },
-      { "productsId": 20, "name": "Laptop Cooling Pad", "price": 200, "image": "coolingpad.jpg", "categoryId": 2 },
-      { "productsId": 21, "name": "Portable SSD 1TB", "price": 2000, "image": "ssd.jpg", "categoryId": 2 },
-      { "productsId": 22, "name": "Digital Drawing Tablet", "price": 2400, "image": "drawingtablet.jpg", "categoryId": 1 },
-      { "productsId": 23, "name": "AI & ML Book", "price": 370, "image": "aibook.jpg", "categoryId": 3 },
-      { "productsId": 24, "name": "Phone Tripod", "price": 180, "image": "tripod.jpg", "categoryId": 2 },
-      { "productsId": 25, "name": "Noise-Canceling Earbuds", "price": 950, "image": "earbuds.jpg", "categoryId": 2 },
-      { "productsId": 26, "name": "Mechanical Keyboard", "price": 800, "image": "mechkeyboard.jpg", "categoryId": 2 },
-      { "productsId": 27, "name": "Java Programming Guide", "price": 270, "image": "javabook.jpg", "categoryId": 3 },
-      { "productsId": 28, "name": "VR Headset", "price": 4500, "image": "vr.jpg", "categoryId": 1 },
-      { "productsId": 29, "name": "Gaming Controller", "price": 600, "image": "controller.jpg", "categoryId": 2 },
-      { "productsId": 30, "name": "Cloud Computing Book", "price": 290, "image": "cloudbook.jpg", "categoryId": 3 }
-    ],
-    "categories": [
-        { "categoriesId": 1, "name": "Electronics" },
-        { "categoriesId": 2, "name": "Accessories" }
+  "users": [
+    {
+      "id": "1",
+      "userName": "belal",
+      "email": "fafaf@fafafa.com",
+      "password": "1234",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "userName": "ahmed",
+      "email": "fafaf@fafafa.com",
+      "password": "adminpass",
+      "role": "admin"
+    },
+    {
+      "id": "9c8f",
+      "name": "Ahmed Ibrahim",
+      "email": "ahmed@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "efb5",
+      "name": "Ahmed 2",
+      "email": "ahmed2@gmail.com",
+      "password": "123456",
+      "role": "seller"
+    },
+    {
+      "id": "1361",
+      "name": "belal abdo",
+      "email": "belal@gmail.com",
+      "password": "123456",
+      "role": "seller"
+    },
+    {
+      "id": "bf54",
+      "name": "belal abdo",
+      "email": "belal2@gmail.com",
+      "password": "123456",
+      "role": "seller"
+    },
+    {
+      "id": "5cf6",
+      "name": "mezo",
+      "email": "mezo@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "db90",
+      "name": "kholyy",
+      "email": "kholy@gmail.com",
+      "password": "123456",
+      "role": "seller"
+    },
+    {
+      "id": "7b51",
+      "name": "sherif",
+      "email": "sherif@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "bf96",
+      "name": "XZX",
+      "email": "xas@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "8731",
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "a58d",
+      "name": "test32",
+      "email": "test32@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "5f24",
+      "name": "test322",
+      "email": "testss@gmail.com",
+      "password": "123456",
+      "role": "seller"
+    },
+    {
+      "id": "88fe",
+      "name": "last test",
+      "email": "last@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    }
+  ],
+  "products": [
+    {
+      "productsId": 1,
+      "name": "Laptop",
+      "price": 15000,
+      "image": "laptop.jpg",
+      "categoryId": 1,
+      "id": "97c4"
+    },
+    {
+      "productsId": 2,
+      "name": "Smartphone",
+      "price": 9000,
+      "image": "smartphone.jpg",
+      "categoryId": 1,
+      "id": "9ecb"
+    },
+    {
+      "productsId": 3,
+      "name": "Headphones",
+      "price": 600,
+      "image": "headphones.jpg",
+      "categoryId": 2,
+      "id": "ccee"
+    },
+    {
+      "productsId": 4,
+      "name": "Gaming Mouse",
+      "price": 350,
+      "image": "mouse.jpg",
+      "categoryId": 2,
+      "id": "1035"
+    },
+    {
+      "productsId": 5,
+      "name": "JavaScript Book",
+      "price": 250,
+      "image": "jsbook.jpg",
+      "categoryId": 3,
+      "id": "d401"
+    },
+    {
+      "productsId": 6,
+      "name": "Power Bank",
+      "price": 400,
+      "image": "powerbank.jpg",
+      "categoryId": 2,
+      "id": "9917"
+    },
+    {
+      "productsId": 7,
+      "name": "Smartwatch",
+      "price": 1200,
+      "image": "smartwatch.jpg",
+      "categoryId": 1,
+      "id": "c10c"
+    },
+    {
+      "productsId": 8,
+      "name": "USB-C Cable",
+      "price": 100,
+      "image": "cable.jpg",
+      "categoryId": 2,
+      "id": "0bd1"
+    },
+    {
+      "productsId": 9,
+      "name": "HTML & CSS Book",
+      "price": 230,
+      "image": "htmlcssbook.jpg",
+      "categoryId": 3,
+      "id": "8543"
+    },
+    {
+      "productsId": 10,
+      "name": "Bluetooth Speaker",
+      "price": 750,
+      "image": "speaker.jpg",
+      "categoryId": 2,
+      "id": "d7a5"
+    },
+    {
+      "productsId": 11,
+      "name": "Tablet",
+      "price": 7000,
+      "image": "tablet.jpg",
+      "categoryId": 1,
+      "id": "9d25"
+    },
+    {
+      "productsId": 12,
+      "name": "Wireless Keyboard",
+      "price": 450,
+      "image": "keyboard.jpg",
+      "categoryId": 2,
+      "id": "5688"
+    },
+    {
+      "productsId": 13,
+      "name": "C++ Programming Book",
+      "price": 280,
+      "image": "cppbook.jpg",
+      "categoryId": 3,
+      "id": "7b52"
+    },
+    {
+      "productsId": 14,
+      "name": "Monitor 24in",
+      "price": 3000,
+      "image": "monitor.jpg",
+      "categoryId": 1,
+      "id": "8d92"
+    },
+    {
+      "productsId": 15,
+      "name": "Flash Drive 64GB",
+      "price": 150,
+      "image": "flashdrive.jpg",
+      "categoryId": 2,
+      "id": "c986"
+    },
+    {
+      "productsId": 16,
+      "name": "Python Crash Course",
+      "price": 320,
+      "image": "pythonbook.jpg",
+      "categoryId": 3,
+      "id": "7636"
+    },
+    {
+      "productsId": 17,
+      "name": "Wi-Fi Router",
+      "price": 1100,
+      "image": "router.jpg",
+      "categoryId": 1,
+      "id": "a4ee"
+    },
+    {
+      "productsId": 18,
+      "name": "Webcam 1080p",
+      "price": 850,
+      "image": "webcam.jpg",
+      "categoryId": 2,
+      "id": "9273"
+    },
+    {
+      "productsId": 19,
+      "name": "Data Structures Book",
+      "price": 300,
+      "image": "dsbook.jpg",
+      "categoryId": 3,
+      "id": "6767"
+    },
+    {
+      "productsId": 20,
+      "name": "Laptop Cooling Pad",
+      "price": 200,
+      "image": "coolingpad.jpg",
+      "categoryId": 2,
+      "id": "5318"
+    },
+    {
+      "productsId": 21,
+      "name": "Portable SSD 1TB",
+      "price": 2000,
+      "image": "ssd.jpg",
+      "categoryId": 2,
+      "id": "86c7"
+    },
+    {
+      "productsId": 22,
+      "name": "Digital Drawing Tablet",
+      "price": 2400,
+      "image": "drawingtablet.jpg",
+      "categoryId": 1,
+      "id": "0239"
+    },
+    {
+      "productsId": 23,
+      "name": "AI & ML Book",
+      "price": 370,
+      "image": "aibook.jpg",
+      "categoryId": 3,
+      "id": "b59c"
+    },
+    {
+      "productsId": 24,
+      "name": "Phone Tripod",
+      "price": 180,
+      "image": "tripod.jpg",
+      "categoryId": 2,
+      "id": "30b4"
+    },
+    {
+      "productsId": 25,
+      "name": "Noise-Canceling Earbuds",
+      "price": 950,
+      "image": "earbuds.jpg",
+      "categoryId": 2,
+      "id": "0d8f"
+    },
+    {
+      "productsId": 26,
+      "name": "Mechanical Keyboard",
+      "price": 800,
+      "image": "mechkeyboard.jpg",
+      "categoryId": 2,
+      "id": "fd85"
+    },
+    {
+      "productsId": 27,
+      "name": "Java Programming Guide",
+      "price": 270,
+      "image": "javabook.jpg",
+      "categoryId": 3,
+      "id": "58b3"
+    },
+    {
+      "productsId": 28,
+      "name": "VR Headset",
+      "price": 4500,
+      "image": "vr.jpg",
+      "categoryId": 1,
+      "id": "9391"
+    },
+    {
+      "productsId": 29,
+      "name": "Gaming Controller",
+      "price": 600,
+      "image": "controller.jpg",
+      "categoryId": 2,
+      "id": "72c6"
+    },
+    {
+      "productsId": 30,
+      "name": "Cloud Computing Book",
+      "price": 290,
+      "image": "cloudbook.jpg",
+      "categoryId": 3,
+      "id": "cb4d"
+    }
+  ],
+  "categories": [
+    {
+      "categoriesId": 1,
+      "name": "Electronics",
+      "id": "69b1"
+    },
+    {
+      "categoriesId": 2,
+      "name": "Accessories",
+      "id": "6eda"
+    }
+  ],
+  "orders": [
+    {
+      "orderId": 1,
+      "customerId": 1,
+      "sellerId": 2,
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Laptop",
+          "price": 15000,
+          "quantity": 1
+        }
       ],
-    "orders": [
-      {
-        "orderId": 1,"customerId": 1,"sellerId": 2,"items":
-        [
-          {
-            "productId": 1, "productName": "Laptop", "price": 15000,"quantity": 1
-          }
-        ],
-        "status": "pending", "total": 15000
-      }
-    ],
-    "cart": [
-      {
-        "cartId": 1,"customerId": 1,"items":
-        [
-          {
-            "productId": 2, "quantity": 2
-          }
-        ]
-      }
-    ]
-  }
-  
+      "status": "pending",
+      "total": 15000,
+      "id": "a5ff"
+    }
+  ],
+  "cart": [
+    {
+      "cartId": 1,
+      "customerId": 1,
+      "items": [
+        {
+          "productId": 2,
+          "quantity": 2
+        }
+      ],
+      "id": "1797"
+    }
+  ]
+}

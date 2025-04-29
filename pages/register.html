@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopEase | Register</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../Js/common.js"></script>
+    <script src = "../Js/register.js"></script>
 </head>
 <body>
     <header>
@@ -40,18 +42,22 @@
                             <div class="form-group">
                                 <label for="fullname">Full Name</label>
                                 <input type="text" id="fullname" name="fullname" required>
+                                <span id="fullname-error" class="error-message"></span>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email Address</label>
                                 <input type="email" id="email" name="email" required>
+                                <span id="email-error" class="error-message"></span>
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
                                 <input type="password" id="password" name="password" required>
+                                <span id="password-error" class="error-message"></span>
                             </div>
                             <div class="form-group">
                                 <label for="confirm-password">Confirm Password</label>
                                 <input type="password" id="confirm-password" name="confirm-password" required>
+                                <span id="confirm-password-error" class="error-message"></span>
                             </div>
                             <div class="form-group">
                                 <label>Account Type</label>
@@ -88,7 +94,7 @@
                         </div>
                         
                         <div class="auth-footer">
-                            <p>Already have an account? <a href="login.html">Login</a></p>
+                            <p>Already have an account? <a href="./login.html">Login</a></p>
                         </div>
                     </div>
                 </div>
