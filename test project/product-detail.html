@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase | Wireless Headphones</title>
+      initial-scale=1.0">
+    <title>ShopEase | Wireless Headphones</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">ShopEase</a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="categories.html">Categories</a>
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Register</a>
+                    <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="categories.html?cat=electronics">Electronics</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Wireless Headphones</span>
+            </div>
+
+            <section class="product-detail">
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="images/product1.jpg" alt="Wireless Headphones" id="main-product-image">
+                    </div>
+                    <div class="thumbnail-images">
+                        <img src="images/product1.jpg" alt="Wireless Headphones - Front" class="active" onclick="changeImage(this)">
+                        <img src="images/product1-side.jpg" alt="Wireless Headphones - Side" onclick="changeImage(this)">
+                        <img src="images/product1-back.jpg" alt="Wireless Headphones - Back" onclick="changeImage(this)">
+                        <img src="images/product1-case.jpg" alt="Wireless Headphones - Case" onclick="changeImage(this)">
+                    </div>
+                </div>
+                <div class="product-info-detail">
+                    <div class="product-badge new">New</div>
+                    <h1>Premium Wireless Headphones</h1>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(120 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$129.99</span>
+                        <span class="original-price">$159.99</span>
+                        <span class="discount">19% OFF</span>
+                    </div>
+                    <div class="product-description">
+                        <p>Experience premium sound quality with our wireless headphones. Featuring active noise cancellation, 30-hour battery life, and comfortable over-ear design for extended listening sessions.</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Active Noise Cancellation</li>
+                            <li><i class="fas fa-check"></i> 30-hour Battery Life</li>
+                            <li><i class="fas fa-check"></i> Bluetooth 5.0 Connectivity</li>
+                            <li><i class="fas fa-check"></i> Built-in Microphone</li>
+                            <li><i class="fas fa-check"></i> Foldable Design</li>
+                        </ul>
+                    </div>
+                    <div class="product-colors">
+                        <h3>Color:</h3>
+                        <div class="color-options">
+                            <button class="color-option active" style="background-color: #000;" data-color="Black"></button>
+                            <button class="color-option" style="background-color: #fff; border: 1px solid #ddd;" data-color="White"></button>
+                            <button class="color-option" style="background-color: #3a86ff;" data-color="Blue"></button>
+                            <button class="color-option" style="background-color: #ff006e;" data-color="Pink"></button>
+                        </div>
+                        <span class="selected-color">Black</span>
+                    </div>
+                    <div class="product-quantity">
+                        <h3>Quantity:</h3>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                            <input type="number" value="1" min="1" max="10">
+                            <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <span class="stock-status in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn btn-primary btn-lg"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="btn btn-outline btn-lg"><i class="fas fa-heart"></i> Add to Wishlist</button>
+                    </div>
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <span>SKU:</span>
+                            <span>WH-1001-BLK</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>Category:</span>
+                            <a href="categories.html?cat=electronics">Electronics</a>
+                        </div>
+                        <div class="meta-item">
+                            <span>Tags:</span>
+                            <a href="products.html?tag=headphones">Headphones</a>,
+                            <a href="products.html?tag=wireless">Wireless</a>,
+                            <a href="products.html?tag=audio">Audio</a>
+                        </div>
+                    </div>
+                    <div class="product-share">
+                        <span>Share:</span>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-tabs">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="description">Description</button>
+                    <button class="tab-btn" data-tab="specifications">Specifications</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews (120)</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="description">
+                        <h2>Product Description</h2>
+                        <p>Immerse yourself in exceptional sound quality with our Premium Wireless Headphones. Designed for audiophiles and casual listeners alike, these headphones deliver crystal-clear audio with deep bass and crisp highs.</p>
+                        <p>The active noise cancellation technology blocks out ambient noise, allowing you to focus on your music or calls without distractions. With a comfortable over-ear design and soft cushioned ear cups, you can enjoy extended listening sessions without discomfort.</p>
+                        <p>The built-in microphone ensures clear voice capture for calls, while the intuitive touch controls make it easy to adjust volume, skip tracks, or answer calls with a simple tap. The foldable design makes these headphones perfect for travel, and the included carrying case provides protection when not in use.</p>
+                        <p>With up to 30 hours of battery life on a single charge, you can enjoy your favorite music all day long. A quick 10-minute charge provides up to 3 hours of playback time, ensuring you're never without your music for long.</p>
+                    </div>
+                    <div class="tab-pane" id="specifications">
+                        <h2>Technical Specifications</h2>
+                        <table class="specs-table">
+                            <tr>
+                                <th>Driver Size</th>
+                                <td>40mm</td>
+                            </tr>
+                            <tr>
+                                <th>Frequency Response</th>
+                                <td>20Hz - 20kHz</td>
+                            </tr>
+                            <tr>
+                                <th>Impedance</th>
+                                <td>32 Ohms</td>
+                            </tr>
+                            <tr>
+                                <th>Sensitivity</th>
+                                <td>105dB</td>
+                            </tr>
+                            <tr>
+                                <th>Bluetooth Version</th>
+                                <td>5.0</td>
+                            </tr>
+                            <tr>
+                                <th>Bluetooth Range</th>
+                                <td>Up to 10m (33ft)</td>
+                            </tr>
+                            <tr>
+                                <th>Battery Life</th>
+                                <td>Up to 30 hours</td>
+                            </tr>
+                            <tr>
+                                <th>Charging Time</th>
+                                <td>2 hours</td>
+                            </tr>
+                            <tr>
+                                <th>Weight</th>
+                                <td>250g</td>
+                            </tr>
+                            <tr>
+                                <th>Dimensions</th>
+                                <td>180 x 165 x 78mm</td>
+                            </tr>
+                            <tr>
+                                <th>In the Box</th>
+                                <td>Headphones, Carrying Case, USB-C Charging Cable, 3.5mm Audio Cable, User Manual</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="reviews">
+                        <div class="reviews-summary">
+                            <div class="average-rating">
+                                <h2>4.5</h2>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p>Based on 120 reviews</p>
+                            </div>
+                            <div class="rating-bars">
+                                <div class="rating-bar">
+                                    <span>5 stars</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 75%;"></div>
+                                    </div>
+                                    <span>75%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>4 stars</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 15%;"></div>
+                                    </div>
+                                    <span>15%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>3 stars</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 7%;"></div>
+                                    </div>
+                                    <span>7%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>2 stars</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 2%;"></div>
+                                    </div>
+                                    <span>2%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>1 star</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 1%;"></div>
+                                    </div>
+                                    <span>1%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-reviews">
+                            <div class="review">
+                                <div class="review-header">
+                                    <img src="images/avatar1.jpg" alt="Sarah J.">
+                                    <div>
+                                        <h4>Sarah J.</h4>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="review-date">April 15, 2025</span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>These headphones are amazing! The sound quality is exceptional, and the noise cancellation works perfectly. I use them during my commute, and they block out all the subway noise. Battery life is impressive too - I only need to charge them once a week with daily use.</p>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-header">
+                                    <img src="images/avatar2.jpg" alt="Michael B.">
+                                    <div>
+                                        <h4>Michael B.</h4>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <span class="review-date">April 10, 2025</span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>Great headphones overall. The sound quality is excellent, and they're very comfortable to wear for long periods. The only reason I'm giving 4 stars instead of 5 is that the touch controls can be a bit sensitive sometimes. Otherwise, they're perfect!</p>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-header">
+                                    <img src="images/avatar3.jpg" alt="Emily W.">
+                                    <div>
+                                        <h4>Emily W.</h4>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <span class="review-date">April 5, 2025</span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>I'm very impressed with these headphones. The sound is crisp and clear, with good bass response. The noise cancellation is effective, and they're comfortable enough to wear all day. The carrying case is a nice touch for protection when traveling.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="load-more">
+                            <button class="btn btn-outline">Load More Reviews</button>
+                        </div>
+                        <div class="write-review">
+                            <h3>Write a Review</h3>
+                            <form class="review-form">
+                                <div class="form-group">
+                                    <label>Your Rating</label>
+                                    <div class="rating-select">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="review-title">Review Title</label>
+                                    <input type="text" id="review-title" placeholder="Give your review a title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="review-content">Your Review</label>
+                                    <textarea id="review-content" rows="5" placeholder="Write your review here"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit Review</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Products -->
+            <section class="related-products">
+                <h2 class="section-title">You May Also Like</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="images/product2.jpg" alt="Smart Watch">
+                        <div class="product-info">
+                            <h3>Smart Watch</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(85)</span>
+                            </div>
+                            <p class="product-price"><span class="original-price">$199.99</span> $149.99</p>
+                            <a href="product-detail.html?id=2" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product5.jpg" alt="Bluetooth Speaker">
+                        <div class="product-info">
+                            <h3>Bluetooth Speaker</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(112)</span>
+                            </div>
+                            <p class="product-price">$79.99</p>
+                            <a href="product-detail.html?id=5" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product6.jpg" alt="Wireless Earbuds">
+                        <div class="product-info">
+                            <h3>Wireless Earbuds</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(95)</span>
+                            </div>
+                            <p class="product-price">$99.99</p>
+                            <a href="product-detail.html?id=6" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product7.jpg" alt="Phone Charger">
+                        <div class="product-info">
+                            <h3>Fast Wireless Charger</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(78)</span>
+                            </div>
+                            <p class="product-price">$39.99</p>
+                            <a href="product-detail.html?id=7" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ShopEase</h3>
+                    <p>Your one-stop shop for all your needs. Quality products, competitive prices, and exceptional service.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Returns & Refunds</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Commerce St, City, Country</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@shopease.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ShopEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
