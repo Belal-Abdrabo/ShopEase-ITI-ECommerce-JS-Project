@@ -1,0 +1,36 @@
+{
+    "users": [
+      { "id": 1, "userName": "belal","email":"fafaf@fafafa.com", "password": "1234", "role": "admin" },
+      { "id": 2, "userName": "ahmed","email":"fafaf@fafafa.com", "password": "adminpass", "role": "admin" }
+    ],
+    "products": [
+      { "productsId": 1, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":1 },
+      { "productsId": 2, "name": "Headphones", "price": 500, "image": "headphones.jpg", "categoryId":1}
+    ],
+    "categories": [
+        { "categoriesId": 1, "name": "Electronics" },
+        { "categoriesId": 2, "name": "Accessories" }
+      ],
+    "orders": [
+      {
+        "orderId": 1,"customerId": 1,"sellerId": 2,"items":
+        [
+          {
+            "productId": 1, "productName": "Laptop", "price": 15000,"quantity": 1
+          }
+        ],
+        "status": "pending", "total": 15000
+      }
+    ],
+    "cart": [
+      {
+        "cartId": 1,"customerId": 1,"items":
+        [
+          {
+            "productId": 2, "quantity": 2
+          }
+        ]
+      }
+    ]
+  }
+  
