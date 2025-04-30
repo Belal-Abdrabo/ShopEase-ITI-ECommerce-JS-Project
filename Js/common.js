@@ -33,7 +33,7 @@ const isHasAccess = function(page, role)
     
 }
 
-const logOut = functio()
+const logOut = function()
 {
     localStorage.removeItem("loggedInUser");
     window.location.href = "../index.html";
@@ -45,3 +45,9 @@ const logOut = functio()
 //         _errorMessageElement.textContent = "Please fill Email field"
 //     }
 // }
+window.addEventListener("load", function() {
+    const logout = document.querySelector("#logout");
+    logout.addEventListener("click", function(){
+        logOut();
+    });
+});
