@@ -1,1 +1,1 @@
-let y = 10;
+//check authentication and access to the page

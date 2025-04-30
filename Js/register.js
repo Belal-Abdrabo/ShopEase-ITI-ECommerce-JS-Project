@@ -14,6 +14,24 @@ window.addEventListener("load", function () {
 
     const url = "http://localhost:3000/users";
 
+    const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
+    if(user)
+    {
+        
+        if(user.role == "admin")
+        {
+            window.location.href = "./admin/admin-dashboard.html";
+        }
+        else if(user.role == "seller")
+        {
+            window.location.href = "./seller/seller-dashboard.html";
+        }
+        else if(user.role == "customer")
+        {
+            window.location.href = "../index.html";
+        }
+    }
+
     const isValidEmail = (email) => {
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return emailPattern.test(email);

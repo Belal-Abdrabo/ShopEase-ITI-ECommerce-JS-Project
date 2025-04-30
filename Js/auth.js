@@ -7,6 +7,23 @@ window.addEventListener('load', function(){
     const passwordErrorMessage = document.querySelector("#password-login-error");
     const url = "http://localhost:3000/users";
 
+    const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
+    if(user)
+    {
+        
+        if(user.role == "admin")
+        {
+            window.location.href = "./admin/admin-dashboard.html";
+        }
+        else if(user.role == "seller")
+        {
+            window.location.href = "./seller/seller-dashboard.html";
+        }
+        else if(user.role == "customer")
+        {
+            window.location.href = "../index.html";
+        }
+    }
     form.addEventListener("keyup", function(event){
         if(event.target.id == "email")
         {
@@ -98,34 +115,7 @@ window.addEventListener('load', function(){
         
         return emailPattern.test(email_value);
     }
-    
-    // const login = (_email, _password) => {
-    //     fetch(`${url}?email=${_email}`)
-    //     .then((result) => {
-    //         result.json()
-    //     })
-    //     .then((user) => {
-    //         if(user) //found user with same email
-    //         {
-    //             if(user.password == _password) //password Check
-    //             {
-    //                 loginErrorMessage.style.display = "none";
-    //                 console.log("logged in successfully");
-    //                 console.log("user =>"+user);
-                    
-    //                 //save at local storage
-    //                 //redirect base on his role
-    //             }
-    //         }
-    //         else{
-    //             loginErrorMessage.style.display = "block";
-    //             console.log("invalid login");
-                
-    //         }
-    //     }).catch((err) => {
-            
-    //     });;
-    // };
+  
     const login = (_email, _password) => {
         fetch(`${url}?email=${_email}`)
             .then((result) => result.json())
@@ -150,13 +140,13 @@ window.addEventListener('load', function(){
                         // Redirect based on role
                         switch (user.role) {
                             case "admin":
-                                window.location.href = "./admin-dashboard.html";
+                                window.location.href = "./admin/admin-dashboard.html";
                                 break;
                             case "seller":
-                                window.location.href = "./seller-dashboard.html";
+                                window.location.href = "./seller/seller-dashboard.html";
                                 break;
                             case "customer":
-                                window.location.href = "./products.html";
+                                window.location.href = "../index.html";
                                 break;
                             default:
                                 alert("Unknown user role");
