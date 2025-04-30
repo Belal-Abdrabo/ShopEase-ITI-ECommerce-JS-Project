@@ -118,9 +118,6 @@ window.addEventListener("load", function () {
                             if (res.ok) {
                                 console.log("Redirecting now...");
                                 window.location.href = "login.html";
-                                // document.querySelector('#password').blur();
-                                // console.log("Redirecting now...");
-                                // window.location.href = "http://127.0.0.1:5500/pages/login.html";
                             } else {
                                 alert("Failed to register. Try again.");
                             }

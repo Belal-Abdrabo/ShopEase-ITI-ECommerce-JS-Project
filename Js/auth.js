@@ -55,7 +55,7 @@ window.addEventListener('load', function(){
         let flag = true;
         console.log("submit event triggered");
         
-        let emailValue = email.value.trim();
+        let emailValue = email.value.trim().toLowerCase();
         let passwordValue = password.value.trim();
         if(emailValue === '')
         {
@@ -136,10 +136,16 @@ window.addEventListener('load', function(){
                     if (user.password === _password) {
                         loginErrorMessage.style.display = "none";
                         console.log("✅ Logged in successfully");
-                        console.log("user =>", user);
-    
+                        let UserDto = {
+                            id: user.id,
+                            fullName: user.fullName,
+                            email: user.email,
+                            role: user.role,
+                        };
+                        console.log("user =>", UserDto);
+                        
                         // Save to localStorage
-                        localStorage.setItem("loggedInUser", JSON.stringify(user));
+                        localStorage.setItem("loggedInUser", JSON.stringify(UserDto));
     
                         // Redirect based on role
                         switch (user.role) {
