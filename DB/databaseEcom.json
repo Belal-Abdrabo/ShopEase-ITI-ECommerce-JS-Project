@@ -97,6 +97,48 @@
       "email": "last@gmail.com",
       "password": "123456",
       "role": "customer"
+    },
+    {
+      "id": "c777",
+      "name": "Ahmed Elkholy",
+      "email": "kholy2@gmail.com",
+      "password": "123456",
+      "role": "seller"
+    },
+    {
+      "id": "bdd8",
+      "name": "asda",
+      "email": "dsd@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "391f",
+      "name": "ahemd",
+      "email": "ahemd@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "b93d",
+      "name": "ahmed ibrahim ahmed",
+      "email": "ibrahim@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "336f",
+      "name": "bahaa",
+      "email": "bahaa@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "0772",
+      "name": "ibrahim",
+      "email": "in@gmail.com",
+      "password": "123456",
+      "role": "customer"
     }
   ],
   "products": [

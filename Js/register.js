@@ -117,12 +117,10 @@ window.addEventListener("load", function () {
                         .then(res => {
                             if (res.ok) {
                                 console.log("Redirecting now...");
-                                setTimeout(() => {
-                                    // Remove focus from the password field to help dismiss the password save prompt
-                                    document.querySelector('#password').blur();
-                                    console.log("Redirecting now...");
-                                    window.location.href = "login.html";
-                                }, 1000); // A short timeout
+                                window.location.href = "login.html";
+                                // document.querySelector('#password').blur();
+                                // console.log("Redirecting now...");
+                                // window.location.href = "http://127.0.0.1:5500/pages/login.html";
                             } else {
                                 alert("Failed to register. Try again.");
                             }
