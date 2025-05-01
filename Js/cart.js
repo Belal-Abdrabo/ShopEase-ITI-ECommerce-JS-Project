@@ -1,1 +1,8 @@
-//check authentication and access to the page
+window.addEventListener('load', function(evernt) {
+    const currentUser = isAuthenticated();
+    if(!isAuthenticated)
+    {
+        window.locatin.href = '../login';
+    }
+    
+})
