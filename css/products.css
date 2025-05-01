@@ -172,6 +172,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
 .product-card {
@@ -344,6 +345,8 @@
     display: flex;
     justify-content: center;
     gap: 0.5rem;
+    margin-bottom: 100px;
+    margin-top:100px ;
 }
 
 .page-link {
@@ -366,6 +369,41 @@
     border-color: var(--primary-color);
     color: white;
 }
+.h2-pag {
+    margin: 0 15px;
+    padding: 6px 1  2px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    min-width: 40px;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  .h2-pag:hover {
+    background-color: #e0e0e0;
+  }
+  
+
+  .categoriesbutton{
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    width: 100%;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: start;
+  }
+  
+  .categoriesbutton:hover {
+    background-color: #0966d0;
+  }
 
 /* Responsive Styles */
 @media (max-width: 1199px) {
