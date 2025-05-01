@@ -36,7 +36,7 @@ const isHasAccess = function(page, role)
 const logOut = function()
 {
     localStorage.removeItem("loggedInUser");
-    window.location.href = "../index.html";
+    window.location.href = "http://127.0.0.1:5500/index.html";
 }
 // const isValidEmail = function (_emailValue, _errorMessageElement){
 //     if(_emailValue === '')

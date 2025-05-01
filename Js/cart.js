@@ -1,8 +1,8 @@
 window.addEventListener('load', function(evernt) {
     const currentUser = isAuthenticated();
-    if(!isAuthenticated)
+    if(!currentUser)
     {
-        window.locatin.href = '../login';
+        window.location.href = '../login.html';
     }
     
 })
