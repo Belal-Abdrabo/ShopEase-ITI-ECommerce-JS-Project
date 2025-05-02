@@ -139,33 +139,205 @@
       "email": "in@gmail.com",
       "password": "123456",
       "role": "customer"
+    },
+    {
+      "id": "9449",
+      "name": "hok4a",
+      "email": "hok4a@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "975c",
+      "name": "seller User",
+      "email": "seller@gmail.com",
+      "password": "123456",
+      "role": "seller"
+    },
+    {
+      "id": "d667",
+      "name": "seller 2",
+      "email": "seller2@gmail.com",
+      "password": "123456",
+      "role": "seller"
+    },
+    {
+      "id": "ac29",
+      "name": "zeft user",
+      "email": "zeft@gmail.com",
+      "password": "123456",
+      "role": "seller"
+    },
+    {
+      "id": "40e2",
+      "name": "zeft2",
+      "email": "zeft2@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "bce2",
+      "name": "tester",
+      "email": "tester@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "23bd",
+      "name": "ffffffffffffffffffffffff",
+      "email": "ff@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "e76c",
+      "name": "5ara",
+      "email": "5ara@gmal.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "8138",
+      "name": "zeft 5ara",
+      "email": "zeft5ara@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "f9a5",
+      "name": "final",
+      "email": "final@gmail.com",
+      "password": "123456",
+      "role": "customer"
     }
   ],
-    "products": [
-      { "id": 1, "name": "Laptop", "price": 15000, "image": "../itiECommerce_JS_Project/images/herp-image.jpg", "categoryId":1 },
-      { "id": 2, "name": "Headphones", "price": 500, "image": "headphones.jpg", "categoryId":1},
-      { "id": 4, "name": "afaf", "price": 15000, "image": "laptop.jpg", "categoryId":1 },
-      { "id": 5, "name": "Headphones", "price": 500, "image": "headphones.jpg", "categoryId":1},
-      { "id": 3, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":1 },
-      { "id": 3, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":1 },
-      { "id": 3, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":1 },
-      { "id": 3, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":1 },
-      { "id": 3, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":1 },
-      { "id": 3, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":1 },
-      { "id": 3, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":2 },
-      { "id": 3, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":2 },
-      { "id": 3, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":2 },
-      { "id": 3, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":2 },
-      { "id": 3, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":2 },
-      { "id": 3, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":2 }
-    ], 
-    "categories": [
-        { "categoriesId": 1, "name": "Electronics" },
-        { "categoriesId": 2, "name": "Accessories" }
-      ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "price": 15000,
+      "image": "../itiECommerce_JS_Project/images/herp-image.jpg",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "Headphones",
+      "price": 500,
+      "image": "headphones.jpg",
+      "categoryId": 1
+    },
+    {
+      "id": 4,
+      "name": "afaf",
+      "price": 15000,
+      "image": "laptop.jpg",
+      "categoryId": 1
+    },
+    {
+      "id": 5,
+      "name": "Headphones",
+      "price": 500,
+      "image": "headphones.jpg",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 15000,
+      "image": "laptop.jpg",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 15000,
+      "image": "laptop.jpg",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 15000,
+      "image": "laptop.jpg",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 15000,
+      "image": "laptop.jpg",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 15000,
+      "image": "laptop.jpg",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 15000,
+      "image": "laptop.jpg",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 15000,
+      "image": "laptop.jpg",
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 15000,
+      "image": "laptop.jpg",
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 15000,
+      "image": "laptop.jpg",
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 15000,
+      "image": "laptop.jpg",
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 15000,
+      "image": "laptop.jpg",
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 15000,
+      "image": "laptop.jpg",
+      "categoryId": 2
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Electronics"
+    },
+    {
+      "id": 2,
+      "name": "Accessories"
+    }
+  ],
   "orders": [
     {
-      "orderId": 1,
+      "id": 1,
       "customerId": 1,
       "sellerId": 2,
       "items": [
@@ -175,7 +347,7 @@
           "price": 15000,
           "quantity": 1
         }
-        ],
+      ],
       "date": "2023-10-01",
       "status": "pending",
       "total": 15000
@@ -183,7 +355,7 @@
   ],
   "cart": [
     {
-      "cartId": 1,
+      "id": 1,
       "customerId": 1,
       "items": [
         {
