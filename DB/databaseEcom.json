@@ -176,9 +176,9 @@
           "quantity": 1
         }
         ],
-       "status": "pending",
-      "total": 15000,
-      "id": "a5ff"
+      "date": "2023-10-01",
+      "status": "pending",
+      "total": 15000
     }
   ],
   "cart": [
