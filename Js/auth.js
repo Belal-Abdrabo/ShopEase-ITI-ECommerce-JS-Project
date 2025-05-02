@@ -133,8 +133,12 @@ window.addEventListener('load', function(){
                             role: user.role,
                         };
                         console.log("user =>", UserDto);
-                        
-                        // Save to localStorage
+                        // create a carts for the user
+                        if(user.role == "customer") 
+                        {
+                            postCartUsingCustomerId(user.id);
+                        }
+                        // Save userDto to localStorage
                         localStorage.setItem("loggedInUser", JSON.stringify(UserDto));
     
                         // Redirect based on role
