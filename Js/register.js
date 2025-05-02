@@ -134,8 +134,7 @@ window.addEventListener("load", function () {
                     })
                         .then(res => {
                             if (res.ok) {
-                                console.log("Redirecting now...");
-                                window.location.href = "login.html";
+                                window.location.href = "./login.html";
                             } else {
                                 alert("Failed to register. Try again.");
                             }

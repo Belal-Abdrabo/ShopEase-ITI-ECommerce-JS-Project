@@ -18,6 +18,8 @@ window.addEventListener("load", function() {
     let productsCount;
     let categoriesCount
     let ordersCount;
+    let ordersTableBody = document.querySelector("#table-body");
+
     //update userCount card
     fetch(url+'users')
     .then(response => response.json())
@@ -27,6 +29,7 @@ window.addEventListener("load", function() {
         cards[0].textContent = usersCount;
     }
     ).catch(error => console.error('Error:', error));
+
     //update productsCount card
     fetch(url+'products')
     .then(response => response.json())
@@ -36,6 +39,7 @@ window.addEventListener("load", function() {
         cards[1].textContent = productsCount;
     }
     ).catch(error => console.error('Error:', error));
+    
     //update categoriesCount card
     fetch(url+'categories')
     .then(response => response.json())
@@ -45,6 +49,7 @@ window.addEventListener("load", function() {
         cards[2].textContent = categoriesCount;
     }
     ).catch(error => console.error('Error:', error));
+
     //update ordersCount card
     fetch(url+'orders')
     .then(response => response.json())
@@ -54,4 +59,8 @@ window.addEventListener("load", function() {
         cards[3].textContent = ordersCount;
     }
     ).catch(error => console.error('Error:', error));
+
+    //update orders table
+    
+    
 });//load end
