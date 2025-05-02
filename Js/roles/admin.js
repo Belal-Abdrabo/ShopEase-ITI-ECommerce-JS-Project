@@ -61,6 +61,47 @@ window.addEventListener("load", function() {
     ).catch(error => console.error('Error:', error));
 
     //update orders table
+    let customer = null;
+    let product = null;
+    ordersTableBody.innerHTML = ""; //clear table body
+    getAllOrders().then(orders => {
+        orders.forEach(order =>{
+            let row = document.createElement('tr');
+            getUserById(order.customerId)
+            .then(data => {
+                console.log(`customer: ${data.userName}`);
+                customer = data
+                row.innerHTML = `
+                <td>${order.id}</td>
+                <td>${customer.userName}</td>
+                <td>${order.date}</td>
+                <td>${order.total}</td>
+                <td><span class="status-badge ${order.status}">${order.status}</span></td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn-icon"><i class="fas fa-eye"></i></button>   
+                        <a href="../editOrder.html?orderId=${order.id}"><button class="btn-icon"><i class="fas fa-edit"></i></button></a>
+                    </div>
+                </td>  
+                `
+                ordersTableBody.appendChild(row);
+            });
+        });
+    })
     
     
 });//load end
+
+{/* <tr>
+<td>#ORD-5289</td>
+<td>John Smith</td>
+<td>May 1, 2025</td>
+<td>$125.99</td>
+<td><span class="status-badge delivered">Delivered</span></td>
+<td>
+    <div class="action-buttons">
+        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+    </div>
+</td>
+</tr> */}

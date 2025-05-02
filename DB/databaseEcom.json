@@ -16,7 +16,7 @@
     },
     {
       "id": "b817",
-      "name": "ahmed",
+      "userName": "ahmed",
       "email": "ahmed@gmail.com",
       "password": "123456",
       "role": "customer"
@@ -160,7 +160,23 @@
         }
       ],
       "date": "2023-10-01",
-      "status": "pending",
+      "status": "active",
+      "total": 15000
+    },
+    {
+      "id": "2",
+      "customerId": "b817",
+      "sellerId": 2,
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Laptop",
+          "price": 15000,
+          "quantity": 1
+        }
+      ],
+      "date": "2023-10-01",
+      "status": "processing",
       "total": 15000
     }
   ],
