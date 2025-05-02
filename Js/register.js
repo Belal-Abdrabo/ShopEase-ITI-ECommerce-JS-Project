@@ -12,7 +12,7 @@ window.addEventListener("load", function () {
     const passwordError = document.querySelector('#password-error');
     const confirmPasswordError = document.querySelector('#confirm-password-error');
 
-    const url = "http://localhost:3000/users";
+    const url = "http://localhost:3000/";
 
     const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
     if(user)
@@ -114,7 +114,7 @@ window.addEventListener("load", function () {
         if (!isValid) return;
 
         // Check if email already exists
-        fetch(`${url}?email=${emailVal}`)
+        fetch(`${url+'users'}?email=${emailVal}`)
             .then(res => res.json())
             .then(users => {
                 if (users.length > 0) {
@@ -126,19 +126,19 @@ window.addEventListener("load", function () {
                         password: passwordVal,
                         role: selectedRole
                     };
-
-                    fetch(url, {
+                    
+                    fetch(url+'users', {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(newUser)
                     })
-                        .then(res => {
-                            if (res.ok) {
-                                window.location.href = "./login.html";
-                            } else {
-                                alert("Failed to register. Try again.");
-                            }
-                        });
+                    .then(res => {
+                        if (res.ok) {
+                            window.location.href = "./login.html";
+                        } else {
+                            alert("Failed to register. Try again.");
+                        }
+                    });
                 }
             })
             .catch(err => {

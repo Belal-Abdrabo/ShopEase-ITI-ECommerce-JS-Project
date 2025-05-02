@@ -15,310 +15,121 @@
       "role": "admin"
     },
     {
-      "id": "9c8f",
-      "name": "Ahmed Ibrahim",
+      "id": "b817",
+      "name": "ahmed",
       "email": "ahmed@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "efb5",
-      "name": "Ahmed 2",
-      "email": "ahmed2@gmail.com",
-      "password": "123456",
-      "role": "seller"
-    },
-    {
-      "id": "1361",
-      "name": "belal abdo",
-      "email": "belal@gmail.com",
-      "password": "123456",
-      "role": "seller"
-    },
-    {
-      "id": "bf54",
-      "name": "belal abdo",
-      "email": "belal2@gmail.com",
-      "password": "123456",
-      "role": "seller"
-    },
-    {
-      "id": "5cf6",
-      "name": "mezo",
-      "email": "mezo@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "db90",
-      "name": "kholyy",
-      "email": "kholy@gmail.com",
-      "password": "123456",
-      "role": "seller"
-    },
-    {
-      "id": "7b51",
-      "name": "sherif",
-      "email": "sherif@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "bf96",
-      "name": "XZX",
-      "email": "xas@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "8731",
-      "name": "test",
-      "email": "test@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "a58d",
-      "name": "test32",
-      "email": "test32@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "5f24",
-      "name": "test322",
-      "email": "testss@gmail.com",
-      "password": "123456",
-      "role": "seller"
-    },
-    {
-      "id": "88fe",
-      "name": "last test",
-      "email": "last@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "c777",
-      "name": "Ahmed Elkholy",
-      "email": "kholy2@gmail.com",
-      "password": "123456",
-      "role": "seller"
-    },
-    {
-      "id": "bdd8",
-      "name": "asda",
-      "email": "dsd@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "391f",
-      "name": "ahemd",
-      "email": "ahemd@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "b93d",
-      "name": "ahmed ibrahim ahmed",
-      "email": "ibrahim@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "336f",
-      "name": "bahaa",
-      "email": "bahaa@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "0772",
-      "name": "ibrahim",
-      "email": "in@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "9449",
-      "name": "hok4a",
-      "email": "hok4a@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "975c",
-      "name": "seller User",
-      "email": "seller@gmail.com",
-      "password": "123456",
-      "role": "seller"
-    },
-    {
-      "id": "d667",
-      "name": "seller 2",
-      "email": "seller2@gmail.com",
-      "password": "123456",
-      "role": "seller"
-    },
-    {
-      "id": "ac29",
-      "name": "zeft user",
-      "email": "zeft@gmail.com",
-      "password": "123456",
-      "role": "seller"
-    },
-    {
-      "id": "40e2",
-      "name": "zeft2",
-      "email": "zeft2@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "bce2",
-      "name": "tester",
-      "email": "tester@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "23bd",
-      "name": "ffffffffffffffffffffffff",
-      "email": "ff@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "e76c",
-      "name": "5ara",
-      "email": "5ara@gmal.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "8138",
-      "name": "zeft 5ara",
-      "email": "zeft5ara@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "f9a5",
-      "name": "final",
-      "email": "final@gmail.com",
       "password": "123456",
       "role": "customer"
     }
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Laptop",
       "price": 15000,
       "image": "../itiECommerce_JS_Project/images/herp-image.jpg",
       "categoryId": 1
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Headphones",
       "price": 500,
       "image": "headphones.jpg",
       "categoryId": 1
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "afaf",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 1
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Headphones",
       "price": 500,
       "image": "headphones.jpg",
       "categoryId": 1
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 1
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 1
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 1
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 1
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 1
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 1
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 2
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 2
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 2
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 2
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 2
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
@@ -327,17 +138,17 @@
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Electronics"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Accessories"
     }
   ],
   "orders": [
     {
-      "id": 1,
+      "id": "1",
       "customerId": 1,
       "sellerId": 2,
       "items": [
@@ -355,7 +166,7 @@
   ],
   "cart": [
     {
-      "id": 1,
+      "id": "1",
       "customerId": 1,
       "items": [
         {
@@ -363,6 +174,11 @@
           "quantity": 2
         }
       ]
+    },
+    {
+      "id": "ed77",
+      "customerId": "b817",
+      "items": []
     }
   ]
 }

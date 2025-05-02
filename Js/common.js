@@ -178,6 +178,36 @@ const getCartItemById = function(id)
     })
     .catch(error => console.error('Error:', error));
 }
+//post cart using customerId
+const postCartUsingCustomerId = function(customerId) {
+    //Check if a cart already exists for the customer
+    fetch(`http://localhost:3000/cart?customerId=${customerId}`)
+        .then(res => res.json())
+        .then(carts => {
+            if (carts.length > 0) {
+                console.log("Cart already exists:", carts[0]);
+                return;
+            } else {
+                // No cart exists => create one
+                return fetch('http://localhost:3000/cart', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        customerId: customerId,
+                        items: [] // start with empty cart
+                    })
+                })
+                .then(res => res.json())
+                .then(newCart => {
+                    console.log("Created new cart:", newCart);
+                });
+            }
+        })
+        .catch(error => console.error("Error:", error));
+};
+
 //get specific cart item with customerId
 const getCartItemByUserId = function(customerId)
 {
