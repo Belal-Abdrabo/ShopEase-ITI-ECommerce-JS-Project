@@ -1,1 +1,3 @@
-let x =0;
+window.addEventListener("load", function() {
+    
+});//load end

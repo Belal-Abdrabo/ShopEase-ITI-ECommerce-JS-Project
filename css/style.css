@@ -1209,4 +1209,8 @@
       flex-direction: column;
     }
   }
-  
+  .error-message{
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }

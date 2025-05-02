@@ -1,8 +1,146 @@
 {
-    "users": [
-      { "id": 1, "userName": "belal","email":"fafaf@fafafa.com", "password": "1234", "role": "admin" },
-      { "id": 2, "userName": "ahmed","email":"fafaf@fafafa.com", "password": "adminpass", "role": "admin" }
-    ],
+  "users": [
+    {
+      "id": "1",
+      "userName": "belal",
+      "email": "fafaf@fafafa.com",
+      "password": "1234",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "userName": "ahmed",
+      "email": "fafaf@fafafa.com",
+      "password": "adminpass",
+      "role": "admin"
+    },
+    {
+      "id": "9c8f",
+      "name": "Ahmed Ibrahim",
+      "email": "ahmed@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "efb5",
+      "name": "Ahmed 2",
+      "email": "ahmed2@gmail.com",
+      "password": "123456",
+      "role": "seller"
+    },
+    {
+      "id": "1361",
+      "name": "belal abdo",
+      "email": "belal@gmail.com",
+      "password": "123456",
+      "role": "seller"
+    },
+    {
+      "id": "bf54",
+      "name": "belal abdo",
+      "email": "belal2@gmail.com",
+      "password": "123456",
+      "role": "seller"
+    },
+    {
+      "id": "5cf6",
+      "name": "mezo",
+      "email": "mezo@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "db90",
+      "name": "kholyy",
+      "email": "kholy@gmail.com",
+      "password": "123456",
+      "role": "seller"
+    },
+    {
+      "id": "7b51",
+      "name": "sherif",
+      "email": "sherif@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "bf96",
+      "name": "XZX",
+      "email": "xas@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "8731",
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "a58d",
+      "name": "test32",
+      "email": "test32@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "5f24",
+      "name": "test322",
+      "email": "testss@gmail.com",
+      "password": "123456",
+      "role": "seller"
+    },
+    {
+      "id": "88fe",
+      "name": "last test",
+      "email": "last@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "c777",
+      "name": "Ahmed Elkholy",
+      "email": "kholy2@gmail.com",
+      "password": "123456",
+      "role": "seller"
+    },
+    {
+      "id": "bdd8",
+      "name": "asda",
+      "email": "dsd@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "391f",
+      "name": "ahemd",
+      "email": "ahemd@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "b93d",
+      "name": "ahmed ibrahim ahmed",
+      "email": "ibrahim@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "336f",
+      "name": "bahaa",
+      "email": "bahaa@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "0772",
+      "name": "ibrahim",
+      "email": "in@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    }
+  ],
     "products": [
       { "id": 1, "name": "Laptop", "price": 15000, "image": "../itiECommerce_JS_Project/images/herp-image.jpg", "categoryId":1 },
       { "id": 2, "name": "Headphones", "price": 500, "image": "headphones.jpg", "categoryId":1},
@@ -20,31 +158,39 @@
       { "id": 3, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":2 },
       { "id": 3, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":2 },
       { "id": 3, "name": "Laptop", "price": 15000, "image": "laptop.jpg", "categoryId":2 }
-    ],
+    ], 
     "categories": [
         { "categoriesId": 1, "name": "Electronics" },
         { "categoriesId": 2, "name": "Accessories" }
       ],
-    "orders": [
-      {
-        "orderId": 1,"customerId": 1,"sellerId": 2,"items":
-        [
-          {
-            "productId": 1, "productName": "Laptop", "price": 15000,"quantity": 1
-          }
+  "orders": [
+    {
+      "orderId": 1,
+      "customerId": 1,
+      "sellerId": 2,
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Laptop",
+          "price": 15000,
+          "quantity": 1
+        }
         ],
-        "status": "pending", "total": 15000
-      }
-    ],
-    "cart": [
-      {
-        "cartId": 1,"customerId": 1,"items":
-        [
-          {
-            "productId": 2, "quantity": 2
-          }
-        ]
-      }
-    ]
-  }
-  
+       "status": "pending",
+      "total": 15000,
+      "id": "a5ff"
+    }
+  ],
+  "cart": [
+    {
+      "cartId": 1,
+      "customerId": 1,
+      "items": [
+        {
+          "productId": 2,
+          "quantity": 2
+        }
+      ]
+    }
+  ]
+}
