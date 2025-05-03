@@ -1,23 +1,23 @@
 {
   "users": [
     {
-      "id": "1",
-      "userName": "belal",
-      "email": "fafaf@fafafa.com",
-      "password": "1234",
-      "role": "admin"
-    },
-    {
-      "id": "2",
-      "userName": "ahmed",
-      "email": "fafaf@fafafa.com",
-      "password": "adminpass",
-      "role": "admin"
-    },
-    {
       "id": "b817",
       "name": "ahmed",
       "email": "ahmed@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "78af",
+      "name": "belal a7a",
+      "email": "belal@a7a.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "edfe",
+      "name": "adfad",
+      "email": "bbb@gmail.com",
       "password": "123456",
       "role": "customer"
     }
@@ -38,98 +38,98 @@
       "categoryId": 1
     },
     {
-      "id": "4",
+      "id": "3",
       "name": "afaf",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 1
     },
     {
-      "id": "5",
+      "id": "4",
       "name": "Headphones",
       "price": 500,
       "image": "headphones.jpg",
       "categoryId": 1
     },
     {
-      "id": "3",
+      "id": "5",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 1
     },
     {
-      "id": "3",
+      "id": "6",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 1
     },
     {
-      "id": "3",
+      "id": "7",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 1
     },
     {
-      "id": "3",
+      "id": "8",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 1
     },
     {
-      "id": "3",
+      "id": "9",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 1
     },
     {
-      "id": "3",
+      "id": "10",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 1
     },
     {
-      "id": "3",
+      "id": "11",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 2
     },
     {
-      "id": "3",
+      "id": "12",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 2
     },
     {
-      "id": "3",
+      "id": "13",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 2
     },
     {
-      "id": "3",
+      "id": "14",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 2
     },
     {
-      "id": "3",
+      "id": "15",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
       "categoryId": 2
     },
     {
-      "id": "3",
+      "id": "16 ",
       "name": "Laptop",
       "price": 15000,
       "image": "laptop.jpg",
@@ -166,19 +166,40 @@
   ],
   "cart": [
     {
-      "id": "1",
-      "customerId": 1,
+      "id": "ed77",
+      "customerId": "b817",
       "items": [
         {
           "productId": 2,
           "quantity": 2
+        },
+        {
+          "productId": 1,
+          "quantity": 1
         }
       ]
     },
     {
-      "id": "ed77",
-      "customerId": "b817",
-      "items": []
+      "id": "12d0",
+      "customerId": "edfe",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 3
+        },
+        {
+          "productId": 3,
+          "quantity": 1
+        },
+        {
+          "productId": 6,
+          "quantity": 1
+        },
+        {
+          "productId": 4,
+          "quantity": 1
+        }
+      ]
     }
   ]
 }
