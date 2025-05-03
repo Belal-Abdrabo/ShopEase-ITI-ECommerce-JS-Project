@@ -67,7 +67,7 @@
                 </ul>
             </nav>
             <div class="sidebar-footer">
-                <a href="index.html">
+                <a id="logout" href="index.html">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>
@@ -92,9 +92,6 @@
                         <img src="images/admin-avatar.jpg" alt="Admin">
                         <span>Admin User</span>
                         <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <button id="logout">Logout</button> 
-                </div>
             </header>
 
             <div class="admin-content">
@@ -250,7 +247,7 @@
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="recent-products-table-body">
                                 <tr>
                                     <td>#PRD-1024</td>
                                     <td>Wireless Headphones</td>
