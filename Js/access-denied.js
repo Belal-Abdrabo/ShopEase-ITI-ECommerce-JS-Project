@@ -5,19 +5,19 @@ window.addEventListener('load', function(event){
         {
             if(user.role == "admin")
                 {
-                    window.location.href = "../admin/admin-dashboard.html";
+                    window.location.href = "./admin/admin-dashboard.html";
                 }
                 else if(user.role == "seller")
                 {
-                    window.location.href = "../seller/seller-dashboard.html";
+                    window.location.href = "./seller/seller-dashboard.html";
                 }
                 else if(user.role == "customer")
                 {
-                    window.location.href = "../../index.html";
+                    window.location.href = "../index.html";
                 }
         }
         else{
-            window.location.href = "../login.html"
+            window.location.href = "./login.html"
         }
     }, 5000);
 });//load end

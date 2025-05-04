@@ -1,3 +1,16 @@
+   const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
+    if(user)
+    {
+        if(user.role == "seller"|| user.role == "customer")
+        {
+            window.location.href = "../access-denied.html";
+        }
+    }
+    else
+    {
+        window.location.href = "../access-denied.html";
+    }
+
 window.addEventListener("load", function () {
     const form = document.querySelector('#register-form');
     const fullName = document.querySelector('#fullname');
@@ -13,15 +26,6 @@ window.addEventListener("load", function () {
     const confirmPasswordError = document.querySelector('#confirm-password-error');
 
     const url = "http://localhost:3000/";
-
-    const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
-    if(user)
-    {
-        if(user.role == "seller"|| user.role == "customer")
-        {
-            window.location.href = "../access-denied.html";
-        }
-    }
 
     const isValidEmail = (email) => {
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -125,7 +129,7 @@ window.addEventListener("load", function () {
                     })
                     .then(res => {
                         if (res.ok) {
-                            window.location.href = "./login.html";
+                            window.location.href = "./admin-users.html";
                         } else {
                             alert("Failed to register. Try again.");
                         }

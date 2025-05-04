@@ -41,6 +41,13 @@
       "email": "taha@gmail.com",
       "password": "123456",
       "role": "customer"
+    },
+    {
+      "id": "0aa3",
+      "userName": "Mohamed Ghareeb",
+      "email": "Ghareb@gmail.com",
+      "password": "123456",
+      "role": "admin"
     }
   ],
   "products": [

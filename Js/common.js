@@ -1,4 +1,5 @@
 // Check if user is logged in or not
+const url = "http://localhost:3000/";
 const isAuthenticated = function () {
     const user = localStorage.getItem("loggedInUser");
     if (user) {
@@ -34,6 +35,16 @@ const getAllUsers = function () {
             console.error('Error:', error);
             return [];
         });
+}
+//GET url/posts?_page=1&_per_page=25
+const getUserByPagination = function(pageNum, countPerPage)
+{
+    return fetch(url + 'users?_page=' + pageNum + '&_limit=' + countPerPage)
+            .then(res => res.json())
+            .catch(err =>{
+                console.error('Error:', err);
+                return [];
+            });
 }
 
 // Get specific user by email
