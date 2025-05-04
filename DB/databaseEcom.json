@@ -20,6 +20,27 @@
       "email": "ahmed@gmail.com",
       "password": "123456",
       "role": "customer"
+    },
+    {
+      "id": "007b",
+      "userName": "ahmed ramadan",
+      "email": "ramadan@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "5b3f",
+      "userName": "belal",
+      "email": "belal@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "7bef",
+      "userName": "Ahmed Taha",
+      "email": "taha@gmail.com",
+      "password": "123456",
+      "role": "customer"
     }
   ],
   "products": [
@@ -194,6 +215,11 @@
     {
       "id": "ed77",
       "customerId": "b817",
+      "items": []
+    },
+    {
+      "id": "7987",
+      "customerId": "007b",
       "items": []
     }
   ]
