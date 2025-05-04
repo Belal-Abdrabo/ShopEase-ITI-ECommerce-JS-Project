@@ -121,7 +121,7 @@ window.addEventListener("load", function () {
                     emailError.textContent = "Email already exists";
                 } else {
                     const newUser = {
-                        name: fullNameVal,
+                        userName: fullNameVal,
                         email: emailVal,
                         password: passwordVal,
                         role: selectedRole

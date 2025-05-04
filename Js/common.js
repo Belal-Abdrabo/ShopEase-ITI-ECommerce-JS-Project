@@ -1,195 +1,203 @@
-//check if user is logged in or not
-const isAuthenticated = function()   
-{
+// Check if user is logged in or not
+const isAuthenticated = function () {
     const user = localStorage.getItem("loggedInUser");
-    if(user)
-    {
+    if (user) {
         const userData = JSON.parse(user);
         return userData;
-    }
-    else
-    {
+    } else {
         return false;
     }
 }
-//check if user role has access to the page or not
-const isHasAccess = function(page, role)
-{
-    if(role == 'admin')
-    {
-        if(page.includes('admin'))
-        {
+
+// Check if user role has access to the page or not
+const isHasAccess = function (page, role) {
+    if (role == 'admin') {
+        if (page.includes('admin')) {
             return true;
         }
-    }
-    else if(role == 'seller')
-    {
-        if(page.includes('seller'))
-        {
+    } else if (role == 'seller') {
+        if (page.includes('seller')) {
             return true;
         }
     }
     return false;
-    
 }
+
 //#region user methods 
-//get all users
-const getAllUsers = function()
-{
+
+// Get all users
+const getAllUsers = function () {
     const url = 'http://localhost:3000/users';
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        return data;
-    })
-    .catch(error => console.error('Error:', error));
+
+    return fetch(url)
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error:', error);
+            return [];
+        });
 }
-//get specific user with email
-const getUserByEmail = function(email)
-{
-    const url = 'http://localhost:3000/users?email='+email;
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        return data;
-    })
-    .catch(error => console.error('Error:', error));
-    
+
+// Get specific user by email
+const getUserByEmail = function (email) {
+    const url = 'http://localhost:3000/users?email=' + email;
+    return fetch(url)
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error:', error);
+            return null;
+        });
 }
-//get specific user with role
-const getUserByRole = function(role)
-{
-    const url = 'http://localhost:3000/users?role='+role;
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        return data;
-    })
-    .catch(error => console.error('Error:', error));
+
+// Get specific user by role
+const getUserByRole = function (role) {
+    const url = 'http://localhost:3000/users?role=' + role;
+    return fetch(url)
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error:', error);
+            return [];
+        });
 }
-//get specific user with id
-const getUserById = function(id)
-{
-    const url = 'http://localhost:3000/users/'+id;
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        return data;
-    })
-    .catch(error => console.error('Error:', error));
+
+// Get specific user by ID
+const getUserById = function (id) {
+    const url = 'http://localhost:3000/users/' + id;
+    return fetch(url)
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error:', error);
+            return null;
+        });
 }
 //#endregion user methods
 
+
 //#region product methods
-//get all products
-const getAllProducts = function()
-{
+
+// Get all products
+const getAllProducts = function () {
     const url = 'http://localhost:3000/products';
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        return data;
-    })
-    .catch(error => console.error('Error:', error));
+    return fetch(url)
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error:', error);
+            return [];
+        });
 }
-//get specific product with id
-const getProductById = function(id)
-{
-    const url = 'http://localhost:3000/products/'+id;
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        return data;
-    })
-    .catch(error => console.error('Error:', error));
+
+// Get specific product by ID
+const getProductById = function (id) {
+    const url = 'http://localhost:3000/products/' + id;
+    return fetch(url)
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error:', error);
+            return null;
+        });
 }
-//#endregion product methods
+
+//#endregion
 
 //#region categories methods
-//get all categories
-const getAllCategories = function()
-{
+
+// Get all categories
+const getAllCategories = function () {
     const url = 'http://localhost:3000/categories';
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        return data;
-    })
-    .catch(error => console.error('Error:', error));
+    return fetch(url)
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error:', error);
+            return [];
+        });
 }
-//get specific category with id    
-const getCategoryById = function(id)
-{
-    const url = 'http://localhost:3000/categories/'+id;
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        return data;
-    })
-    .catch(error => console.error('Error:', error));
+
+// Get specific category by ID
+const getCategoryById = function (id) {
+    const url = 'http://localhost:3000/categories/' + id;
+    return fetch(url)
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error:', error);
+            return null;
+        });
 }
-//#endregion categories methods
+
+//#endregion
 
 //#region orders methods
-//get all orders
-const getAllOrders = function()
-{
+
+// Get all orders
+const getAllOrders = function () {
     const url = 'http://localhost:3000/orders';
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        return data;
-    })
-    .catch(error => console.error('Error:', error));
+    return fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log("Fetched orders:", data);
+            return data;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            return [];
+        });
 }
 
-//get specific order with id
-const getOrderById = function(id)
-{
-    const url = 'http://localhost:3000/orders/'+id;
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        return data;
-    })
-    .catch(error => console.error('Error:', error));
+// Get specific order by ID
+const getOrderById = function (id) {
+    const url = 'http://localhost:3000/orders/' + id;
+    return fetch(url)
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error:', error);
+            return null;
+        });
 }
-//#endregion orders methods
+
+//#endregion
 
 //#region cart methods
-//get all cart items
-const getAllCartItems = function()
-{
+
+// Get all cart items
+const getAllCartItems = function () {
     const url = 'http://localhost:3000/cart';
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        return data;
-    })
-    .catch(error => console.error('Error:', error));
+    return fetch(url)
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error:', error);
+            return [];
+        });
 }
-//get specific cart item with id
-const getCartItemById = function(id)
-{
-    const url = 'http://localhost:3000/cart/'+id;
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        return data;
-    })
-    .catch(error => console.error('Error:', error));
+
+// Get specific cart item by ID
+const getCartItemById = function (id) {
+    const url = 'http://localhost:3000/cart/' + id;
+    return fetch(url)
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error:', error);
+            return null;
+        });
 }
-//post cart using customerId
-const postCartUsingCustomerId = function(customerId) {
-    //Check if a cart already exists for the customer
-    fetch(`http://localhost:3000/cart?customerId=${customerId}`)
+
+// Get cart items by customer ID
+const getCartItemByUserId = function (customerId) {
+    const url = 'http://localhost:3000/cart?customerId=' + customerId;
+    return fetch(url)
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error:', error);
+            return [];
+        });
+}
+
+// Post a cart using customer ID (create only if it doesn't exist)
+const postCartUsingCustomerId = function (customerId) {
+    return fetch(`http://localhost:3000/cart?customerId=${customerId}`)
         .then(res => res.json())
         .then(carts => {
             if (carts.length > 0) {
                 console.log("Cart already exists:", carts[0]);
-                return;
+                return carts[0];
             } else {
-                // No cart exists => create one
                 return fetch('http://localhost:3000/cart', {
                     method: 'POST',
                     headers: {
@@ -197,30 +205,23 @@ const postCartUsingCustomerId = function(customerId) {
                     },
                     body: JSON.stringify({
                         customerId: customerId,
-                        items: [] // start with empty cart
+                        items: []
                     })
                 })
-                .then(res => res.json())
-                .then(newCart => {
-                    console.log("Created new cart:", newCart);
-                });
+                    .then(res => res.json())
+                    .then(newCart => {
+                        console.log("Created new cart:", newCart);
+                        return newCart;
+                    });
             }
         })
-        .catch(error => console.error("Error:", error));
-};
-
-//get specific cart item with customerId
-const getCartItemByUserId = function(customerId)
-{
-    const url = 'http://localhost:3000/cart?customerId='+customerId;
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        return data;
-    })
-    .catch(error => console.error('Error:', error));
+        .catch(error => {
+            console.error("Error:", error);
+            return null;
+        });
 }
-//#endregion cart methods
+
+//#endregion
 
 
 const handleAddToCart = function(productId) {

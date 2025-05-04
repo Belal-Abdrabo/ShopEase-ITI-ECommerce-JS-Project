@@ -11,6 +11,9 @@
     // o Edit or delete existing products. 
 // • Order Management: 
     // o View and manage all orders. 
+
+
+    
 window.addEventListener("load", function() {
     const cards = document.querySelectorAll(".stat-number");
     const url = 'http://localhost:3000/';
@@ -19,7 +22,8 @@ window.addEventListener("load", function() {
     let categoriesCount
     let ordersCount;
     let ordersTableBody = document.querySelector("#table-body");
-
+    let recentProductsTableBody = document.querySelector("#recent-products-table-body");
+//#region update admin cards
     //update userCount card
     fetch(url+'users')
     .then(response => response.json())
@@ -59,8 +63,85 @@ window.addEventListener("load", function() {
         cards[3].textContent = ordersCount;
     }
     ).catch(error => console.error('Error:', error));
+// #endregion
 
-    //update orders table
+// #region update orders table
+//update orders table
+    let customer = null;
+    let product = null;
+    ordersTableBody.innerHTML = ""; //clear table body
+    getAllOrders().then(orders => {
+        let first6Orders  = orders.slice(0, 6); //get first 6 orders
+        first6Orders.forEach(order =>{
+            let row = document.createElement('tr');
+            getUserById(order.customerId)
+            .then(data => {
+                console.log(`customer: ${data.userName}`);
+                customer = data
+                row.innerHTML = `
+                <td>${order.id}</td>
+                <td>${customer.userName}</td>
+                <td>${order.date}</td>
+                <td>${order.total}</td>
+                <td><span class="status-badge ${order.status}">${order.status}</span></td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn-icon"><i class="fas fa-eye"></i></button>   
+                        <a href="../editOrder.html?orderId=${order.id}"><button class="btn-icon"><i class="fas fa-edit"></i></button></a>
+                    </div>
+                </td>  
+                `
+                ordersTableBody.appendChild(row);
+            });
+        });
+    })
+    // #endregion
     
-    
+// #region update recent products table
+    recentProductsTableBody.innerHTML = ""; //clear table body
+    getAllProducts().then(products =>{
+        let first6Products = products.slice(0, 6); //get first 6 products
+        first6Products.forEach(product =>{
+            getCategoryById(product.categoryId).then(data =>{
+                console.log(`category: ${data.name}`);
+                product.category = data.name; //add category to product object
+                let row = document.createElement('tr');
+                row.innerHTML = `
+                <tr>
+                    <td>${product.id}</td>
+                    <td>${product.name}</td>
+                    <td>${product.category}</td>
+                    <td>${product.price}</td>
+                    <td><span class="status-badge active">Active</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <a href="../product-datails/id=${product.id}"><button class="btn-icon"><i class="fas fa-eye"></i></button></a>
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                `;
+                recentProductsTableBody.appendChild(row);
+            })//end of getCategoryById
+    }) //end of forEach
+
+}) //end of getallProducts
+
+// #endregion
+
 });//load end
+
+/* <tr>
+<td>#ORD-5289</td>
+<td>John Smith</td>
+<td>May 1, 2025</td>
+<td>$125.99</td>
+<td><span class="status-badge delivered">Delivered</span></td>
+<td>
+    <div class="action-buttons">
+        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+    </div>
+</td>
+</tr> */
