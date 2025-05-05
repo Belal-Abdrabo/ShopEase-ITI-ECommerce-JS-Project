@@ -48,6 +48,55 @@
       "email": "Ghareb@gmail.com",
       "password": "123456",
       "role": "admin"
+    },
+    {
+      "id": "1",
+      "userName": "belal",
+      "email": "fafaf@fafafa.com",
+      "password": "1234",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "userName": "ahmed",
+      "email": "fafaf@fafafa.com",
+      "password": "adminpass",
+      "role": "admin"
+    },
+    {
+      "id": "b817",
+      "userName": "ahmed",
+      "email": "ahmed@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "007b",
+      "userName": "ahmed ramadan",
+      "email": "ramadan@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "5b3f",
+      "userName": "belal",
+      "email": "belal@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "7bef",
+      "userName": "Ahmed Taha",
+      "email": "taha@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "0aa3",
+      "userName": "Mohamed Ghareeb",
+      "email": "Ghareb@gmail.com",
+      "password": "123456",
+      "role": "admin"
     }
   ],
   "products": [

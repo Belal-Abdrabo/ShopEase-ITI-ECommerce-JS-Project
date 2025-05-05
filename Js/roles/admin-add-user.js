@@ -1,15 +1,6 @@
-   const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
-    if(user)
-    {
-        if(user.role == "seller"|| user.role == "customer")
-        {
-            window.location.href = "../access-denied.html";
-        }
-    }
-    else
-    {
-        window.location.href = "../access-denied.html";
-    }
+//check if the user is logged in and has the role of admin
+adminCheckAuthentication();
+
 
 window.addEventListener("load", function () {
     const form = document.querySelector('#register-form');

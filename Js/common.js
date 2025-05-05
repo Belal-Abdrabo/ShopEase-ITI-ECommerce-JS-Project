@@ -10,6 +10,22 @@ const isAuthenticated = function () {
     }
 }
 
+const adminCheckAuthentication = function () {
+    const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
+    if(user)
+    {
+        if(user.role == "seller"|| user.role == "customer")
+        {
+            window.location.href = "../access-denied.html";
+        }
+    }
+    else
+    {
+        window.location.href = "../access-denied.html";
+    }
+
+}
+
 // Check if user role has access to the page or not
 const isHasAccess = function (page, role) {
     if (role == 'admin') {
@@ -25,6 +41,14 @@ const isHasAccess = function (page, role) {
 }
 
 //#region user methods 
+const getLoggedInUser = function () {
+    const loggedUser = localStorage.getItem("loggedInUser");
+    if (loggedUser) {
+        return JSON.parse(loggedUser);
+    } else {
+        return null;
+    }
+}
 
 // Get all users
 const getAllUsers = function () {

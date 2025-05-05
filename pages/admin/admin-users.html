@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../../Js/common.js"></script>
+    <script src="../../Js/roles/admin-users.js"></script>
 </head>
 <body class="admin-body">
     <div class="admin-container">
@@ -114,25 +116,6 @@
                                 <option value="admin">Admin</option>
                             </select>
                         </div>
-                        <div class="filter-group">
-                            <label for="status-filter">Status</label>
-                            <select id="status-filter">
-                                <option value="">All Status</option>
-                                <option value="active">Active</option>
-                                <option value="inactive">Inactive</option>
-                                <option value="suspended">Suspended</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label for="date-filter">Date</label>
-                            <select id="date-filter">
-                                <option value="">All Time</option>
-                                <option value="today">Today</option>
-                                <option value="week">This Week</option>
-                                <option value="month">This Month</option>
-                                <option value="year">This Year</option>
-                            </select>
-                        </div>
                     </div>
                     <button class="btn btn-outline">
                         <i class="fas fa-filter"></i> Apply Filters
@@ -152,7 +135,7 @@
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id = 'admin-users-table'>
                                 <tr>
                                     <td>#USR-1001</td>
                                     <td class="user-info">
@@ -238,15 +221,13 @@
                     </div>
                 </div>
 
-                <!-- Pagination -->
+                <!-- Pagination  -->
                 <div class="pagination">
-                    <button class="btn-page" disabled><i class="fas fa-chevron-left"></i></button>
-                    <button class="btn-page active">1</button>
-                    <button class="btn-page">2</button>
-                    <button class="btn-page">3</button>
-                    <span class="pagination-ellipsis">...</span>
-                    <button class="btn-page">10</button>
-                    <button class="btn-page"><i class="fas fa-chevron-right"></i></button>
+                    <button class="btn-page" id="previous" disabled><i class="fas fa-chevron-left"></i></button>
+                    <!-- <button class="btn-page active">1</button> -->
+                    <span class="pagination-ellipsis"></span>
+                    <!-- <button class="btn-page">10</button> -->
+                    <button class="btn-page" id="next"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </main>
