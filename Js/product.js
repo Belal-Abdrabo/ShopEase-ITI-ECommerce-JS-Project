@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
     const pag = document.getElementsByClassName('h2-pag')[0];
     searchInput.addEventListener('input', function () {
         searchQuery = this.value;
-        currentPage = 1; // ارجع لأول صفحة لما يكتب بحث
+        currentPage = 1;
         renderProducts(currentPage);
       });
       
@@ -62,7 +62,7 @@ window.addEventListener('load', function () {
                             <span>(42)</span>
                         </div>
                         <p class="product-price">${product.price} EGP</p>
-                        <p class="product-description">Premium product - description can be dynamic later.</p>
+                        <p class="product-description">${product.productDescription}</p>
                        <a href="product-detail.html?id=${product.id}" class="btn btn-secondary">View Details</a>
                     </div>
                 </div>
@@ -74,9 +74,9 @@ window.addEventListener('load', function () {
             const cartprod = div.querySelector('.cartprod');
             cartprod.addEventListener('click', function () {
                 const productId = parseInt(this.getAttribute('product-id'));
-                handleAddToCart(productId);
-            
+                handleAddToCart(productId, product.sellerId, product.capacity); 
             });
+            
             
         });
 

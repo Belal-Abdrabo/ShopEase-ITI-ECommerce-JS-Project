@@ -33,8 +33,11 @@ window.addEventListener('load', function (evernt) {
                 let cost = 0;
                 for (let index in usercart.items) {
                     let prod = products.find(pr => pr.id == usercart.items[index].productId);
+                    let capacity = prod.capacity;
                     let newItem = cartItem.cloneNode(true); //to get fresh copy of the cart item layout
                     cost = prod.price * usercart.items[index].quantity;
+                    usercart.items[index].sellerId= prod.sellerId;
+                    usercart.status = "processing"; //
                     totalp += cost;
                     suptotal.innerHTML = ` `;
                     tax.innerHTML = ` `;
@@ -72,21 +75,23 @@ window.addEventListener('load', function (evernt) {
 
                     plusBtn.addEventListener("click", () => {
                         let quantity = parseInt(quantityInput.value);
-
-                        quantity++;
-                        quantityInput.value = quantity;
-                        itemTotal.textContent = `${prod.price * quantity} EGP`;
-                        usercart.items[index].quantity = quantity;
-
-                        //Update the cart for plus
-
-                        fetch(`http://localhost:3000/cart/${usercart.id}`, {
-                            method: 'PUT',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify(usercart)
-                        });
+                        if(quantity < capacity){
+                            quantity++;
+                            quantityInput.value = quantity;
+                            itemTotal.textContent = `${prod.price * quantity} EGP`;
+                            usercart.items[index].quantity = quantity;
+                            //Update the cart for plus  
+                            fetch(`http://localhost:3000/cart/${usercart.id}`, {
+                                method: 'PUT',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(usercart)
+                            });
+                        }
+                    else{
+                        alert("You can not add more than the available capacity."); 
+                    }
 
                     });
 
@@ -143,7 +148,7 @@ window.addEventListener('load', function (evernt) {
     checkout.addEventListener("click", () => {
        // console.log("checkout clicked");
        
-        this.alert(`${usercart.items.length}`); 
+        
         if(usercart.items.length>0) {
 
             fetch("http://localhost:3000/cartcheckout",{
@@ -153,8 +158,9 @@ window.addEventListener('load', function (evernt) {
                 },
                 body: JSON.stringify({
                     customerId: x,
-                    items: usercart.items.splice(), // Create a shallow copy of the items array
-                    totalPrice: totalp * 0.08 + 10 + totalp
+                    items: usercart.items, // Create a shallow copy of the items array
+                    amount: totalp * 0.08 + 10 + totalp,
+                    status: "processing",
                 })
             })
             .then(res => res.json())

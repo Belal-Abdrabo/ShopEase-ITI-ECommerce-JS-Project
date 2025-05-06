@@ -12,7 +12,7 @@ window.addEventListener('load', function () {
           //document.getElementById('product-img').src = "../" + f.image;
           document.getElementById('product-img').src = f.image;
           document.getElementById('product-img').alt = f.name;
-          document.getElementById('product-description').textContent = "A great product from our store!";
+          document.getElementById('product-description').textContent = f.productDescription;
         }
       })
       .catch(err => {
