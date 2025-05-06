@@ -1,14 +1,28 @@
 {
   "users": [
     {
-      "id": "1",
-       "userName": "belal",
+      "userName": "belal",
       "email": "fafaf@fafafa.com",
-      "password": "1234",
-      "role": "admin"
+      "role": "admin",
+      "password": "1478",
+      "id": "1"
+    },
+    {
+      "userName": "ahmed",
+      "email": "ahmed@gmail.com",
+      "role": "customer",
+      "password": "123456",
+      "id": "a5fb"
+    },
+    {
+      "userName": "ahmed ibrahim",
+      "email": "ahmed2@gmail.com",
+      "role": "customer",
+      "password": "123456",
+      "id": "c56e"
     }
-    ],
-  "products":[
+  ],
+  "products": [
     {
       "name": "Laptop",
       "price": 15000,

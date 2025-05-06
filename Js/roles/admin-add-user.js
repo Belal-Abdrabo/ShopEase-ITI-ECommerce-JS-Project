@@ -107,7 +107,8 @@ window.addEventListener("load", function () {
                         userName: fullNameVal,
                         email: emailVal,
                         password: passwordVal,
-                        role: selectedRole
+                        role: selectedRole,
+                        registrationDate: new Date().toISOString().split('T')[0], // Format: YYYY-MM-DD
                     };
                     
                     fetch(url+'users', {
