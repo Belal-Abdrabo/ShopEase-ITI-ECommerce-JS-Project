@@ -1,363 +1,391 @@
 {
-  "users": [
-    {
-      "userName": "belal",
-      "email": "fafaf@fafafa.com",
-      "role": "admin",
-      "password": "1478",
-      "id": "1"
-    },
-    {
-      "userName": "ahmed",
-      "email": "ahmed@gmail.com",
-      "role": "customer",
-      "password": "123456",
-      "id": "a5fb"
-    },
-    {
-      "userName": "ahmed ibrahim",
-      "email": "ahmed2@gmail.com",
-      "role": "customer",
-      "password": "123456",
-      "id": "c56e"
-    }
-  ],
-  "products": [
-    {
-      "name": "Laptop",
-      "price": 15000,
-      "image": "../itiECommerce_JS_Project/images/herp-image.jpg",
-      "categoryId": 1,
-      "sellerId": "1",
-      "capacity": 20,
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    },
-    {
-      "id": "2",
-      "name": "Headphones",
-      "price": 500,
-      "image": "headphones.jpg",
-      "capacity": 20,
-      "categoryId": 1,
-      "sellerId": "1",
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    },
-    {
-      "id": "3",
-      "name": "afaf",
-      "price": 15000,
-      "capacity": 20,
-      "image": "laptop.jpg",
-      "categoryId": 1,
-      "sellerId": "1",
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    },
-    {
-      "id": "4",
-      "name": "Headphones",
-      "price": 500,
-      "capacity": 20,
-      "image": "headphones.jpg",
-      "categoryId": 1,
-      "sellerId": "1",
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    },
-    {
-      "id": "5",
-      "name": "Laptop",
-      "price": 15000,
-      "capacity": 20,
-      "image": "laptop.jpg",
-      "categoryId": 1,
-      "sellerId": "1",
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    },
-    {
-      "id": "6",
-      "name": "Laptop",
-      "price": 15000,
-      "capacity": 20,
-      "image": "laptop.jpg",
-      "categoryId": 1,
-      "sellerId": "1",
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    },
-    {
-      "id": "7",
-      "name": "Laptop",
-      "price": 15000,
-      "capacity": 20,
-      "image": "laptop.jpg",
-      "categoryId": 1,
-      "sellerId": "1",
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    },
-    {
-      "id": "8",
-      "name": "Laptop",
-      "price": 15000,
-      "capacity": 20,
-      "image": "laptop.jpg",
-      "categoryId": 1,
-      "sellerId": "1",
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    },
-    {
-      "id": "9",
-      "name": "Laptop",
-      "price": 15000,
-      "capacity": 20,
-      "image": "laptop.jpg",
-      "categoryId": 1,
-      "sellerId": "1",
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    },
-    {
-      "id": "10",
-      "name": "Laptop",
-      "price": 15000,
-      "capacity": 20,
-      "image": "laptop.jpg",
-      "categoryId": 1,
-      "sellerId": "1",
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    },
-    {
-      "id": "11",
-      "name": "Laptop",
-      "price": 15000,
-      "capacity": 20,
-      "image": "laptop.jpg",
-      "categoryId": 2,
-      "sellerId": "1",
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    },
-    {
-      "id": "12",
-      "name": "Laptop",
-      "price": 15000,
-      "capacity": 20,
-      "image": "laptop.jpg",
-      "categoryId": 2,
-      "sellerId": "1",
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    },
-    {
-      "id": "13",
-      "name": "Laptop",
-      "price": 15000,
-      "capacity": 20,
-      "image": "laptop.jpg",
-      "categoryId": 2,
-      "sellerId": "1",
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    },
-    {
-      "id": "14",
-      "name": "Laptop",
-      "price": 15000,
-      "capacity": 20,
-      "image": "laptop.jpg",
-      "categoryId": 2,
-      "sellerId": "1",
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    },
-    {
-      "id": "15",
-      "name": "Laptop",
-      "price": 15000,
-      "capacity": 20,
-      "image": "laptop.jpg",
-      "categoryId": 2,
-      "sellerId": "1",
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    },
-    {
-      "id": "16 ",
-      "name": "Laptop",
-      "price": 15000,
-      "capacity": 20,
-      "image": "laptop.jpg",
-      "categoryId": 2,
-      "sellerId": "1",
-      "productDescription": "High-performance laptop",
-      "status": "available"
-    }
-  ],
-  "categories": [
-    {
-      "id": "1",
-      "name": "Electronics"
-    },
-    {
-      "id": "2",
-      "name": "Accessories"
-    }
-  ],
-  "orders": [
-    {
-      "id": "1",
-      "checkoutid": "31",
-      "customerId": 1,
-      "sellerId": 2,
-      "items": [
+    "users": [
         {
-          "productId": 1,
-          "productName": "Laptop",
-          "price": 15000,
-          "quantity": 1
-        }
-      ],
-      "date": "2023-10-01",
-      "status": "active",
-      "total": 15000
-    },
-    {
-      "id": "2",
-      "checkoutid": "31",
-      "customerId": "b817",
-      "sellerId": 2,
-      "items": [
-        {
-          "productId": 1,
-          "productName": "Laptop",
-          "price": 15000,
-          "quantity": 1
-        }
-      ],
-      "date": "2023-10-01",
-      "status": "processing",
-      "total": 15000
-    }
-  ],
-  "cart": [
-    {
-      "id": "ed77",
-      "customerId": "b817",
-      "status": "processing",
-      "items": [
-        {
-          "productId": 2,
-          "quantity": 2,
-          "sellerId": 2,
-          "status": "processing"
+            "id": "b817",
+            "userName": "ahmed",
+            "email": "ahmed@gmail.com",
+            "password": "123456",
+            "role": "customer"
         },
         {
-          "productId": 1,
-          "sellerId": 2,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "75cbea98-2c33-4002-8c6e-01249e5b3a5a",
-      "customerId": "78af",
-      "status": "processing",
-      "items": []
-    }
-  ],
-  "cartcheckout": [
-    {
-      "id": "1",
-      "price": 0,
-      "userId": "0",
-      "items": [],
-      "amount": 32950,
-      "date": "2023-10-01",
-      "status": "processing"
-    },
-    {
-      "id": "749b",
-      "customerId": "78af",
-      "items": [
-        {
-          "productId": 2,
-          "quantity": 2,
-          "sellerId": "1"
+            "id": "edfe",
+            "userName": "belal",
+            "email": "fafaf@fafafa.com",
+            "password": "1478",
+            "role": "admin"
         },
         {
-          "productId": 3,
-          "quantity": 1,
-          "sellerId": "1"
-        }
-      ],
-      "amount": 17290,
-      "status": "processing"
-    },
-    {
-      "id": "0add",
-      "customerId": "78af",
-      "items": [
-        {
-          "productId": 3,
-          "quantity": 3,
-          "status": "processing",
-          "sellerId": "1"
-        }
-      ],
-      "amount": 48610,
-      "status": "processing"
-    },
-    {
-      "id": "05ea",
-      "customerId": "78af",
-      "items": [
-        {
-          "productId": 1,
-          "quantity": 1,
-          "status": "processing",
-          "sellerId": "1"
+            "userName": "ahmed",
+            "email": "ahmed@gmail.com",
+            "role": "customer",
+            "password": "123456",
+            "id": "a5fb"
         },
         {
-          "productId": 2,
-          "quantity": 1,
-          "status": "processing",
-          "sellerId": "1"
+            "userName": "ahmed ibrahim",
+            "email": "ahmed2@gmail.com",
+            "role": "customer",
+            "password": "123456",
+            "id": "c56e"
+        }
+    ],
+    "products": [
+        {
+            "id": "1",
+            "name": "Laptop",
+            "price": 15000,
+            "image": "../itiECommerce_JS_Project/images/herp-image.jpg",
+            "categoryId": 1,
+            "sellerId": "1",
+            "capacity": 20,
+            "productDescription": "High-performance laptop",
+            "status": "available"
         },
         {
-          "productId": 3,
-          "quantity": 1,
-          "status": "processing",
-          "sellerId": "1"
+            "id": "2",
+            "name": "Headphones",
+            "price": 500,
+            "image": "headphones.jpg",
+            "capacity": 20,
+            "categoryId": 1,
+            "sellerId": "1",
+            "productDescription": "High-performance laptop",
+            "status": "available"
         },
         {
-          "productId": 6,
-          "quantity": 1,
-          "status": "processing",
-          "sellerId": "1"
-        }
-      ],
-      "amount": 49150,
-      "status": "processing"
-    },
-    {
-      "id": "c3c7",
-      "customerId": "78af",
-      "items": [
+            "id": "3",
+            "name": "afaf",
+            "price": 15000,
+            "capacity": 20,
+            "image": "laptop.jpg",
+            "categoryId": 1,
+            "sellerId": "1",
+            "productDescription": "High-performance laptop",
+            "status": "available"
+        },
         {
-          "productId": 3,
-          "quantity": 1,
-          "status": "processing",
-          "sellerId": "1"
+            "id": "4",
+            "name": "Headphones",
+            "price": 500,
+            "capacity": 20,
+            "image": "headphones.jpg",
+            "categoryId": 1,
+            "sellerId": "1",
+            "productDescription": "High-performance laptop",
+            "status": "available"
+        },
+        {
+            "id": "5",
+            "name": "Laptop",
+            "price": 15000,
+            "capacity": 20,
+            "image": "laptop.jpg",
+            "categoryId": 1,
+            "sellerId": "1",
+            "productDescription": "High-performance laptop",
+            "status": "available"
+        },
+        {
+            "id": "6",
+            "name": "Laptop",
+            "price": 15000,
+            "capacity": 20,
+            "image": "laptop.jpg",
+            "categoryId": 1,
+            "sellerId": "1",
+            "productDescription": "High-performance laptop",
+            "status": "available"
+        },
+        {
+            "id": "7",
+            "name": "Laptop",
+            "price": 15000,
+            "capacity": 20,
+            "image": "laptop.jpg",
+            "categoryId": 1,
+            "sellerId": "1",
+            "productDescription": "High-performance laptop",
+            "status": "available"
+        },
+        {
+            "id": "8",
+            "name": "Laptop",
+            "price": 15000,
+            "capacity": 20,
+            "image": "laptop.jpg",
+            "categoryId": 1,
+            "sellerId": "1",
+            "productDescription": "High-performance laptop",
+            "status": "available"
+        },
+        {
+            "id": "9",
+            "name": "Laptop",
+            "price": 15000,
+            "capacity": 20,
+            "image": "laptop.jpg",
+            "categoryId": 1,
+            "sellerId": "1",
+            "productDescription": "High-performance laptop",
+            "status": "available"
+        },
+        {
+            "id": "10",
+            "name": "Laptop",
+            "price": 15000,
+            "capacity": 20,
+            "image": "laptop.jpg",
+            "categoryId": 1,
+            "sellerId": "1",
+            "productDescription": "High-performance laptop",
+            "status": "available"
+        },
+        {
+            "id": "11",
+            "name": "Laptop",
+            "price": 15000,
+            "capacity": 20,
+            "image": "laptop.jpg",
+            "categoryId": 2,
+            "sellerId": "1",
+            "productDescription": "High-performance laptop",
+            "status": "available"
+        },
+        {
+            "id": "12",
+            "name": "Laptop",
+            "price": 15000,
+            "capacity": 20,
+            "image": "laptop.jpg",
+            "categoryId": 2,
+            "sellerId": "1",
+            "productDescription": "High-performance laptop",
+            "status": "available"
+        },
+        {
+            "id": "13",
+            "name": "Laptop",
+            "price": 15000,
+            "capacity": 20,
+            "image": "laptop.jpg",
+            "categoryId": 2,
+            "sellerId": "1",
+            "productDescription": "High-performance laptop",
+            "status": "available"
+        },
+        {
+            "id": "14",
+            "name": "Laptop",
+            "price": 15000,
+            "capacity": 20,
+            "image": "laptop.jpg",
+            "categoryId": 2,
+            "sellerId": "1",
+            "productDescription": "High-performance laptop",
+            "status": "available"
+        },
+        {
+            "id": "15",
+            "name": "Laptop",
+            "price": 15000,
+            "capacity": 20,
+            "image": "laptop.jpg",
+            "categoryId": 2,
+            "sellerId": "1",
+            "productDescription": "High-performance laptop",
+            "status": "available"
+        },
+        {
+            "id": "16 ",
+            "name": "Laptop",
+            "price": 15000,
+            "capacity": 20,
+            "image": "laptop.jpg",
+            "categoryId": 2,
+            "sellerId": "1",
+            "productDescription": "High-performance laptop",
+            "status": "available"
         }
-      ],
-      "amount": 16210,
-      "status": "processing"
-    }
-  ]
+    ],
+    "categories": [
+        {
+            "id": "1",
+            "name": "Electronics"
+        },
+        {
+            "id": "2",
+            "name": "Accessories"
+        }
+    ],
+    "orders": [
+        {
+            "id": "1",
+            "checkoutid": "31",
+            "customerId": 1,
+            "sellerId": 2,
+            "items": [
+                {
+                    "productId": 1,
+                    "productName": "Laptop",
+                    "price": 15000,
+                    "quantity": 1
+                }
+            ],
+            "date": "2023-10-01",
+            "status": "active",
+            "total": 15000
+        },
+        {
+            "id": "2",
+            "checkoutid": "31",
+            "customerId": "b817",
+            "sellerId": 2,
+            "items": [
+                {
+                    "productId": 1,
+                    "productName": "Laptop",
+                    "price": 15000,
+                    "quantity": 1
+                }
+            ],
+            "date": "2023-10-01",
+            "status": "processing",
+            "total": 15000
+        }
+    ],
+    "cart": [
+        {
+            "id": "ed77",
+            "customerId": "b817",
+            "status": "processing",
+            "items": [
+                {
+                    "productId": 2,
+                    "quantity": 2,
+                    "sellerId": 2,
+                    "status": "processing"
+                },
+                {
+                    "productId": 1,
+                    "sellerId": 2,
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": "75cbea98-2c33-4002-8c6e-01249e5b3a5a",
+            "customerId": "78af",
+            "status": "processing",
+            "items": []
+        }
+    ],
+    "cartcheckout": [
+        {
+            "id": "1",
+            "price": 0,
+            "userId": "0",
+            "items": [],
+            "amount": 32950,
+            "date": "2023-10-01",
+            "status": "processing"
+        },
+        {
+            "id": "749b",
+            "customerId": "78af",
+            "items": [
+                {
+                    "productId": 2,
+                    "quantity": 2,
+                    "sellerId": "1"
+                },
+                {
+                    "productId": 3,
+                    "quantity": 1,
+                    "sellerId": "1"
+                }
+            ],
+            "amount": 17290,
+            "status": "processing"
+        },
+        {
+            "id": "0add",
+            "customerId": "78af",
+            "items": [
+                {
+                    "productId": 3,
+                    "quantity": 3,
+                    "status": "processing",
+                    "sellerId": "1"
+                }
+            ],
+            "amount": 48610,
+            "status": "processing"
+        },
+        {
+            "id": "05ea",
+            "customerId": "78af",
+            "items": [
+                {
+                    "productId": 1,
+                    "quantity": 1,
+                    "status": "processing",
+                    "sellerId": "1"
+                },
+                {
+                    "productId": 2,
+                    "quantity": 1,
+                    "status": "processing",
+                    "sellerId": "1"
+                },
+                {
+                    "productId": 3,
+                    "quantity": 1,
+                    "status": "processing",
+                    "sellerId": "1"
+                },
+                {
+                    "productId": 6,
+                    "quantity": 1,
+                    "status": "processing",
+                    "sellerId": "1"
+                }
+            ],
+            "amount": 49150,
+            "status": "processing"
+        },
+        {
+            "id": "c3c7",
+            "customerId": "78af",
+            "items": [
+                {
+                    "productId": 3,
+                    "quantity": 1,
+                    "status": "processing",
+                    "sellerId": "1"
+                }
+            ],
+            "amount": 16210,
+            "status": "processing"
+        },
+        {
+            "id": "248a",
+            "customerId": "78af",
+            "items": [
+                {
+                    "productId": 1,
+                    "quantity": 1,
+                    "status": "processing",
+                    "sellerId": "1"
+                },
+                {
+                    "productId": 2,
+                    "quantity": 1,
+                    "status": "processing",
+                    "sellerId": "1"
+                }
+            ],
+            "amount": 16750,
+            "status": "processing"
+        }
+    ]
 }
