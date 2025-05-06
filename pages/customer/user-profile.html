@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase | My Profile</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">ShopEase</a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="categories.html">Categories</a>
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Register</a>
+                    <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>My Profile</span>
+            </div>
+
+            <section class="profile-section">
+                <div class="profile-sidebar">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <img src="images/avatar1.jpg" alt="User Avatar">
+                        </div>
+                        <div class="profile-info">
+                            <h3>Sarah Johnson</h3>
+                            <p>sarah.johnson@example.com</p>
+                            <span class="member-since">Member since: Jan 15, 2025</span>
+                        </div>
+                    </div>
+                    <nav class="profile-nav">
+                        <ul>
+                            <li class="active">
+                                <a href="#personal-info" data-tab="personal-info">
+                                    <i class="fas fa-user"></i> Personal Information
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#orders" data-tab="orders">
+                                    <i class="fas fa-shopping-bag"></i> My Orders
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#addresses" data-tab="addresses">
+                                    <i class="fas fa-map-marker-alt"></i> My Addresses
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#wishlist" data-tab="wishlist">
+                                    <i class="fas fa-heart"></i> Wishlist
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#payment-methods" data-tab="payment-methods">
+                                    <i class="fas fa-credit-card"></i> Payment Methods
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#account-settings" data-tab="account-settings">
+                                    <i class="fas fa-cog"></i> Account Settings
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="profile-actions">
+                        <a href="index.html" class="btn btn-outline btn-block">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div>
+                </div>
+
+                <div class="profile-content">
+                    <!-- Personal Information Tab -->
+                    <div class="profile-tab active" id="personal-info">
+                        <div class="tab-header">
+                            <h2>Personal Information</h2>
+                            <button class="btn btn-outline edit-btn" id="edit-personal-info">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                        </div>
+
+                        <div class="profile-form">
+                            <form id="personal-info-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="first-name">First Name</label>
+                                        <input type="text" id="first-name" value="Sarah" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name">Last Name</label>
+                                        <input type="text" id="last-name" value="Johnson" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" value="sarah.johnson@example.com" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" value="+1 (555) 123-4567" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="birth-date">Date of Birth</label>
+                                    <input type="date" id="birth-date" value="1990-05-15" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="gender">Gender</label>
+                                    <select id="gender" disabled>
+                                        <option value="female" selected>Female</option>
+                                        <option value="male">Male</option>
+                                        <option value="other">Other</option>
+                                        <option value="prefer-not-to-say">Prefer not to say</option>
+                                    </select>
+                                </div>
+                                <div class="form-actions" style="display: none;">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    <button type="button" class="btn btn-outline" id="cancel-edit">Cancel</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Orders Tab -->
+                    <div class="profile-tab" id="orders">
+                        <div class="tab-header">
+                            <h2>My Orders</h2>
+                        </div>
+
+                        <div class="orders-filter">
+                            <div class="filter-group">
+                                <label for="order-status">Filter by Status</label>
+                                <select id="order-status">
+                                    <option value="all">All Orders</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="processing">Processing</option>
+                                    <option value="shipped">Shipped</option>
+                                    <option value="delivered">Delivered</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="order-date">Filter by Date</label>
+                                <select id="order-date">
+                                    <option value="all">All Time</option>
+                                    <option value="last-month">Last Month</option>
+                                    <option value="last-3-months">Last 3 Months</option>
+                                    <option value="last-6-months">Last 6 Months</option>
+                                    <option value="last-year">Last Year</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="orders-list">
+                            <div class="order-card">
+                                <div class="order-header">
+                                    <div class="order-info">
+                                        <span class="order-id">Order #ORD-5289</span>
+                                        <span class="order-date">May 1, 2025</span>
+                                    </div>
+                                    <div class="order-status">
+                                        <span class="status-badge delivered">Delivered</span>
+                                    </div>
+                                </div>
+                                <div class="order-items">
+                                    <div class="order-item">
+                                        <img src="images/product1.jpg" alt="Wireless Headphones">
+                                        <div class="item-details">
+                                            <h4>Wireless Headphones</h4>
+                                            <p class="item-price">$129.99</p>
+                                            <p class="item-quantity">Qty: 1</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <div class="order-total">
+                                        <span>Total:</span>
+                                        <span class="total-amount">$129.99</span>
+                                    </div>
+                                    <div class="order-actions">
+                                        <a href="order-detail.html?id=5289" class="btn btn-outline btn-sm">View Details</a>
+                                        <button class="btn btn-primary btn-sm">Track Order</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="order-card">
+                                <div class="order-header">
+                                    <div class="order-info">
+                                        <span class="order-id">Order #ORD-5275</span>
+                                        <span class="order-date">April 15, 2025</span>
+                                    </div>
+                                    <div class="order-status">
+                                        <span class="status-badge delivered">Delivered</span>
+                                    </div>
+                                </div>
+                                <div class="order-items">
+                                    <div class="order-item">
+                                        <img src="images/product2.jpg" alt="Smart Watch">
+                                        <div class="item-details">
+                                            <h4>Smart Watch</h4>
+                                            <p class="item-price">$149.99</p>
+                                            <p class="item-quantity">Qty: 1</p>
+                                        </div>
+                                    </div>
+                                    <div class="order-item">
+                                        <img src="images/product3.jpg" alt="Laptop Backpack">
+                                        <div class="item-details">
+                                            <h4>Laptop Backpack</h4>
+                                            <p class="item-price">$59.99</p>
+                                            <p class="item-quantity">Qty: 1</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <div class="order-total">
+                                        <span>Total:</span>
+                                        <span class="total-amount">$209.98</span>
+                                    </div>
+                                    <div class="order-actions">
+                                        <a href="order-detail.html?id=5275" class="btn btn-outline btn-sm">View Details</a>
+                                        <button class="btn btn-primary btn-sm">Track Order</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="order-card">
+                                <div class="order-header">
+                                    <div class="order-info">
+                                        <span class="order-id">Order #ORD-5260</span>
+                                        <span class="order-date">March 28, 2025</span>
+                                    </div>
+                                    <div class="order-status">
+                                        <span class="status-badge delivered">Delivered</span>
+                                    </div>
+                                </div>
+                                <div class="order-items">
+                                    <div class="order-item">
+                                        <img src="images/product4.jpg" alt="Coffee Maker">
+                                        <div class="item-details">
+                                            <h4>Coffee Maker</h4>
+                                            <p class="item-price">$89.99</p>
+                                            <p class="item-quantity">Qty: 1</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <div class="order-total">
+                                        <span>Total:</span>
+                                        <span class="total-amount">$89.99</span>
+                                    </div>
+                                    <div class="order-actions">
+                                        <a href="order-detail.html?id=5260" class="btn btn-outline btn-sm">View Details</a>
+                                        <button class="btn btn-secondary btn-sm">Write Review</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pagination">
+                            <button class="btn-page" disabled><i class="fas fa-chevron-left"></i></button>
+                            <button class="btn-page active">1</button>
+                            <button class="btn-page">2</button>
+                            <button class="btn-page">3</button>
+                            <button class="btn-page"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Addresses Tab -->
+                    <div class="profile-tab" id="addresses">
+                        <div class="tab-header">
+                            <h2>My Addresses</h2>
+                            <button class="btn btn-primary" id="add-address">
+                                <i class="fas fa-plus"></i> Add New Address
+                            </button>
+                        </div>
+
+                        <div class="addresses-list">
+                            <div class="address-card">
+                                <div class="address-badge default">Default</div>
+                                <h3>Home</h3>
+                                <p>Sarah Johnson</p>
+                                <p>123 Main Street, Apt 4B</p>
+                                <p>New York, NY 10001</p>
+                                <p>United States</p>
+                                <p>Phone: +1 (555) 123-4567</p>
+                                <div class="address-actions">
+                                    <button class="btn btn-outline btn-sm">Edit</button>
+                                    <button class="btn btn-outline btn-sm">Delete</button>
+                                </div>
+                            </div>
+
+                            <div class="address-card">
+                                <h3>Work</h3>
+                                <p>Sarah Johnson</p>
+                                <p>456 Business Ave, Suite 200</p>
+                                <p>New York, NY 10002</p>
+                                <p>United States</p>
+                                <p>Phone: +1 (555) 987-6543</p>
+                                <div class="address-actions">
+                                    <button class="btn btn-outline btn-sm">Edit</button>
+                                    <button class="btn btn-outline btn-sm">Delete</button>
+                                    <button class="btn btn-outline btn-sm">Set as Default</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Tab -->
+                    <div class="profile-tab" id="wishlist">
+                        <div class="tab-header">
+                            <h2>My Wishlist</h2>
+                        </div>
+
+                        <div class="wishlist-grid">
+                            <div class="product-card">
+                                <div class="wishlist-remove">
+                                    <button class="btn-icon"><i class="fas fa-times"></i></button>
+                                </div>
+                                <img src="images/product5.jpg" alt="Bluetooth Speaker">
+                                <div class="product-info">
+                                    <h3>Bluetooth Speaker</h3>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(112)</span>
+                                    </div>
+                                    <p class="product-price">$79.99</p>
+                                    <button class="btn btn-primary btn-block">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="wishlist-remove">
+                                    <button class="btn-icon"><i class="fas fa-times"></i></button>
+                                </div>
+                                <img src="images/product6.jpg" alt="Wireless Earbuds">
+                                <div class="product-info">
+                                    <h3>Wireless Earbuds</h3>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(95)</span>
+                                    </div>
+                                    <p class="product-price">$99.99</p>
+                                    <button class="btn btn-primary btn-block">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="wishlist-remove">
+                                    <button class="btn-icon"><i class="fas fa-times"></i></button>
+                                </div>
+                                <img src="images/product7.jpg" alt="Fast Wireless Charger">
+                                <div class="product-info">
+                                    <h3>Fast Wireless Charger</h3>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span>(78)</span>
+                                    </div>
+                                    <p class="product-price">$39.99</p>
+                                    <button class="btn btn-primary btn-block">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods Tab -->
+                    <div class="profile-tab" id="payment-methods">
+                        <div class="tab-header">
+                            <h2>Payment Methods</h2>
+                            <button class="btn btn-primary" id="add-payment">
+                                <i class="fas fa-plus"></i> Add Payment Method
+                            </button>
+                        </div>
+
+                        <div class="payment-methods-list">
+                            <div class="payment-card">
+                                <div class="payment-badge default">Default</div>
+                                <div class="payment-icon">
+                                    <i class="fab fa-cc-visa"></i>
+                                </div>
+                                <div class="payment-details">
+                                    <h3>Visa ending in 4567</h3>
+                                    <p>Expires: 05/2028</p>
+                                </div>
+                                <div class="payment-actions">
+                                    <button class="btn btn-outline btn-sm">Edit</button>
+                                    <button class="btn btn-outline btn-sm">Delete</button>
+                                </div>
+                            </div>
+
+                            <div class="payment-card">
+                                <div class="payment-icon">
+                                    <i class="fab fa-cc-mastercard"></i>
+                                </div>
+                                <div class="payment-details">
+                                    <h3>Mastercard ending in 8901</h3>
+                                    <p>Expires: 09/2026</p>
+                                </div>
+                                <div class="payment-actions">
+                                    <button class="btn btn-outline btn-sm">Edit</button>
+                                    <button class="btn btn-outline btn-sm">Delete</button>
+                                    <button class="btn btn-outline btn-sm">Set as Default</button>
+                                </div>
+                            </div>
+
+                            <div class="payment-card">
+                                <div class="payment-icon">
+                                    <i class="fab fa-paypal"></i>
+                                </div>
+                                <div class="payment-details">
+                                    <h3>PayPal</h3>
+                                    <p>sarah.johnson@example.com</p>
+                                </div>
+                                <div class="payment-actions">
+                                    <button class="btn btn-outline btn-sm">Edit</button>
+                                    <button class="btn btn-outline btn-sm">Delete</button>
+                                    <button class="btn btn-outline btn-sm">Set as Default</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Account Settings Tab -->
+                    <div class="profile-tab" id="account-settings">
+                        <div class="tab-header">
+                            <h2>Account Settings</h2>
+                        </div>
+
+                        <div class="settings-section">
+                            <h3>Email Notifications</h3>
+                            <div class="settings-options">
+                                <div class="settings-option">
+                                    <div class="option-info">
+                                        <h4>Order Updates</h4>
+                                        <p>Receive notifications about your order status</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="settings-option">
+                                    <div class="option-info">
+                                        <h4>Promotions and Deals</h4>
+                                        <p>Receive notifications about sales and special offers</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="settings-option">
+                                    <div class="option-info">
+                                        <h4>Product Updates</h4>
+                                        <p>Receive notifications about new products and restocks</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="settings-option">
+                                    <div class="option-info">
+                                        <h4>Newsletter</h4>
+                                        <p>Receive our weekly newsletter</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h3>Security</h3>
+                            <div class="settings-form">
+                                <form id="password-form">
+                                    <div class="form-group">
+                                        <label for="current-password">Current Password</label>
+                                        <input type="password" id="current-password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="new-password">New Password</label>
+                                        <input type="password" id="new-password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirm-password">Confirm New Password</label>
+                                        <input type="password" id="confirm-password">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Change Password</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h3>Delete Account</h3>
+                            <p class="warning-text">Warning: This action cannot be undone. All your data will be permanently deleted.</p>
+                            <button class="btn btn-danger">Delete Account</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ShopEase</h3>
+                    <p>Your one-stop shop for all your needs. Quality products, competitive prices, and exceptional service.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Returns & Refunds</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Commerce St, City, Country</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@shopease.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ShopEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabLinks = document.querySelectorAll('.profile-nav a');
+            const tabContents = document.querySelectorAll('.profile-tab');
+            
+            tabLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all tabs and links
+                    tabLinks.forEach(l => l.parentElement.classList.remove('active'));
+                    tabContents.forEach(tab => tab.classList.remove('active'));
+                    
+                    // Add active class to current tab and link
+                    this.parentElement.classList.add('active');
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Edit personal info functionality
+            const editBtn = document.getElementById('edit-personal-info');
+            const cancelBtn = document.getElementById('cancel-edit');
+            const formInputs = document.querySelectorAll('#personal-info-form input, #personal-info-form select');
+            const formActions = document.querySelector('.form-actions');
+            
+            editBtn.addEventListener('click', function() {
+                formInputs.forEach(input => input.disabled = false);
+                formActions.style.display = 'flex';
+                editBtn.style.display = 'none';
+            });
+            
+            cancelBtn.addEventListener('click', function() {
+                formInputs.forEach(input => input.disabled = true);
+                formActions.style.display = 'none';
+                editBtn.style.display = 'inline-flex';
+            });
+            
+            // Form submission (prevent default for demo)
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Form submitted successfully!');
+                    
+                    if (form.id === 'personal-info-form') {
+                        formInputs.forEach(input => input.disabled = true);
+                        formActions.style.display = 'none';
+                        editBtn.style.display = 'inline-flex';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

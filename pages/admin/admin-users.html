@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../../Js/common.js"></script>
+    <script src="../../Js/roles/admin-users.js"></script>
 </head>
 <body class="admin-body">
     <div class="admin-container">
@@ -75,7 +77,7 @@
         <!-- Main Content -->
         <main class="admin-main">
             <header class="admin-header">
-                <div class="header-search">
+                <div class="header-search" id="search-dive">
                     <input type="text" placeholder="Search users...">
                     <button><i class="fas fa-search"></i></button>
                 </div>
@@ -97,9 +99,9 @@
             <div class="admin-content">
                 <div class="page-header">
                     <h1>User Management</h1>
-                    <button class="btn btn-primary">
+                    <a href="./admin-register-user.html"><button class="btn btn-primary">
                         <i class="fas fa-plus"></i> Add New User
-                    </button>
+                    </button></a>
                 </div>
 
                 <!-- Filters -->
@@ -114,25 +116,6 @@
                                 <option value="admin">Admin</option>
                             </select>
                         </div>
-                        <div class="filter-group">
-                            <label for="status-filter">Status</label>
-                            <select id="status-filter">
-                                <option value="">All Status</option>
-                                <option value="active">Active</option>
-                                <option value="inactive">Inactive</option>
-                                <option value="suspended">Suspended</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label for="date-filter">Date</label>
-                            <select id="date-filter">
-                                <option value="">All Time</option>
-                                <option value="today">Today</option>
-                                <option value="week">This Week</option>
-                                <option value="month">This Month</option>
-                                <option value="year">This Year</option>
-                            </select>
-                        </div>
                     </div>
                     <button class="btn btn-outline">
                         <i class="fas fa-filter"></i> Apply Filters
@@ -145,32 +128,22 @@
                         <table class="admin-table">
                             <thead>
                                 <tr>
-                                    <th>
-                                        <input type="checkbox" id="select-all">
-                                    </th>
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Role</th>
-                                    <th>Joined Date</th>
-                                    <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id = 'admin-users-table'>
                                 <tr>
-                                    <td>
-                                        <input type="checkbox" class="user-select">
-                                    </td>
                                     <td>#USR-1001</td>
                                     <td class="user-info">
-                                        <img src="images/avatar1.jpg" alt="User">
+                                        <img src="../../images/DefaultProfile.webp" alt="User">
                                         <span>Sarah Johnson</span>
                                     </td>
                                     <td>sarah.johnson@example.com</td>
                                     <td>Customer</td>
-                                    <td>Jan 15, 2025</td>
-                                    <td><span class="status-badge active">Active</span></td>
                                     <td>
                                         <div class="action-buttons">
                                             <button class="btn-icon"><i class="fas fa-eye"></i></button>
@@ -180,18 +153,13 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <input type="checkbox" class="user-select">
-                                    </td>
                                     <td>#USR-1002</td>
                                     <td class="user-info">
-                                        <img src="images/avatar2.jpg" alt="User">
+                                        <img src="../../images/DefaultProfile.webp" alt="User">
                                         <span>Michael Brown</span>
                                     </td>
                                     <td>michael.brown@example.com</td>
                                     <td>Seller</td>
-                                    <td>Feb 3, 2025</td>
-                                    <td><span class="status-badge active">Active</span></td>
                                     <td>
                                         <div class="action-buttons">
                                             <button class="btn-icon"><i class="fas fa-eye"></i></button>
@@ -201,18 +169,13 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <input type="checkbox" class="user-select">
-                                    </td>
                                     <td>#USR-1003</td>
                                     <td class="user-info">
-                                        <img src="images/avatar3.jpg" alt="User">
+                                        <img src="../../images/DefaultProfile.webp" alt="User">
                                         <span>Emily Wilson</span>
                                     </td>
                                     <td>emily.wilson@example.com</td>
                                     <td>Customer</td>
-                                    <td>Mar 12, 2025</td>
-                                    <td><span class="status-badge inactive">Inactive</span></td>
                                     <td>
                                         <div class="action-buttons">
                                             <button class="btn-icon"><i class="fas fa-eye"></i></button>
@@ -222,18 +185,13 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <input type="checkbox" class="user-select">
-                                    </td>
                                     <td>#USR-1004</td>
                                     <td class="user-info">
-                                        <img src="images/avatar4.jpg" alt="User">
+                                        <img src="../../images/DefaultProfile.webp" alt="User">
                                         <span>David Lee</span>
                                     </td>
                                     <td>david.lee@example.com</td>
                                     <td>Seller</td>
-                                    <td>Mar 28, 2025</td>
-                                    <td><span class="status-badge suspended">Suspended</span></td>
                                     <td>
                                         <div class="action-buttons">
                                             <button class="btn-icon"><i class="fas fa-eye"></i></button>
@@ -243,18 +201,13 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <input type="checkbox" class="user-select">
-                                    </td>
                                     <td>#USR-1005</td>
                                     <td class="user-info">
-                                        <img src="images/avatar5.jpg" alt="User">
+                                        <img src="../../images/DefaultProfile.webp" alt="User">
                                         <span>Jessica Taylor</span>
                                     </td>
                                     <td>jessica.taylor@example.com</td>
                                     <td>Customer</td>
-                                    <td>Apr 5, 2025</td>
-                                    <td><span class="status-badge active">Active</span></td>
                                     <td>
                                         <div class="action-buttons">
                                             <button class="btn-icon"><i class="fas fa-eye"></i></button>
@@ -268,15 +221,13 @@
                     </div>
                 </div>
 
-                <!-- Pagination -->
+                <!-- Pagination  -->
                 <div class="pagination">
-                    <button class="btn-page" disabled><i class="fas fa-chevron-left"></i></button>
-                    <button class="btn-page active">1</button>
-                    <button class="btn-page">2</button>
-                    <button class="btn-page">3</button>
-                    <span class="pagination-ellipsis">...</span>
-                    <button class="btn-page">10</button>
-                    <button class="btn-page"><i class="fas fa-chevron-right"></i></button>
+                    <button class="btn-page" id="previous" disabled><i class="fas fa-chevron-left"></i></button>
+                    <!-- <button class="btn-page active">1</button> -->
+                    <span class="pagination-ellipsis"></span>
+                    <!-- <button class="btn-page">10</button> -->
+                    <button class="btn-page" id="next"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </main>
