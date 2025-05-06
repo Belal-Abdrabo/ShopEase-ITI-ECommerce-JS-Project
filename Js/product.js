@@ -63,7 +63,8 @@ window.addEventListener('load', function () {
                         </div>
                         <p class="product-price">${product.price} EGP</p>
                         <p class="product-description">${product.productDescription}</p>
-                       <a href="product-detail.html?id=${product.id}" class="btn btn-secondary">View Details</a>
+                      <a href="product-detail.html?id=${product.id}&sellerId=${product.sellerId}" class="btn btn-secondary">View Details</a>
+
                     </div>
                 </div>
             `;
@@ -74,7 +75,8 @@ window.addEventListener('load', function () {
             const cartprod = div.querySelector('.cartprod');
             cartprod.addEventListener('click', function () {
                 const productId = parseInt(this.getAttribute('product-id'));
-                handleAddToCart(productId, product.sellerId, product.capacity); 
+            
+                handleAddToCart(productId, product.sellerId); 
             });
             
             
