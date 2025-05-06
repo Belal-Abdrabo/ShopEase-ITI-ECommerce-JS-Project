@@ -1,6 +1,5 @@
 window.addEventListener('load', function () {
     const productUrl = "http://localhost:3000/products";
-
     const searchInput = document.getElementById('searchInput');
     let searchQuery = ""; 
     const container = document.getElementsByClassName('products-grid')[0];
@@ -18,7 +17,6 @@ window.addEventListener('load', function () {
     let currentPage = 1;
     const itemsPerPage = 9;
     let selectedCategory = 'all'; // store selected category globally
-    
     function getFilteredProducts() {
         let filtered = selectedCategory === 'all'
           ? productsData
@@ -29,10 +27,10 @@ window.addEventListener('load', function () {
             product.name.toLowerCase().includes(searchQuery.toLowerCase())
           );
         }
-      
+
         return filtered;
+
       }
-      
     function renderProducts(page) {
         const filteredProducts = getFilteredProducts(); // filter based on selectedCategory
         const start = (page - 1) * itemsPerPage;
@@ -83,7 +81,7 @@ window.addEventListener('load', function () {
         });
 
         const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
-        pag.innerHTML = `<h2> ${page}.....</h2>`;
+        pag.innerHTML = `<h2> ${page}</h2>`;
     }
     fetch(productUrl)
         .then(response => response.json())
