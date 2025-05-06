@@ -1,30 +1,15 @@
 {
   "users": [
     {
-      "id": "b817",
-      "userName": "ahmed",
-      "email": "ahmed@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "78af",
-      "name": "belal a7a",
-      "email": "belal@a7a.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
-      "id": "edfe",
-      "name": "adfad",
-      "email": "bbb@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    }
-  ],
-  "products": [
-    {
       "id": "1",
+       "userName": "belal",
+      "email": "fafaf@fafafa.com",
+      "password": "1234",
+      "role": "admin"
+    }
+    ],
+  "products":[
+    {
       "name": "Laptop",
       "price": 15000,
       "image": "../itiECommerce_JS_Project/images/herp-image.jpg",

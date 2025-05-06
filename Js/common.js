@@ -1,4 +1,5 @@
 // Check if user is logged in or not
+const url = "http://localhost:3000/";
 const isAuthenticated = function () {
     const user = localStorage.getItem("loggedInUser");
     if (user) {
@@ -7,6 +8,22 @@ const isAuthenticated = function () {
     } else {
         return false;
     }
+}
+
+const adminCheckAuthentication = function () {
+    const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
+    if(user)
+    {
+        if(user.role == "seller"|| user.role == "customer")
+        {
+            window.location.href = "../access-denied.html";
+        }
+    }
+    else
+    {
+        window.location.href = "../access-denied.html";
+    }
+
 }
 
 // Check if user role has access to the page or not
@@ -24,6 +41,14 @@ const isHasAccess = function (page, role) {
 }
 
 //#region user methods 
+const getLoggedInUser = function () {
+    const loggedUser = localStorage.getItem("loggedInUser");
+    if (loggedUser) {
+        return JSON.parse(loggedUser);
+    } else {
+        return null;
+    }
+}
 
 // Get all users
 const getAllUsers = function () {
@@ -35,6 +60,16 @@ const getAllUsers = function () {
             console.error('Error:', error);
             return [];
         });
+}
+//GET url/posts?_page=1&_per_page=25
+const getUserByPagination = function(pageNum, countPerPage)
+{
+    return fetch(url + 'users?_page=' + pageNum + '&_limit=' + countPerPage)
+            .then(res => res.json())
+            .catch(err =>{
+                console.error('Error:', err);
+                return [];
+            });
 }
 
 // Get specific user by email
