@@ -13,7 +13,7 @@
     // o View and manage all orders. 
 
 
-    
+    adminCheckAuthentication();
 window.addEventListener("load", function() {
     const cards = document.querySelectorAll(".stat-number");
     const url = 'http://localhost:3000/';

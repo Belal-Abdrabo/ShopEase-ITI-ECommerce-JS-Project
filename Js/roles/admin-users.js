@@ -96,6 +96,47 @@ window.addEventListener('load', function(event){
         updatePagination();
         updateUsersTable(pageUsers);
     });//end of searchInput
+
+//delete user event
+usersTableBody.addEventListener('click', function(event) {
+    if (event.target.closest('#delete-user')) {
+        const deleteBtn = event.target.closest('#delete-user');
+        const userRow = deleteBtn.closest('tr');
+        const userId = userRow.children[0].textContent;
+
+        const confirmed = confirm(`Are you sure you want to delete user with ID ${userId}?`);
+        if (!confirmed) return;
+
+        fetch(`${url}users/${userId}`, {
+            method: 'DELETE',
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to delete user.');
+            }
+            // Remove the user from clondedUsers
+            clondedUsers = clondedUsers.filter(user => user.id != userId);
+
+            // Recalculate pagination
+            userCount = clondedUsers.length;
+            pageCount = Math.ceil(userCount / countPerPage);
+            if (currentPage > pageCount) currentPage = pageCount;
+
+            start = (currentPage - 1) * countPerPage;
+            end = start + countPerPage;
+            pageUsers = clondedUsers.slice(start, end);
+
+            updatePagination();
+            updateUsersTable(pageUsers);
+        })
+        .catch(error => {
+            console.error('Error deleting user:', error);
+            alert('Error deleting user. Please try again.');
+        });
+    }
+});
+    //end of delete user event
+
     const updateUsersTable = function(_users){
         usersTableBody.innerHTML = '';
         _users.forEach(user => {

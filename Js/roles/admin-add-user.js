@@ -92,10 +92,7 @@ window.addEventListener("load", function () {
             confirmPasswordError.textContent = "";
         }
 
-        if (!termsCheckbox.checked) {
-            alert("You must agree to the Terms & Conditions.");
-            isValid = false;
-        }
+      
 
         if (!isValid) return;
 
