@@ -258,40 +258,115 @@ const postCartUsingCustomerId = function (customerId) {
 
 //#endregion
 
-
-const handleAddToCart = function(productId) {
+const handleAddToCart = async function(productId, sellerId) {
     const currentUser = isAuthenticated();
     const cartUrl = "http://localhost:3000/cart";
+    const productUrl = `http://localhost:3000/products/${productId}`;
 
-    fetch(`${cartUrl}?customerId=${currentUser.id}`)
-        .then(res => res.json())
-        .then(carts => {
-            const userCart = carts[0];
-            const itemIndex = userCart.items.findIndex(item => item.productId == productId);
+    try {
+        // Get product capacity
+        const productRes = await fetch(productUrl);
+        const product = await productRes.json();
+        const capacity = product.capacity;
 
-            if (itemIndex !== -1) {
-                userCart.items[itemIndex].quantity += 1;
-            } else {
-                userCart.items.push({
-                    productId: productId,
-                    quantity: 1
-                });
-            }
+        // Get user's cart
+        const cartRes = await fetch(`${cartUrl}?customerId=${currentUser.id}`);
+        const carts = await cartRes.json();
 
-            return fetch(`${cartUrl}/${userCart.id}`, {
-                method: 'PUT',
+        let userCart;
+
+        if (carts.length === 0) {
+            // If cart doesn't exist, create one
+            userCart = {
+                id: crypto.randomUUID(),
+                customerId: currentUser.id,
+                status: "processing",
+                items: []
+            };
+
+            await fetch(cartUrl, {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json'
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify(userCart)
             });
-        })
-        .then(res => res.json())
-        .then(updatedCart => {
-            console.log("Cart updated:", updatedCart);
-        })
-        .catch(err => console.error("Error updating cart:", err));
-}
+        } else {
+            userCart = carts[0];
+        }
+
+        // Find product in cart
+        const itemIndex = userCart.items.findIndex(item => item.productId == productId);
+
+        if (itemIndex !== -1) {
+            const currentQty = userCart.items[itemIndex].quantity;
+            if (currentQty < capacity) {
+                userCart.items[itemIndex].quantity += 1;
+            } else {
+                alert("You reached the product capacity limit!");
+                return;
+            }
+        } else {
+            userCart.items.push({
+                productId: productId,
+                quantity: 1,
+                status: "processing",
+                sellerId: sellerId
+            });
+        }
+
+        // Update the cart
+        await fetch(`${cartUrl}/${userCart.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userCart)
+        });
+
+        console.log("Cart updated successfully.");
+
+    } catch (err) {
+        console.error("Error updating cart:", err);
+    }
+};
+
+
+// const handleAddToCart = function(productId,sellerId) {
+//     const currentUser = isAuthenticated();
+//     const cartUrl = "http://localhost:3000/cart";
+
+//     fetch(`${cartUrl}?customerId=${currentUser.id}`)
+//         .then(res => res.json())
+//         .then(carts => {
+//             const userCart = carts[0];
+//             const itemIndex = userCart.items.findIndex(item => String(item.productId) === String(productId));
+
+
+//             if (itemIndex !== -1) {
+//                 userCart.items[itemIndex].quantity += 1;
+//             } else {
+//                 userCart.items.push({
+//                     productId: productId,
+//                     quantity: 1,
+//                     sellerId: sellerId
+//                 });
+//             }
+
+//             return fetch(`${cartUrl}/${userCart.id}`, {
+//                 method: 'PUT',
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 },
+//                 body: JSON.stringify(userCart)
+//             });
+//         })
+//         .then(res => res.json())
+//         .then(updatedCart => {
+//             console.log("Cart updated:", updatedCart);
+//         })
+//         .catch(err => console.error("Error updating cart:", err));
+// }
 
 
 //logout method
