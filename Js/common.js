@@ -53,6 +53,7 @@ const getLoggedInUser = function () {
 // Get all users
 const getAllUsers = function () {
     const url = 'http://localhost:3000/users';
+
     return fetch(url)
         .then(response => response.json())
         .catch(error => {
@@ -103,8 +104,8 @@ const getUserById = function (id) {
             return null;
         });
 }
+//#endregion user methods
 
-//#endregion
 
 //#region product methods
 
@@ -256,6 +257,41 @@ const postCartUsingCustomerId = function (customerId) {
 }
 
 //#endregion
+
+
+const handleAddToCart = function(productId) {
+    const currentUser = isAuthenticated();
+    const cartUrl = "http://localhost:3000/cart";
+
+    fetch(`${cartUrl}?customerId=${currentUser.id}`)
+        .then(res => res.json())
+        .then(carts => {
+            const userCart = carts[0];
+            const itemIndex = userCart.items.findIndex(item => item.productId == productId);
+
+            if (itemIndex !== -1) {
+                userCart.items[itemIndex].quantity += 1;
+            } else {
+                userCart.items.push({
+                    productId: productId,
+                    quantity: 1
+                });
+            }
+
+            return fetch(`${cartUrl}/${userCart.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userCart)
+            });
+        })
+        .then(res => res.json())
+        .then(updatedCart => {
+            console.log("Cart updated:", updatedCart);
+        })
+        .catch(err => console.error("Error updating cart:", err));
+}
 
 
 //logout method

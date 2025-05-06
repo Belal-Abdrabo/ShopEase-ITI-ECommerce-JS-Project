@@ -1,11 +1,12 @@
 window.addEventListener('load', function () {
     const productUrl = "http://localhost:3000/products";
+
     const searchInput = document.getElementById('searchInput');
     let searchQuery = ""; 
     const container = document.getElementsByClassName('products-grid')[0];
     const categoryButtons = document.querySelectorAll('.categoriesbutton');
-    const bt = document.getElementById('r');
-    const bb = document.getElementById('l');
+    const next = document.getElementById('r');
+    const left = document.getElementById('l');
     const pag = document.getElementsByClassName('h2-pag')[0];
     searchInput.addEventListener('input', function () {
         searchQuery = this.value;
@@ -16,7 +17,7 @@ window.addEventListener('load', function () {
     let productsData = [];
     let currentPage = 1;
     const itemsPerPage = 9;
-    let selectedCategory = 'all'; // ✅ store selected category globally
+    let selectedCategory = 'all'; // store selected category globally
     
     function getFilteredProducts() {
         let filtered = selectedCategory === 'all'
@@ -33,7 +34,7 @@ window.addEventListener('load', function () {
       }
       
     function renderProducts(page) {
-        const filteredProducts = getFilteredProducts(); // ✅ always filter based on selectedCategory
+        const filteredProducts = getFilteredProducts(); // filter based on selectedCategory
         const start = (page - 1) * itemsPerPage;
         const end = start + itemsPerPage;
         const currentItems = filteredProducts.slice(start, end);
@@ -48,7 +49,7 @@ window.addEventListener('load', function () {
                         <img src="../${product.image}" alt="${product.name}">
                         <div class="product-actions">
                             <button class="action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="action-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn cartprod" product-id=${product.id}><i class="fas fa-shopping-cart"></i></button>
                             <a href="./product-detail.html?id=${product.id}" class="action-btn"><i class="fas fa-eye"></i></a>
                         </div>
                     </div>
@@ -69,12 +70,21 @@ window.addEventListener('load', function () {
                 </div>
             `;
             container.appendChild(div);
+
+
+            // Add event listener to the cart button
+            const cartprod = div.querySelector('.cartprod');
+            cartprod.addEventListener('click', function () {
+                const productId = parseInt(this.getAttribute('product-id'));
+                handleAddToCart(productId);
+            
+            });
+            
         });
 
         const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
         pag.innerHTML = `<h2> ${page}.....</h2>`;
     }
-
     fetch(productUrl)
         .then(response => response.json())
         .then(data => {
@@ -84,16 +94,15 @@ window.addEventListener('load', function () {
         .catch(error => {
             console.error("Error fetching products:", error);
         });
-
     categoryButtons.forEach(button => {
         button.addEventListener('click', function () {
-            selectedCategory = this.getAttribute('data-category'); // ✅ update global filter
+            selectedCategory = this.getAttribute('data-category'); //  update global filter
             currentPage = 1;
             renderProducts(currentPage);
         });
     });
 
-    bt.addEventListener('click', function () {
+    next.addEventListener('click', function () {
         const filtered = getFilteredProducts();
         const totalPages = Math.ceil(filtered.length / itemsPerPage);
         if (currentPage < totalPages) {
@@ -102,10 +111,11 @@ window.addEventListener('load', function () {
         }
     });
 
-    bb.addEventListener('click', function () {
+    left.addEventListener('click', function () {
         if (currentPage > 1) {
             currentPage--;
             renderProducts(currentPage);
         }
     });
+  
 });
