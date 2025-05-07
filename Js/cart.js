@@ -36,10 +36,10 @@ window.addEventListener('load', function (evernt) {
                     let capacity = prod.capacity;
                     let newItem = cartItem.cloneNode(true); //to get fresh copy of the cart item layout
                     cost = prod.price * usercart.items[index].quantity;
-                    usercart.items[index].sellerId= prod.sellerId;
+                    usercart.items[index].sellerId = prod.sellerId;
                     usercart.status = "processing"; //
                     totalp += cost;
-                    suptotal.innerHTML = ` `;
+                    suptotal.innerHTML = ` `;       
                     tax.innerHTML = ` `;
                     total.innerHTML = ` `;
                     newItem.innerHTML = `
@@ -53,7 +53,7 @@ window.addEventListener('load', function (evernt) {
                         <div class="item-price">${prod.price} EGP</div>
                         <div class="item-quantity">
                             <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
-                            <input type="number" class='quantity-input' value="${usercart.items[index].quantity}">
+                            <input type="text" disabled class='quantity-input' value="${usercart.items[index].quantity}">
                             <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
                         </div>
                         <div class="item-total">${prod.price * usercart.items[index].quantity} EGP</div>
@@ -75,7 +75,7 @@ window.addEventListener('load', function (evernt) {
 
                     plusBtn.addEventListener("click", () => {
                         let quantity = parseInt(quantityInput.value);
-                        if(quantity < capacity){
+                        if (quantity < capacity) {
                             quantity++;
                             quantityInput.value = quantity;
                             itemTotal.textContent = `${prod.price * quantity} EGP`;
@@ -89,9 +89,9 @@ window.addEventListener('load', function (evernt) {
                                 body: JSON.stringify(usercart)
                             });
                         }
-                    else{
-                        alert("You can not add more than the available capacity."); 
-                    }
+                        else {
+                            alert("You can not add more than the available capacity.");
+                        }
 
                     });
 
@@ -137,55 +137,120 @@ window.addEventListener('load', function (evernt) {
 
         })
 
-        //checkout button adding to checkout in json server and deleteing the cart items
+    //checkout button adding to checkout in json server and deleteing the cart items
 
 
 
 
 
-        //still can`t stop checkout button from working if the cart is empty
-        //still can`t delet item from the cart if the cart is empty
+    //still can`t stop checkout button from working if the cart is empty
+    //still can`t delet item from the cart if the cart is empty
+    // checkout.addEventListener("click", () => {
+    //    // console.log("checkout clicked");
+
+
+    //     if(usercart.items.length>0) {
+
+    //         fetch("http://localhost:3000/cartcheckout",{
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify({
+    //                 customerId: x,
+    //                 items: usercart.items, // Create a shallow copy of the items array
+    //                 amount: totalp * 0.08 + 10 + totalp,
+    //                 status: "processing",
+    //             })
+    //         })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log("Checkout successful:", data);
+    //             // Clear the cart after checkout
+    //             usercart.items = [];
+
+    //              fetch(`http://localhost:3000/cart/${usercart.id}`, {
+    //                 method: 'PUT',
+    //                 headers: {  
+    //                     'Content-Type': 'application/json'
+    //                 },
+    //                 body: JSON.stringify(usercart)
+    //             });
+    //         })
+    //         .then(() => {
+    //             newItem.remove();
+    //             alert("Checkout successful! Your order has been placed.");
+    //             window.location.href = '../index.html'; // Redirect to home page or order confirmation page
+    //         })
+    //         .catch(err => console.error('Error during checkout:', err));
+    //     }
+    //     else {
+    //         alert("Your cart is empty. Please add items to your cart before checking out.");
+
+    //     }   
+    // })
+
+   
+
+    
     checkout.addEventListener("click", () => {
-       // console.log("checkout clicked");
-       
-        
-        if(usercart.items.length>0) {
-
-            fetch("http://localhost:3000/cartcheckout",{
+        if (usercart.items.length > 0) {
+            const itemsToCheckout = [...usercart.items]; //taking copy of items 
+    
+            fetch("http://localhost:3000/cartcheckout", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     customerId: x,
-                    items: usercart.items, // Create a shallow copy of the items array
+                    items: itemsToCheckout,
                     amount: totalp * 0.08 + 10 + totalp,
                     status: "processing",
                 })
             })
             .then(res => res.json())
             .then(data => {
-                console.log("Checkout successful:", data);
-                // Clear the cart after checkout
+                console.log("Checkout successful:");
+    
                 usercart.items = [];
-                 fetch(`http://localhost:3000/cart/${usercart.id}`, {
+                return fetch(`http://localhost:3000/cart/${usercart.id}`, {
                     method: 'PUT',
-                    headers: {  
+                    headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(usercart)
                 });
             })
             .then(() => {
-                newItem.remove();
+                itemsToCheckout.forEach(item => {
+                    const product = products.find(p => p.id == item.productId); //to get the product from the products array
+                    // if (!product) {
+                    //     console.warn(` Product not found: ${item.productId}`);
+                    //     return;
+                    // }
+                    const newCapacity = product.capacity - item.quantity;
+                    // if (newCapacity < 0) {
+                    //     console.log(` Insufficient stock for product ${item.productId}`);
+                    //     return;
+                    // }
+                    fetch(`http://localhost:3000/products/${item.productId}`, {
+                        method: 'PATCH',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ capacity: newCapacity })
+                    })
+                   
+                });
+                document.querySelectorAll(".cart-item").forEach(item => item.remove());
                 alert("Checkout successful! Your order has been placed.");
-                window.location.href = '../index.html'; // Redirect to home page or order confirmation page
+                console.log("Checkout successful! Your order has been placed.");
+                window.location.href = '../../index.html'; // Redirect to home page or order confirmation page
             })
-            .catch(err => console.error('Error during checkout:', err));
+            .catch(err => console.error(' Error during checkout:', err));
+        } else {
+            alert("Your cart is empty. Please add items before checking out.");
         }
-        else {
-            alert("Your cart is empty. Please add items to your cart before checking out.");
-
-        }   
-    })
+    });
+    
+    
 })

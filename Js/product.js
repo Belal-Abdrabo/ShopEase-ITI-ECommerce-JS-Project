@@ -75,7 +75,6 @@ window.addEventListener('load', function () {
             const cartprod = div.querySelector('.cartprod');
             cartprod.addEventListener('click', function () {
                 const productId = parseInt(this.getAttribute('product-id'));
-            
                 handleAddToCart(productId, product.sellerId); 
             });
             

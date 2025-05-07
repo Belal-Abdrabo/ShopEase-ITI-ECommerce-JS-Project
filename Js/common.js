@@ -330,6 +330,7 @@ const postCartUsingCustomerId = function (customerId) {
 //         console.error("Error updating cart:", err);
 //     }
 // };
+
 const handleAddToCart = async function(productId, sellerId) {
     const currentUser = isAuthenticated();
     const cartUrl = "http://localhost:3000/cart";
@@ -351,18 +352,21 @@ const handleAddToCart = async function(productId, sellerId) {
 
         if (itemIndex !== -1) {
             const currentQty = userCart.items[itemIndex].quantity;
-            if (currentQty < capacity) {
+            if (currentQty < capacity && capacity > 0) {
                 userCart.items[itemIndex].quantity += 1;
             } else {
                 alert("You reached the product capacity limit!");
                 return;
             }
-        } else {
+        } else if(capacity > 0) {
             userCart.items.push({
                 productId: productId,
                 quantity: 1,
                 sellerId: sellerId
             });
+        }
+        else{
+            alert("product is out of stock!");
         }
 
         // Update the cart
