@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../../Js/roles/admin-products.js"></script>
 </head>
 <body class="admin-body">
     <div class="admin-container">
         <!-- Admin Sidebar -->
         <aside class="admin-sidebar">
             <div class="sidebar-header">
-                <a href="admin-dashboard.html" class="logo">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span>ShopEase</span>
-                </a>
+                <div class="logo">
+                    <a href="index.html">ShopEase</a>
+                </div>
                 <span class="admin-badge">Admin</span>
             </div>
             
@@ -29,15 +29,21 @@
                         </a>
                     </li>
                     <li>
-                        <a href="admin-orders.html">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span>Orders</span>
+                        <a href="admin-users.html">
+                            <i class="fas fa-users"></i>
+                            <span>User Management</span>
                         </a>
                     </li>
                     <li class="active">
                         <a href="admin-products.html">
                             <i class="fas fa-box"></i>
-                            <span>Products</span>
+                            <span>Product Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-orders.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Order Management</span>
                         </a>
                     </li>
                     <li>
@@ -47,15 +53,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="admin-customers.html">
-                            <i class="fas fa-users"></i>
-                            <span>Customers</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="admin-reviews.html">
-                            <i class="fas fa-star"></i>
-                            <span>Reviews</span>
+                        <a href="admin-reports.html">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Reports</span>
                         </a>
                     </li>
                     <li>
@@ -80,11 +80,11 @@
         </aside>
         
         <!-- Admin Main Content -->
-        <div class="admin-main">
+        <main class="admin-main">
             <!-- Admin Header -->
             <header class="admin-header">
                 <div class="header-search">
-                    <input type="text" placeholder="Search products...">
+                    <input type="text" id="searchInput" placeholder="Search products...">
                     <button><i class="fas fa-search"></i></button>
                 </div>
                 <div class="header-actions">
@@ -95,8 +95,9 @@
                         </button>
                     </div>
                     <div class="admin-profile">
-                        <img src="images/admin-avatar.jpg" alt="Admin User">
+                        <img src="images/admin-avatar.jpg" alt="Admin">
                         <span>Admin User</span>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                 </div>
             </header>
@@ -117,82 +118,60 @@
                 </div>
                 
                 <!-- Filters Container -->
-                <div class="filters-container">
-                    <div class="filters">
-                        <div class="filter-group">
-                            <label for="category-filter">Category</label>
-                            <select id="category-filter">
-                                <option value="">All Categories</option>
-                                <option value="electronics">Electronics</option>
-                                <option value="fashion">Fashion</option>
-                                <option value="home">Home & Kitchen</option>
-                                <option value="beauty">Beauty & Personal Care</option>
-                                <option value="sports">Sports & Outdoors</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label for="status-filter">Status</label>
-                            <select id="status-filter">
-                                <option value="">All Statuses</option>
-                                <option value="active">Active</option>
-                                <option value="pending">Pending Approval</option>
-                                <option value="inactive">Inactive</option>
-                                <option value="out-of-stock">Out of Stock</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label for="seller-filter">Seller</label>
-                            <select id="seller-filter">
-                                <option value="">All Sellers</option>
-                                <option value="1">ShopEase Official</option>
-                                <option value="2">Tech Gadgets Inc.</option>
-                                <option value="3">Fashion Forward</option>
-                                <option value="4">Home Essentials</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <button class="btn btn-primary">Apply Filters</button>
-                        <button class="btn btn-secondary">Reset</button>
-                    </div>
-                </div>
+               
                 
                 <!-- Products Table -->
                 <div class="admin-card">
                     <div class="card-header">
                         <h2>Products</h2>
-                        <div>
-                            <select>
-                                <option value="all">All Products</option>
-                                <option value="pending">Pending Approval (5)</option>
-                                <option value="active">Active</option>
-                                <option value="inactive">Inactive</option>
-                            </select>
-                        </div>
                     </div>
                     <div class="table-responsive">
                         <table class="admin-table">
                             <thead>
                                 <tr>
-                                    <th>
-                                        <input type="checkbox" id="select-all">
-                                    </th>
                                     <th>Product</th>
-                                    <th>SKU</th>
+                                    <th>ID</th>
                                     <th>Category</th>
                                     <th>Price</th>
                                     <th>Stock</th>
                                     <th>Status</th>
-                                    <th>Date Added</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <!-- Pending Approval Products -->
+                            <tbody id="admin-products-table">
+                                <!-- Laptop Product (from the provided object) 
                                 <tr>
                                     <td>
-                                        <input type="checkbox">
+                                        <div class="user-info">
+                                            <img src="../itiECommerce_JS_Project/images/herp-image.jpg" alt="Laptop">
+                                            <div>
+                                                <strong>Laptop</strong>
+                                                <div class="product-sales">Seller: ShopEase Official</div>
+                                            </div>
+                                        </div>
                                     </td>
+                                    <td>1</td>
+                                    <td>Electronics</td>
+                                    <td>$15,000.00</td>
+                                    <td>20</td>
+                                    <td><span class="status-badge active">Available</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="admin-product-edit.html?id=1" class="btn btn-sm btn-secondary" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <button class="btn btn-sm btn-primary" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                              
+                                <tr>
                                     <td>
                                         <div class="user-info">
                                             <img src="images/product8.jpg" alt="Gaming Headset">
@@ -202,12 +181,11 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>TG-GH100</td>
+                                    <td>8</td>
                                     <td>Electronics</td>
                                     <td>$149.99</td>
                                     <td>25</td>
                                     <td><span class="status-badge pending">Pending Approval</span></td>
-                                    <td>2025-04-28</td>
                                     <td>
                                         <div class="action-buttons">
                                             <a href="admin-product-edit.html?id=8" class="btn btn-sm btn-secondary" title="Edit">
@@ -224,9 +202,6 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="checkbox">
-                                    </td>
-                                    <td>
                                         <div class="user-info">
                                             <img src="images/product9.jpg" alt="Mechanical Keyboard">
                                             <div>
@@ -235,65 +210,28 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>TG-KB200</td>
+                                    <td>9</td>
                                     <td>Electronics</td>
                                     <td>$89.99</td>
                                     <td>15</td>
                                     <td><span class="status-badge pending">Pending Approval</span></td>
-                                    <td>2025-04-28</td>
                                     <td>
                                         <div class="action-buttons">
                                             <a href="admin-product-edit.html?id=9" class="btn btn-sm btn-secondary" title="Edit">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <button class="btn btn-sm btn-success" title="Approve">
+                                            <button class="btn btn-sm btn-success" id="approve" title="Approve">
                                                 <i class="fas fa-check"></i>
                                             </button>
-                                            <button class="btn btn-sm btn-danger" title="Reject">
+                                            <button class="btn btn-sm btn-danger" id="reject" title="Reject">
                                                 <i class="fas fa-times"></i>
                                             </button>
                                         </div>
                                     </td>
                                 </tr>
                                 
-                                <!-- Published Products -->
+                               Published Products 
                                 <tr>
-                                    <td>
-                                        <input type="checkbox">
-                                    </td>
-                                    <td>
-                                        <div class="user-info">
-                                            <img src="images/product1.jpg" alt="Wireless Headphones">
-                                            <div>
-                                                <strong>Wireless Headphones</strong>
-                                                <div class="product-sales">Seller: ShopEase Official</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>SE-WH100</td>
-                                    <td>Electronics</td>
-                                    <td>$129.99</td>
-                                    <td>42</td>
-                                    <td><span class="status-badge active">Active</span></td>
-                                    <td>2025-03-15</td>
-                                    <td>
-                                        <div class="action-buttons">
-                                            <a href="admin-product-edit.html?id=1" class="btn btn-sm btn-secondary" title="Edit">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                            <button class="btn btn-sm btn-primary" title="View">
-                                                <i class="fas fa-eye"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-danger" title="Delete">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox">
-                                    </td>
                                     <td>
                                         <div class="user-info">
                                             <img src="images/product2.jpg" alt="Smart Watch">
@@ -303,12 +241,11 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>SE-SW200</td>
+                                    <td>2</td>
                                     <td>Electronics</td>
                                     <td>$199.99</td>
                                     <td>28</td>
-                                    <td><span class="status-badge active">Active</span></td>
-                                    <td>2025-03-18</td>
+                                    <td><span class="status-badge active">Available</span></td>
                                     <td>
                                         <div class="action-buttons">
                                             <a href="admin-product-edit.html?id=2" class="btn btn-sm btn-secondary" title="Edit">
@@ -325,9 +262,6 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="checkbox">
-                                    </td>
-                                    <td>
                                         <div class="user-info">
                                             <img src="images/product3.jpg" alt="Bluetooth Speaker">
                                             <div>
@@ -336,12 +270,11 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>SE-BS300</td>
+                                    <td>3</td>
                                     <td>Electronics</td>
                                     <td>$79.99</td>
                                     <td>56</td>
-                                    <td><span class="status-badge active">Active</span></td>
-                                    <td>2025-03-20</td>
+                                    <td><span class="status-badge active">Available</span></td>
                                     <td>
                                         <div class="action-buttons">
                                             <a href="admin-product-edit.html?id=3" class="btn btn-sm btn-secondary" title="Edit">
@@ -358,9 +291,6 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="checkbox">
-                                    </td>
-                                    <td>
                                         <div class="user-info">
                                             <img src="images/product4.jpg" alt="Wireless Earbuds">
                                             <div>
@@ -369,12 +299,11 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>TG-WE400</td>
+                                    <td>4</td>
                                     <td>Electronics</td>
                                     <td>$89.99</td>
                                     <td>5</td>
                                     <td><span class="status-badge processing">Low Stock</span></td>
-                                    <td>2025-03-25</td>
                                     <td>
                                         <div class="action-buttons">
                                             <a href="admin-product-edit.html?id=4" class="btn btn-sm btn-secondary" title="Edit">
@@ -391,9 +320,6 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="checkbox">
-                                    </td>
-                                    <td>
                                         <div class="user-info">
                                             <img src="images/product6.jpg" alt="Fitness Tracker">
                                             <div>
@@ -402,12 +328,11 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>SE-FT600</td>
+                                    <td>6</td>
                                     <td>Electronics</td>
                                     <td>$59.99</td>
                                     <td>0</td>
-                                    <td><span class="status-badge suspended">Out of Stock</span></td>
-                                    <td>2025-04-05</td>
+                                    
                                     <td>
                                         <div class="action-buttons">
                                             <a href="admin-product-edit.html?id=6" class="btn btn-sm btn-secondary" title="Edit">
@@ -421,36 +346,73 @@
                                             </button>
                                         </div>
                                     </td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>
                     
-                    <!-- Bulk Actions and Pagination -->
-                    <div style="display: flex; justify-content: space-between; padding: 1rem 1.5rem; border-top: 1px solid #e5e7eb;">
-                        <div>
-                            <select>
-                                <option value="">Bulk Actions</option>
-                                <option value="approve">Approve Selected</option>
-                                <option value="reject">Reject Selected</option>
-                                <option value="delete">Delete Selected</option>
-                            </select>
-                            <button class="btn btn-secondary">Apply</button>
-                        </div>
-                        
-                        <div class="pagination">
-                            <button class="btn-page" disabled><i class="fas fa-chevron-left"></i></button>
-                            <button class="btn-page active">1</button>
-                            <button class="btn-page">2</button>
-                            <button class="btn-page">3</button>
-                            <span class="pagination-ellipsis">...</span>
-                            <button class="btn-page">10</button>
-                            <button class="btn-page"><i class="fas fa-chevron-right"></i></button>
-                        </div>
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="btn-page" id="previous" disabled><i class="fas fa-chevron-left"></i></button>
+                        <span class="pagination-ellipsis">1 of 1</span>
+                        <button class="btn-page" id="next"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
+
+   
+
+    <style>
+        /* Additional styles for the admin products page */
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .user-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 0.25rem;
+            object-fit: cover;
+        }
+        
+        .product-sales {
+            font-size: 0.75rem;
+            color: #6b7280;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 0.25rem;
+        }
+        
+        .btn-sm {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+        }
+        
+        .status-badge.active {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+        }
+        
+        .status-badge.pending {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+        
+        .status-badge.processing {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+        
+        .status-badge.suspended {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+        }
+    </style>
 </body>
 </html>
