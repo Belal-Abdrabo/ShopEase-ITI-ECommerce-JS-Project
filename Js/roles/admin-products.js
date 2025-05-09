@@ -183,7 +183,6 @@ window.addEventListener('load', function () {
                 <td>${categories.filter(c => String(c.id) === String(product.categoryId))[0]?.name || "Category Not Found"}</td>
                 <td>$${product.price}</td>
                 <td>${product.capacity}</td>
-                <td>${product.status}</td>
             `;
             if(product.status=="pending")
                 {
@@ -210,7 +209,7 @@ window.addEventListener('load', function () {
                         tr.innerHTML += `<td><span class="status-badge suspended">${product.status}</span></td>`
                     }
                     else{
-                        tr.innerHTML += `<td><span class="status-badge active">Available</span></td>`
+                        tr.innerHTML += `<td><span class="status-badge active">${product.status}</span></td>`
 
                     }
                     tr.innerHTML += `<td>

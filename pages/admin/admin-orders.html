@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../../css/admin.css">
     <link rel="stylesheet" href="../../css/admin-orders.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../../Js/common.js"></script>
+    <script src="../../Js/roles/admin-orders.js"></script>
 </head>
 <body class="admin-body">
     <div class="admin-container">
@@ -29,40 +31,28 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
-                    <li class="active">
-                        <a href="admin-orders.html">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span>Orders</span>
+                    <li>
+                        <a href="admin-users.html">
+                            <i class="fas fa-users"></i>
+                            <span>User Management</span>
                         </a>
                     </li>
                     <li>
                         <a href="admin-products.html">
                             <i class="fas fa-box"></i>
-                            <span>Products</span>
+                            <span>Product Management</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="admin-orders.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Order Management</span>
                         </a>
                     </li>
                     <li>
                         <a href="admin-categories.html">
                             <i class="fas fa-tags"></i>
                             <span>Categories</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="admin-customers.html">
-                            <i class="fas fa-users"></i>
-                            <span>Customers</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="admin-reviews.html">
-                            <i class="fas fa-star"></i>
-                            <span>Reviews</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="admin-settings.html">
-                            <i class="fas fa-cog"></i>
-                            <span>Settings</span>
                         </a>
                     </li>
                 </ul>
@@ -110,134 +100,18 @@
                         <h1>Order Management</h1>
                         <p>Manage customer orders</p>
                     </div>
-                    <div>
-                        <button class="btn btn-primary">
-                            <i class="fas fa-file-export"></i> Export Orders
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Stats Cards -->
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background-color: rgba(59, 130, 246, 0.1); color: #3b82f6;">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <div class="stat-details">
-                            <h3>Total Orders</h3>
-                            <div class="stat-number">1,248</div>
-                            <div class="stat-change positive">
-                                <i class="fas fa-arrow-up"></i> 12% <span>vs last month</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981;">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <div class="stat-details">
-                            <h3>Completed Orders</h3>
-                            <div class="stat-number">968</div>
-                            <div class="stat-change positive">
-                                <i class="fas fa-arrow-up"></i> 8% <span>vs last month</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background-color: rgba(245, 158, 11, 0.1); color: #f59e0b;">
-                            <i class="fas fa-truck"></i>
-                        </div>
-                        <div class="stat-details">
-                            <h3>Processing Orders</h3>
-                            <div class="stat-number">156</div>
-                            <div class="stat-change negative">
-                                <i class="fas fa-arrow-down"></i> 5% <span>vs last month</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background-color: rgba(239, 68, 68, 0.1); color: #ef4444;">
-                            <i class="fas fa-times-circle"></i>
-                        </div>
-                        <div class="stat-details">
-                            <h3>Cancelled Orders</h3>
-                            <div class="stat-number">42</div>
-                            <div class="stat-change positive">
-                                <i class="fas fa-arrow-down"></i> 18% <span>vs last month</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Filters Container -->
-                <div class="filters-container">
-                    <div class="filters">
-                        <div class="filter-group">
-                            <label for="date-filter">Date Range</label>
-                            <select id="date-filter">
-                                <option value="today">Today</option>
-                                <option value="yesterday">Yesterday</option>
-                                <option value="last7" selected>Last 7 days</option>
-                                <option value="last30">Last 30 days</option>
-                                <option value="thisMonth">This Month</option>
-                                <option value="lastMonth">Last Month</option>
-                                <option value="custom">Custom Range</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label for="status-filter">Status</label>
-                            <select id="status-filter">
-                                <option value="">All Statuses</option>
-                                <option value="pending">Pending Payment</option>
-                                <option value="processing">Processing</option>
-                                <option value="shipped">Shipped</option>
-                                <option value="delivered">Delivered</option>
-                                <option value="cancelled">Cancelled</option>
-                                <option value="refunded">Refunded</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label for="payment-filter">Payment Method</label>
-                            <select id="payment-filter">
-                                <option value="">All Payment Methods</option>
-                                <option value="credit">Credit Card</option>
-                                <option value="paypal">PayPal</option>
-                                <option value="bank">Bank Transfer</option>
-                                <option value="cod">Cash on Delivery</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <button class="btn btn-primary">Apply Filters</button>
-                        <button class="btn btn-secondary">Reset</button>
-                    </div>
                 </div>
                 
                 <!-- Orders Table -->
                 <div class="admin-card">
                     <div class="card-header">
                         <h2>Recent Orders</h2>
-                        <div>
-                            <select>
-                                <option value="all">All Orders</option>
-                                <option value="pending">Pending Payment</option>
-                                <option value="processing">Processing</option>
-                                <option value="shipped">Shipped</option>
-                                <option value="delivered">Delivered</option>
-                                <option value="cancelled">Cancelled</option>
-                            </select>
-                        </div>
+                        
                     </div>
                     <div class="table-responsive">
                         <table class="admin-table">
                             <thead>
                                 <tr>
-                                    <th>
-                                        <input type="checkbox" id="select-all">
-                                    </th>
                                     <th>Order ID</th>
                                     <th>Customer</th>
                                     <th>Date</th>
@@ -248,7 +122,7 @@
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="admin-orders-table">
                                 <tr>
                                     <td>
                                         <input type="checkbox">
@@ -463,254 +337,17 @@
                         </table>
                     </div>
                     
-                    <!-- Bulk Actions and Pagination -->
-                    <div class="table-footer">
-                        <div>
-                            <select>
-                                <option value="">Bulk Actions</option>
-                                <option value="mark-processing">Mark as Processing</option>
-                                <option value="mark-shipped">Mark as Shipped</option>
-                                <option value="mark-delivered">Mark as Delivered</option>
-                                <option value="mark-cancelled">Mark as Cancelled</option>
-                                <option value="delete">Delete</option>
-                            </select>
-                            <button class="btn btn-secondary">Apply</button>
-                        </div>
-                        
-                        <div class="pagination">
-                            <button class="btn-page" disabled><i class="fas fa-chevron-left"></i></button>
-                            <button class="btn-page active">1</button>
-                            <button class="btn-page">2</button>
-                            <button class="btn-page">3</button>
-                            <span class="pagination-ellipsis">...</span>
-                            <button class="btn-page">15</button>
-                            <button class="btn-page"><i class="fas fa-chevron-right"></i></button>
-                        </div>
+                    
+                        <!-- Pagination  -->
+                <div class="pagination">
+                    <button class="btn-page" id="previous" disabled><i class="fas fa-chevron-left"></i></button>
+                    <!-- <button class="btn-page active">1</button> -->
+                    <span class="pagination-ellipsis"></span>
+                    <!-- <button class="btn-page">10</button> -->
+                    <button class="btn-page" id="next"><i class="fas fa-chevron-right"></i></button>
+                </div>
                     </div>
                 </div>
-                
-                <!-- Order Details Preview -->
-                <div class="admin-card order-preview">
-                    <div class="card-header">
-                        <h2>Order #10248 Details</h2>
-                        <div>
-                            <button class="btn btn-sm btn-secondary">
-                                <i class="fas fa-print"></i> Print Invoice
-                            </button>
-                            <button class="btn btn-sm btn-primary">
-                                <i class="fas fa-envelope"></i> Email Customer
-                            </button>
-                        </div>
-                    </div>
-                    <div class="order-details-grid">
-                        <div class="order-info">
-                            <h3>Order Information</h3>
-                            <div class="info-group">
-                                <div class="info-label">Order ID:</div>
-                                <div class="info-value">#10248</div>
-                            </div>
-                            <div class="info-group">
-                                <div class="info-label">Date Created:</div>
-                                <div class="info-value">Apr 30, 2025 at 10:24 AM</div>
-                            </div>
-                            <div class="info-group">
-                                <div class="info-label">Status:</div>
-                                <div class="info-value"><span class="status-badge processing">Processing</span></div>
-                            </div>
-                            <div class="info-group">
-                                <div class="info-label">Payment Method:</div>
-                                <div class="info-value">Credit Card (Visa ending in 4242)</div>
-                            </div>
-                            <div class="info-group">
-                                <div class="info-label">Payment Status:</div>
-                                <div class="info-value"><span class="status-badge active">Paid</span></div>
-                            </div>
-                        </div>
-                        
-                        <div class="customer-info">
-                            <h3>Customer Information</h3>
-                            <div class="info-group">
-                                <div class="info-label">Name:</div>
-                                <div class="info-value">John Doe</div>
-                            </div>
-                            <div class="info-group">
-                                <div class="info-label">Email:</div>
-                                <div class="info-value">john.doe@example.com</div>
-                            </div>
-                            <div class="info-group">
-                                <div class="info-label">Phone:</div>
-                                <div class="info-value">(555) 123-4567</div>
-                            </div>
-                            <div class="info-group">
-                                <div class="info-label">Customer Since:</div>
-                                <div class="info-value">Jan 15, 2025</div>
-                            </div>
-                            <div class="info-group">
-                                <div class="info-label">Total Orders:</div>
-                                <div class="info-value">5 orders</div>
-                            </div>
-                        </div>
-                        
-                        <div class="shipping-info">
-                            <h3>Shipping Information</h3>
-                            <div class="info-group">
-                                <div class="info-label">Address:</div>
-                                <div class="info-value">
-                                    123 Main Street<br>
-                                    Apt 4B<br>
-                                    New York, NY 10001<br>
-                                    United States
-                                </div>
-                            </div>
-                            <div class="info-group">
-                                <div class="info-label">Shipping Method:</div>
-                                <div class="info-value">Standard Shipping</div>
-                            </div>
-                            <div class="info-group">
-                                <div class="info-label">Tracking Number:</div>
-                                <div class="info-value">
-                                    <input type="text" placeholder="Enter tracking number">
-                                    <button class="btn btn-sm btn-primary">Update</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="billing-info">
-                            <h3>Billing Information</h3>
-                            <div class="info-group">
-                                <div class="info-label">Address:</div>
-                                <div class="info-value">
-                                    123 Main Street<br>
-                                    Apt 4B<br>
-                                    New York, NY 10001<br>
-                                    United States
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="order-items">
-                        <h3>Order Items</h3>
-                        <table class="admin-table">
-                            <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>SKU</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="user-info">
-                                            <img src="images/product1.jpg" alt="Wireless Headphones">
-                                            <div>Wireless Headphones</div>
-                                        </div>
-                                    </td>
-                                    <td>SE-WH100</td>
-                                    <td>$129.99</td>
-                                    <td>1</td>
-                                    <td>$129.99</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="user-info">
-                                            <img src="images/product3.jpg" alt="Bluetooth Speaker">
-                                            <div>Bluetooth Speaker</div>
-                                        </div>
-                                    </td>
-                                    <td>SE-BS300</td>
-                                    <td>$79.99</td>
-                                    <td>1</td>
-                                    <td>$79.99</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="user-info">
-                                            <img src="images/product7.jpg" alt="Wireless Charger">
-                                            <div>Wireless Charger</div>
-                                        </div>
-                                    </td>
-                                    <td>SE-WC700</td>
-                                    <td>$29.99</td>
-                                    <td>1</td>
-                                    <td>$29.99</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="4" class="text-right">Subtotal:</td>
-                                    <td>$239.97</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4" class="text-right">Shipping:</td>
-                                    <td>$5.99</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4" class="text-right">Tax:</td>
-                                    <td>$0.00</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4" class="text-right"><strong>Total:</strong></td>
-                                    <td><strong>$245.96</strong></td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                    
-                    <div class="order-actions">
-                        <h3>Order Status</h3>
-                        <div class="status-update">
-                            <select>
-                                <option value="pending">Pending Payment</option>
-                                <option value="processing" selected>Processing</option>
-                                <option value="shipped">Shipped</option>
-                                <option value="delivered">Delivered</option>
-                                <option value="cancelled">Cancelled</option>
-                                <option value="refunded">Refunded</option>
-                            </select>
-                            <button class="btn btn-primary">Update Status</button>
-                        </div>
-                    </div>
-                    
-                    <div class="order-notes">
-                        <h3>Order Notes</h3>
-                        <div class="notes-list">
-                            <div class="note">
-                                <div class="note-header">
-                                    <div class="user-info">
-                                        <img src="images/admin-avatar.jpg" alt="Admin User">
-                                        <div>
-                                            <strong>Admin User</strong>
-                                            <div class="note-date">Apr 30, 2025 at 11:15 AM</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="note-content">
-                                    Order processed and payment confirmed. Ready for shipping.
-                                </div>
-                            </div>
-                            <div class="note">
-                                <div class="note-header">
-                                    <div class="user-info">
-                                        <img src="images/system-avatar.jpg" alt="System">
-                                        <div>
-                                            <strong>System</strong>
-                                            <div class="note-date">Apr 30, 2025 at 10:24 AM</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="note-content">
-                                    Order created. Payment received via Credit Card.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="add-note">
-                            <textarea placeholder="Add a note about this order..."></textarea>
-                            <button class="btn btn-primary">Add Note</button>
-                        </div>
                     </div>
                 </div>
             </div>
