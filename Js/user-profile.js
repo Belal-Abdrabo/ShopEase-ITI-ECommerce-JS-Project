@@ -10,6 +10,8 @@ window.addEventListener('load', function () {
     //start from here
     fetch(`http://localhost:3000/users/${x}`).then(res => res.json())
         .then(user => {
+            console.log(user);
+            
             this.document.getElementById('first-name').value = user.userName.split(' ')[0];
             this.document.getElementById('last-name').value = user.userName.split(' ')[1];
             this.document.getElementById('email').value = user.email;
