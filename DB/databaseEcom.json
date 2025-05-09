@@ -38,19 +38,27 @@
       "password": "123456",
       "role": "customer",
       "registrationDate": "2025-05-08"
+    },
+    {
+      "id": "1",
+      "userName": "Tech.Eg",
+      "email": "tech@gmail.com",
+      "password": "123456",
+      "role": "seller",
+      "registrationDate": "2025-05-09"
     }
   ],
   "products": [
     {
-      "id": "1",
       "name": "Canon camera",
-      "price": 15000,
+      "price": 1159,
+      "capacity": 29,
       "image": "https://f.nooncdn.com/p/v1662029536/N33956021A_1.jpg",
-      "categoryId": 1,
+      "categoryId": "1",
       "sellerId": "1",
-      "capacity": 7,
       "productDescription": "Capture every moment with this high-quality camera. Perfect for both photography enthusiasts and professionals, this camera provides exceptional image quality, a variety of settings, and ease of use for every situation.",
-      "status": "available"
+      "status": "available",
+      "id": "1"
     },
     {
       "id": "2",
@@ -720,7 +728,31 @@
     },
     {
       "id": "2",
-      "name": "Accessories"
+      "name": "Fashion"
+    },
+    {
+      "id": "3",
+      "name": "Home & Kitchen"
+    },
+    {
+      "id": "4",
+      "name": "Beauty & Personal Care"
+    },
+    {
+      "id": "5",
+      "name": "Sports & Outdoors"
+    },
+    {
+      "id": "6",
+      "name": "Toys & Games"
+    },
+    {
+      "id": "7",
+      "name": "Books & Media"
+    },
+    {
+      "id": "8",
+      "name": "Health & Wellness"
     }
   ],
   "orders": [

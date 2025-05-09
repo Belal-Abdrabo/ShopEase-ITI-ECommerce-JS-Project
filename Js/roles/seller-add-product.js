@@ -1,10 +1,14 @@
 window.addEventListener('load', function() {
-    // Get the productId from the URL parameters
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('productId');
 
+    let currentUser = isAuthenticated();
+    if(currentUser)
+    {
+
+    }
+    else{
+        window.location.href = '../login.html';
+    }
     // Get form elements by their IDs
-    const productIdInput = document.getElementById('product-id');
     const productNameInput = document.getElementById('product-name');
     const productDescriptionInput = document.getElementById('product-description');
     const productCategoryInput = document.getElementById('product-category');
@@ -20,35 +24,19 @@ window.addEventListener('load', function() {
     const productCategoryError = document.getElementById('product-category-error');
     const productPriceError = document.getElementById('product-price-error');
     const productCapacityError = document.getElementById('product-capacity-error');
-    console.log("product ID: "+productId);
-    
-    // Fetch product data by productId
-    fetch(`http://localhost:3000/products/${productId}`)
-        .then(response => response.json())
-        .then(product => {
-            // Pre-fill the form with the product data
-            productIdInput.value = product.id;
-            productNameInput.value = product.name;
-            productDescriptionInput.value = product.productDescription;
-            getAllCategories()
-            .then(data => {
-                productCategoryInput.innerHTML='';
-                data.forEach(c => {
-                    productCategoryInput.innerHTML += `<option value="${c.id}">${c.name}</option>`
-                })
-            productCategoryInput.value = product.categoryId;
-            productStatusInput.value = product.status;
-            productPriceInput.value = product.price;
-            productCapacityInput.value = product.capacity;
-            productImageInput.value = product.image || '';  // Handle optional image field
-            productSellerInput.value = product.sellerId;  // Pre-fill the seller ID (disabled)
-            })
-    .catch(err => console.error(err))
-            
+
+    //get current seller and display at sellect
+    productSellerInput.disabled = true;
+    productSellerInput.innerHTML += `<option value="${currentUser.id}" selected>${currentUser.userName}</option>`;
+    getAllCategories()
+    .then(data => {
+        productCategoryInput.innerHTML='';
+        data.forEach(c => {
+            productCategoryInput.innerHTML += `<option value="${c.id}">${c.name}</option>`;
         })
-        .catch(error => {
-            console.error('Error fetching product:', error);
-        });
+    })
+    .catch(err => console.error(err))
+    
 
     // Validate form fields
     function validateForm() {
@@ -117,7 +105,7 @@ window.addEventListener('load', function() {
         }
 
         // Prepare the updated product data
-        const updatedProduct = {
+        const newProduct = {
             name: productNameInput.value.trim(),
             price: parseFloat(productPriceInput.value.trim()),
             capacity: parseInt(productCapacityInput.value.trim()),
@@ -129,21 +117,21 @@ window.addEventListener('load', function() {
         };
 
         // Send the updated product data to the server using a PUT request
-        fetch(`http://localhost:3000/products/${productId}`, {
-            method: 'PUT',
+        fetch(`http://localhost:3000/products`, {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(updatedProduct)
+            body: JSON.stringify(newProduct)
         })
             .then(response => response.json())
             .then(data => {
-                alert('Product updated successfully');
+                alert('Product added successfully');
                 window.location.href = 'admin-products.html'; // Redirect back to products page after success
             })
             .catch(error => {
                 console.error('Error updating product:', error);
-                alert('Error updating product. Please try again.');
+                alert('Error adding product. Please try again.');
             });
     });
 });
