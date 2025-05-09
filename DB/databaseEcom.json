@@ -89,7 +89,7 @@
       "id": "5",
       "name": "Sony HeadPhone",
       "price": 15000,
-      "capacity": 19,
+      "capacity": 18,
       "image": "https://f.nooncdn.com/p/v1678773717/N53391622A_1.jpg",
       "categoryId": 1,
       "sellerId": "1",
@@ -100,7 +100,7 @@
       "id": "6",
       "name": "ASUS TUF A15",
       "price": 15000,
-      "capacity": 19,
+      "capacity": 18,
       "image": "https://f.nooncdn.com/p/pnsku/N70122720V/45/_/1729658809/3558255e-34ef-40eb-a886-c94f630bc42c.jpg",
       "categoryId": 1,
       "sellerId": "1",
@@ -889,6 +889,27 @@
       "amount": 16210,
       "status": "processing",
       "orderdate": "08/05/2025"
+    },
+    {
+      "id": "79d3",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 6,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        },
+        {
+          "productId": 5,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        }
+      ],
+      "amount": 32410,
+      "status": "processing",
+      "orderdate": "09/05/2025"
     }
   ],
   "review": [
@@ -917,6 +938,13 @@
       "id": "86dd",
       "orderReview": "sgsg",
       "productId": "3",
+      "userId": "c56e",
+      "sellerId": "1"
+    },
+    {
+      "id": "fc21",
+      "orderReview": "bmhbhnmvbhjb",
+      "productId": "1",
       "userId": "c56e",
       "sellerId": "1"
     }
