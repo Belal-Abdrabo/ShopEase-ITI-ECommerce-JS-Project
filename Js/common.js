@@ -330,6 +330,7 @@ const postCartUsingCustomerId = function (customerId) {
 //         console.error("Error updating cart:", err);
 //     }
 // };
+
 const handleAddToCart = async function(productId, sellerId) {
     const currentUser = isAuthenticated();
     const cartUrl = "http://localhost:3000/cart";
@@ -351,18 +352,22 @@ const handleAddToCart = async function(productId, sellerId) {
 
         if (itemIndex !== -1) {
             const currentQty = userCart.items[itemIndex].quantity;
-            if (currentQty < capacity) {
+            if (currentQty < capacity && capacity > 0) {
                 userCart.items[itemIndex].quantity += 1;
             } else {
                 alert("You reached the product capacity limit!");
                 return;
             }
-        } else {
+        } else if(capacity > 0) {
             userCart.items.push({
                 productId: productId,
                 quantity: 1,
-                sellerId: sellerId
+                sellerId: sellerId,
+                status: "processing"
             });
+        }
+        else{
+            alert("product is out of stock!");
         }
 
         // Update the cart
@@ -381,6 +386,32 @@ const handleAddToCart = async function(productId, sellerId) {
         console.error("Error updating cart:", err);
     }
 }
+
+
+
+let cartSize = 0; 
+
+const cartsize = function() {
+    const currentUser = isAuthenticated();
+    const cartUrl = "http://localhost:3000/cart";
+
+    fetch(`${cartUrl}?customerId=${currentUser.id}`)
+        .then(res => res.json())
+        .then(carts => {
+            if (carts.length > 0) {
+                const userCart = carts[0];
+                cartSize = userCart.items.length; // Set global variable to cart size
+                console.log("Cart size:", cartSize);
+            } else {
+                cartSize = 0; 
+                console.log("No cart found for the user.");
+            }
+        })
+        .catch(err => console.error("Error fetching cart size:", err));
+}
+
+
+
 
 
 // const handleAddToCart = function(productId,sellerId) {

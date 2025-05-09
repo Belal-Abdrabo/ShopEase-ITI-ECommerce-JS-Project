@@ -235,7 +235,7 @@
   }
   
   .cart-icon::after {
-    content: "2";
+    
     position: absolute;
     top: -8px;
     right: -8px;
