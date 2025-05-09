@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopEase | Admin - Edit Product</title>
+    <title>ShopEase | Admin Add Product</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/admin.css">
     <link rel="stylesheet" href="../../css/admin-product-edit.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="../../js/roles/admin-product-edit.js"></script>
+    <script src="../../Js/common.js"></script>
+    <script src="../../js/roles/admin-add-product.js"></script>
 </head>
 <body class="admin-body">
     <div class="admin-container">
@@ -87,26 +88,12 @@
             <div class="admin-content">
                 <div class="page-header">
                     <div>
-                        <h1>Edit Product</h1>
+                        <h1>Add New Product</h1>
                     </div>
                     <div>
                         <a href="admin-products.html" class="btn btn-outline">
                             <i class="fas fa-arrow-left"></i> Back to Products
                         </a>
-                    </div>
-                </div>
-
-                <!-- Product Status Alert -->
-                <div class="alert alert-success">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="alert-content">
-                        <h3>Product Available</h3>
-                        <p>This product is currently available and visible in the store.</p>
-                    </div>
-                    <div class="alert-actions">
-                        <button class="btn btn-outline">
-                            <i class="fas fa-eye-slash"></i> Hide Product
-                        </button>
                     </div>
                 </div>
 
@@ -118,19 +105,14 @@
                             <h3 class="section-title">Basic Information</h3>
                             
                             <div class="form-group">
-                                <label for="product-id">Product ID</label>
-                                <input type="text" id="product-id" value="1" disabled>
-                            </div>
-                            
-                            <div class="form-group">
                                 <label for="product-name">Product Name <span class="required">*</span></label>
-                                <input type="text" id="product-name" value="Laptop" required>
+                                <input type="text" id="product-name" required>
                                 <p id="product-name-error" class="error-message"></p>
                             </div>
                             
                             <div class="form-group">
                                 <label for="product-description">Description <span class="required">*</span></label>
-                                <textarea id="product-description" rows="6" required>High-performance laptop</textarea>
+                                <textarea id="product-description" rows="6" required></textarea>
                                 <p id="product-description-error" class="error-message"></p>
                             </div>
                             
@@ -164,14 +146,14 @@
                                 <label for="product-price">Price <span class="required">*</span></label>
                                 <div class="price-input">
                                     <span class="currency">$</span>
-                                    <input type="number" id="product-price" value="15000" step="0.01" min="0" required>
+                                    <input type="number" id="product-price" step="0.01" min="0" required>
                                 </div>
                                 <p id="product-price-error" class="error-message"></p>
                             </div>
                             
                             <div class="form-group">
                                 <label for="product-capacity">Stock Quantity <span class="required">*</span></label>
-                                <input type="number" id="product-capacity" value="20" min="0" required>
+                                <input type="number" id="product-capacity" min="0" required>
                                 <p id="product-capacity-error" class="error-message"></p>
                             </div>
                         </div>
@@ -186,10 +168,9 @@
                             <h3 class="section-title">Seller Information</h3>
                              <div class="form-group">
                                 <label for="product-seller">Seller</label>
-                                <select id="product-seller" disabled>
+                                <select id="product-seller" >
                                     <option value="1" selected>Tech Store</option>
                                 </select>
-                                <small style="display: block; margin-top: 0.25rem; font-size: 0.75rem; color: #6b7280;">Seller cannot be changed after product creation</small>
                             </div>
                         </div>
                     </div>
