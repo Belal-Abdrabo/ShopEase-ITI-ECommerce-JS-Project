@@ -6,7 +6,11 @@
     <title>ShopEase | My Profile</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/profile.css">
+    <link rel="stylesheet" href="../../css/products.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../../Js/user-profile.js"></script>
+    <script src="../../Js/common.js"></script>
+    
 </head>
 <body>
     <header>
@@ -20,12 +24,10 @@
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </div>
                 <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="products.html">Products</a>
-                    <a href="categories.html">Categories</a>
-                    <a href="login.html">Login</a>
-                    <a href="register.html">Register</a>
-                    <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="../../index.html">Home</a>
+                    <a href="../products.html">Products</a>
+                    <a href="../categories.html">Categories</a>
+                    <a href="../customer/cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
                 </div>
             </div>
         </nav>
@@ -43,16 +45,16 @@
                 <div class="profile-sidebar">
                     <div class="profile-header">
                         <div class="profile-avatar">
-                            <img src="images/avatar1.jpg" alt="User Avatar">
+                            <img class="userimg" src="../../images/DefaultProfile.webp" alt="User Avatar">
                         </div>
                         <div class="profile-info">
-                            <h3>Sarah Johnson</h3>
-                            <p>sarah.johnson@example.com</p>
-                            <span class="member-since">Member since: Jan 15, 2025</span>
+                            <h3 class="username">Sarah Johnson</h3>
+                            <p class="useremail">sarah.johnson@example.com</p>
                         </div>
                     </div>
                     <nav class="profile-nav">
                         <ul>
+                            
                             <li class="active">
                                 <a href="#personal-info" data-tab="personal-info">
                                     <i class="fas fa-user"></i> Personal Information
@@ -63,12 +65,15 @@
                                     <i class="fas fa-shopping-bag"></i> My Orders
                                 </a>
                             </li>
-                            <li>
+                            <!-- Future Edition -->
+                            <!-- <li>
                                 <a href="#addresses" data-tab="addresses">
                                     <i class="fas fa-map-marker-alt"></i> My Addresses
                                 </a>
-                            </li>
-                            <li>
+                            </li> -->
+
+                            
+                            <!-- <li>
                                 <a href="#wishlist" data-tab="wishlist">
                                     <i class="fas fa-heart"></i> Wishlist
                                 </a>
@@ -82,7 +87,7 @@
                                 <a href="#account-settings" data-tab="account-settings">
                                     <i class="fas fa-cog"></i> Account Settings
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </nav>
                     <div class="profile-actions">
@@ -123,8 +128,8 @@
                                     <input type="tel" id="phone" value="+1 (555) 123-4567" disabled>
                                 </div>
                                 <div class="form-group">
-                                    <label for="birth-date">Date of Birth</label>
-                                    <input type="date" id="birth-date" value="1990-05-15" disabled>
+                                    <label for="Address">Address</label>
+                                    <input type="text" id="adress" value="" disabled>
                                 </div>
                                 <div class="form-group">
                                     <label for="gender">Gender</label>
@@ -143,13 +148,23 @@
                         </div>
                     </div>
 
+
+
+
+
+
+
+
+
+
+                    
                     <!-- Orders Tab -->
                     <div class="profile-tab" id="orders">
                         <div class="tab-header">
                             <h2>My Orders</h2>
                         </div>
 
-                        <div class="orders-filter">
+                        <!-- <div class="orders-filter">
                             <div class="filter-group">
                                 <label for="order-status">Filter by Status</label>
                                 <select id="order-status">
@@ -171,10 +186,10 @@
                                     <option value="last-year">Last Year</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="orders-list">
-                            <div class="order-card">
+                            <!-- <div class="order-card">
                                 <div class="order-header">
                                     <div class="order-info">
                                         <span class="order-id">Order #ORD-5289</span>
@@ -204,9 +219,9 @@
                                         <button class="btn btn-primary btn-sm">Track Order</button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <div class="order-card">
+                            <!-- <div class="order-card">
                                 <div class="order-header">
                                     <div class="order-info">
                                         <span class="order-id">Order #ORD-5275</span>
@@ -244,7 +259,7 @@
                                         <button class="btn btn-primary btn-sm">Track Order</button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="order-card">
                                 <div class="order-header">
@@ -263,6 +278,7 @@
                                             <h4>Coffee Maker</h4>
                                             <p class="item-price">$89.99</p>
                                             <p class="item-quantity">Qty: 1</p>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -280,16 +296,14 @@
                         </div>
 
                         <div class="pagination">
-                            <button class="btn-page" disabled><i class="fas fa-chevron-left"></i></button>
-                            <button class="btn-page active">1</button>
-                            <button class="btn-page">2</button>
-                            <button class="btn-page">3</button>
-                            <button class="btn-page"><i class="fas fa-chevron-right"></i></button>
+                            <a href="#" id="l" class="page-link next"><i class="fas fa-chevron-left"></i></a>
+                                <h2 class="h2-pag">1</h2>
+                            <a href="#" id="r" class="page-link next"><i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
 
-                    <!-- Addresses Tab -->
-                    <div class="profile-tab" id="addresses">
+                    <!-- Future Edition Addresses  -->
+                    <!-- <div class="profile-tab" id="addresses">
                         <div class="tab-header">
                             <h2>My Addresses</h2>
                             <button class="btn btn-primary" id="add-address">
@@ -310,229 +324,16 @@
                                     <button class="btn btn-outline btn-sm">Edit</button>
                                     <button class="btn btn-outline btn-sm">Delete</button>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <div class="address-card">
-                                <h3>Work</h3>
-                                <p>Sarah Johnson</p>
-                                <p>456 Business Ave, Suite 200</p>
-                                <p>New York, NY 10002</p>
-                                <p>United States</p>
-                                <p>Phone: +1 (555) 987-6543</p>
-                                <div class="address-actions">
-                                    <button class="btn btn-outline btn-sm">Edit</button>
-                                    <button class="btn btn-outline btn-sm">Delete</button>
-                                    <button class="btn btn-outline btn-sm">Set as Default</button>
-                                </div>
-                            </div>
+                         
                         </div>
                     </div>
 
-                    <!-- Wishlist Tab -->
-                    <div class="profile-tab" id="wishlist">
-                        <div class="tab-header">
-                            <h2>My Wishlist</h2>
-                        </div>
 
-                        <div class="wishlist-grid">
-                            <div class="product-card">
-                                <div class="wishlist-remove">
-                                    <button class="btn-icon"><i class="fas fa-times"></i></button>
-                                </div>
-                                <img src="images/product5.jpg" alt="Bluetooth Speaker">
-                                <div class="product-info">
-                                    <h3>Bluetooth Speaker</h3>
-                                    <div class="product-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span>(112)</span>
-                                    </div>
-                                    <p class="product-price">$79.99</p>
-                                    <button class="btn btn-primary btn-block">Add to Cart</button>
-                                </div>
-                            </div>
 
-                            <div class="product-card">
-                                <div class="wishlist-remove">
-                                    <button class="btn-icon"><i class="fas fa-times"></i></button>
-                                </div>
-                                <img src="images/product6.jpg" alt="Wireless Earbuds">
-                                <div class="product-info">
-                                    <h3>Wireless Earbuds</h3>
-                                    <div class="product-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <span>(95)</span>
-                                    </div>
-                                    <p class="product-price">$99.99</p>
-                                    <button class="btn btn-primary btn-block">Add to Cart</button>
-                                </div>
-                            </div>
 
-                            <div class="product-card">
-                                <div class="wishlist-remove">
-                                    <button class="btn-icon"><i class="fas fa-times"></i></button>
-                                </div>
-                                <img src="images/product7.jpg" alt="Fast Wireless Charger">
-                                <div class="product-info">
-                                    <h3>Fast Wireless Charger</h3>
-                                    <div class="product-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <span>(78)</span>
-                                    </div>
-                                    <p class="product-price">$39.99</p>
-                                    <button class="btn btn-primary btn-block">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Payment Methods Tab -->
-                    <div class="profile-tab" id="payment-methods">
-                        <div class="tab-header">
-                            <h2>Payment Methods</h2>
-                            <button class="btn btn-primary" id="add-payment">
-                                <i class="fas fa-plus"></i> Add Payment Method
-                            </button>
-                        </div>
-
-                        <div class="payment-methods-list">
-                            <div class="payment-card">
-                                <div class="payment-badge default">Default</div>
-                                <div class="payment-icon">
-                                    <i class="fab fa-cc-visa"></i>
-                                </div>
-                                <div class="payment-details">
-                                    <h3>Visa ending in 4567</h3>
-                                    <p>Expires: 05/2028</p>
-                                </div>
-                                <div class="payment-actions">
-                                    <button class="btn btn-outline btn-sm">Edit</button>
-                                    <button class="btn btn-outline btn-sm">Delete</button>
-                                </div>
-                            </div>
-
-                            <div class="payment-card">
-                                <div class="payment-icon">
-                                    <i class="fab fa-cc-mastercard"></i>
-                                </div>
-                                <div class="payment-details">
-                                    <h3>Mastercard ending in 8901</h3>
-                                    <p>Expires: 09/2026</p>
-                                </div>
-                                <div class="payment-actions">
-                                    <button class="btn btn-outline btn-sm">Edit</button>
-                                    <button class="btn btn-outline btn-sm">Delete</button>
-                                    <button class="btn btn-outline btn-sm">Set as Default</button>
-                                </div>
-                            </div>
-
-                            <div class="payment-card">
-                                <div class="payment-icon">
-                                    <i class="fab fa-paypal"></i>
-                                </div>
-                                <div class="payment-details">
-                                    <h3>PayPal</h3>
-                                    <p>sarah.johnson@example.com</p>
-                                </div>
-                                <div class="payment-actions">
-                                    <button class="btn btn-outline btn-sm">Edit</button>
-                                    <button class="btn btn-outline btn-sm">Delete</button>
-                                    <button class="btn btn-outline btn-sm">Set as Default</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Account Settings Tab -->
-                    <div class="profile-tab" id="account-settings">
-                        <div class="tab-header">
-                            <h2>Account Settings</h2>
-                        </div>
-
-                        <div class="settings-section">
-                            <h3>Email Notifications</h3>
-                            <div class="settings-options">
-                                <div class="settings-option">
-                                    <div class="option-info">
-                                        <h4>Order Updates</h4>
-                                        <p>Receive notifications about your order status</p>
-                                    </div>
-                                    <label class="toggle-switch">
-                                        <input type="checkbox" checked>
-                                        <span class="toggle-slider"></span>
-                                    </label>
-                                </div>
-                                <div class="settings-option">
-                                    <div class="option-info">
-                                        <h4>Promotions and Deals</h4>
-                                        <p>Receive notifications about sales and special offers</p>
-                                    </div>
-                                    <label class="toggle-switch">
-                                        <input type="checkbox" checked>
-                                        <span class="toggle-slider"></span>
-                                    </label>
-                                </div>
-                                <div class="settings-option">
-                                    <div class="option-info">
-                                        <h4>Product Updates</h4>
-                                        <p>Receive notifications about new products and restocks</p>
-                                    </div>
-                                    <label class="toggle-switch">
-                                        <input type="checkbox">
-                                        <span class="toggle-slider"></span>
-                                    </label>
-                                </div>
-                                <div class="settings-option">
-                                    <div class="option-info">
-                                        <h4>Newsletter</h4>
-                                        <p>Receive our weekly newsletter</p>
-                                    </div>
-                                    <label class="toggle-switch">
-                                        <input type="checkbox" checked>
-                                        <span class="toggle-slider"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="settings-section">
-                            <h3>Security</h3>
-                            <div class="settings-form">
-                                <form id="password-form">
-                                    <div class="form-group">
-                                        <label for="current-password">Current Password</label>
-                                        <input type="password" id="current-password">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="new-password">New Password</label>
-                                        <input type="password" id="new-password">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="confirm-password">Confirm New Password</label>
-                                        <input type="password" id="confirm-password">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Change Password</button>
-                                </form>
-                            </div>
-                        </div>
-
-                        <div class="settings-section">
-                            <h3>Delete Account</h3>
-                            <p class="warning-text">Warning: This action cannot be undone. All your data will be permanently deleted.</p>
-                            <button class="btn btn-danger">Delete Account</button>
-                        </div>
-                    </div>
                 </div>
             </section>
         </div>

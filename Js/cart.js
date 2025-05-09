@@ -196,7 +196,7 @@ window.addEventListener('load', function (evernt) {
     checkout.addEventListener("click", () => {
         if (usercart.items.length > 0) {
             const itemsToCheckout = [...usercart.items]; //taking copy of items 
-    
+            const today = new Date();
             fetch("http://localhost:3000/cartcheckout", {
                 method: 'POST',
                 headers: {
@@ -207,6 +207,8 @@ window.addEventListener('load', function (evernt) {
                     items: itemsToCheckout,
                     amount: totalp * 0.08 + 10 + totalp,
                     status: "processing",
+                    orderdate:`${today.getDate().toString().padStart(2, '0')}/${(today.getMonth()+1).toString().padStart(2, '0')}/${today.getFullYear()}`
+                   
                 })
             })
             .then(res => res.json())
@@ -230,6 +232,8 @@ window.addEventListener('load', function (evernt) {
                     //     return;
                     // }
                     const newCapacity = product.capacity - item.quantity;
+                    let statust = "available";
+                    if(newCapacity == 0) {statust = "out of stock";}
                     // if (newCapacity < 0) {
                     //     console.log(` Insufficient stock for product ${item.productId}`);
                     //     return;
@@ -237,12 +241,13 @@ window.addEventListener('load', function (evernt) {
                     fetch(`http://localhost:3000/products/${item.productId}`, {
                         method: 'PATCH',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ capacity: newCapacity })
+                        body: JSON.stringify({ capacity: newCapacity, status: statust })
+
                     })
                    
                 });
                 document.querySelectorAll(".cart-item").forEach(item => item.remove());
-                alert("Checkout successful! Your order has been placed.");
+                alert("Checkout successful! Your order has been placed.");  
                 console.log("Checkout successful! Your order has been placed.");
                 window.location.href = '../../index.html'; // Redirect to home page or order confirmation page
             })

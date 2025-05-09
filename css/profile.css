@@ -172,6 +172,33 @@
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
+#reviewForm {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1rem;
+  background-color: #f9fafb;
+  margin-top: 1rem;
+  max-width: 500px;
+  
+}
+
+#reviewForm textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  resize: vertical;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+#reviewForm button {
+  margin-top: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
 
 .filter-group {
   display: flex;
@@ -195,7 +222,10 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.9rem;
+  justify-content: center;
+  
+
 }
 
 .order-card {
@@ -207,7 +237,8 @@
 .order-header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  align-items: center;
+  padding: 0.75rem 1rem; /* قللنا البادينج العمودي */
   background-color: #f9fafb;
   border-bottom: 1px solid var(--border-color);
 }
@@ -215,6 +246,9 @@
 .order-info {
   display: flex;
   flex-direction: column;
+  gap: 0.2rem;
+  margin: 0; 
+  padding: 0; 
 }
 
 .order-id {
@@ -230,29 +264,49 @@
   padding: 1rem;
 }
 
-.order-item {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
+
 
 .order-item:last-child {
   margin-bottom: 0;
 }
 
-.order-item img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: var(--radius);
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; 
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
 }
+
+.order-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 0.2rem;
+}
+
+
 
 .item-details h4 {
-  margin-bottom: 0.25rem;
+  margin: 0;
 }
 
-.item-price {
-  font-weight: 600;
+.item-price,.item-quantity {
+  font-size: 0.875rem;
+  color: var(--text-light);
 }
 
 .item-quantity {
@@ -280,13 +334,20 @@
 
 .order-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
+  justify-content: flex-end;
+}
+.order-status {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 /* Addresses */
 .addresses-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  justify-content: center;
   gap: 1rem;
 }
 

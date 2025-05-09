@@ -362,7 +362,8 @@ const handleAddToCart = async function(productId, sellerId) {
             userCart.items.push({
                 productId: productId,
                 quantity: 1,
-                sellerId: sellerId
+                sellerId: sellerId,
+                status: "processing"
             });
         }
         else{
@@ -385,6 +386,32 @@ const handleAddToCart = async function(productId, sellerId) {
         console.error("Error updating cart:", err);
     }
 }
+
+
+
+let cartSize = 0; 
+
+const cartsize = function() {
+    const currentUser = isAuthenticated();
+    const cartUrl = "http://localhost:3000/cart";
+
+    fetch(`${cartUrl}?customerId=${currentUser.id}`)
+        .then(res => res.json())
+        .then(carts => {
+            if (carts.length > 0) {
+                const userCart = carts[0];
+                cartSize = userCart.items.length; // Set global variable to cart size
+                console.log("Cart size:", cartSize);
+            } else {
+                cartSize = 0; 
+                console.log("No cart found for the user.");
+            }
+        })
+        .catch(err => console.error("Error fetching cart size:", err));
+}
+
+
+
 
 
 // const handleAddToCart = function(productId,sellerId) {

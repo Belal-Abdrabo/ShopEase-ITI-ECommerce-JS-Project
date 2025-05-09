@@ -8,7 +8,7 @@ window.addEventListener('load', function () {
     fetch(productUrl)
       .then(res => res.json())
       .then(product =>  {
-        for(let f of product){
+        for(let f of product){  
           document.getElementById('product-name').textContent = f.name;
           document.getElementById('product-price').textContent = `${f.price} EGP`;
           //document.getElementById('product-img').src = "../" + f.image;

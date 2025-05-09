@@ -38,13 +38,13 @@ window.addEventListener('load', function () {
         const currentItems = filteredProducts.slice(start, end);
 
         container.innerHTML = '';
-        currentItems.forEach(product => {
+        currentItems.filter(i => i.status != "pending" || i.status != "rejected").forEach(product => {
             const div = document.createElement('div');
             div.innerHTML = `
                 <div class="product-card">
-                    <div class="product-badge">New</div>
+                    <div class="product-badge">${product.status}</div>
                     <div class="product-image">
-                        <img src="../${product.image}" alt="${product.name}">
+                        <img src="${product.image}" alt="${product.name}">
                         <div class="product-actions">
                             <button class="action-btn"><i class="fas fa-heart"></i></button>
                             <button class="action-btn cartprod" product-id=${product.id}><i class="fas fa-shopping-cart"></i></button>
@@ -80,9 +80,9 @@ window.addEventListener('load', function () {
             
             
         });
-
+        
         const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
-        pag.innerHTML = `<h2> ${page}</h2>`;
+        pag.innerHTML = `<h2> ${page} of ${totalPages}</h2>`;
     }
     fetch(productUrl)
         .then(response => response.json())
@@ -100,7 +100,9 @@ window.addEventListener('load', function () {
             renderProducts(currentPage);
         });
     });
+    // Add event listeners for pagination buttons
 
+   
     next.addEventListener('click', function () {
         const filtered = getFilteredProducts();
         const totalPages = Math.ceil(filtered.length / itemsPerPage);
@@ -116,5 +118,7 @@ window.addEventListener('load', function () {
             renderProducts(currentPage);
         }
     });
+
+
   
 });
