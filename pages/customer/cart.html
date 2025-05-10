@@ -6,11 +6,10 @@
     <title>ShopEase | Shopping Cart</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/cart.css">
-    <a href="./customer/user-profile.html" class="cart-icon"><i class="fas fa-shopping-cart">dd</i></a>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../Js/common.js"></script>
     <script src="../../Js/cart.js"></script>
-    
 </head>
 <body>
     <header>
@@ -28,6 +27,8 @@
                     <a href="../products.html">Products</a>
                     <a href="../categories.html">Categories</a>
                     <a href="#" class="cart-icon active"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="../../pages/customer/user-profile.html" class="cart-icon"><img style="width:50px; " src="../../images/Default.webp" alt="User Avatar"></a>
+                    
                     <button id="logout">Logout</button> 
                 </div>
                 <div class="mobile-menu-btn">
@@ -232,6 +233,22 @@
             </div>
         </div>
     </footer>
+        <div id="toast" style="
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #4BB543;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        display: none;
+        z-index: 1000;
+        font-family: sans-serif;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    ">
+        ✅ Checkout successful! Your order has been placed.
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>

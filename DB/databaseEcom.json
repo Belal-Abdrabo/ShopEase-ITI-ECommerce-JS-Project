@@ -38,6 +38,14 @@
       "password": "123456",
       "role": "customer",
       "registrationDate": "2025-05-08"
+    },
+    {
+      "id": "23f7",
+      "userName": "ABDOO MOZA",
+      "email": "ABDOO@GMAIL.COM",
+      "password": "123456",
+      "role": "customer",
+      "registrationDate": "2025-05-09"
     }
   ],
   "products": [
@@ -48,9 +56,9 @@
       "image": "https://f.nooncdn.com/p/v1662029536/N33956021A_1.jpg",
       "categoryId": 1,
       "sellerId": "1",
-      "capacity": 7,
+      "capacity": 0,
       "productDescription": "Capture every moment with this high-quality camera. Perfect for both photography enthusiasts and professionals, this camera provides exceptional image quality, a variety of settings, and ease of use for every situation.",
-      "status": "available"
+      "status": "out of stock"
     },
     {
       "id": "2",
@@ -67,7 +75,7 @@
       "id": "3",
       "name": "Iphone 16 Pro Max",
       "price": 15000,
-      "capacity": 13,
+      "capacity": 10,
       "image": "https://f.nooncdn.com/p/pnsku/N70105592V/45/_/1726043633/aa2f8393-ed30-467b-b456-c8b10fad6e8f.jpg ",
       "categoryId": 1,
       "sellerId": "1",
@@ -385,7 +393,7 @@
     {
       "id": "32",
       "name": "Cosarks Bimble for Youth",
-      "price": 15000,
+      "price": 900,
       "capacity": 20,
       "image": "https://f.nooncdn.com/p/v1656332407/N20615172A_1.jpg",
       "categoryId": 4,
@@ -396,7 +404,7 @@
     {
       "id": "33",
       "name": "Lattafa Mayar",
-      "price": 15000,
+      "price": 3000,
       "capacity": 20,
       "image": "https://f.nooncdn.com/p/pzsku/Z256BE86A85CCE09792FFZ/45/1746286916/ad6fd0b0-2c62-41de-9938-c6141c415f75.jpg",
       "categoryId": 4,
@@ -429,7 +437,7 @@
     {
       "id": "36",
       "name": "Mascara Lash Princess Follium",
-      "price": 15000,
+      "price": 17000,
       "capacity": 20,
       "image": "https://f.nooncdn.com/p/v1672653538/N11031427A_1.jpg",
       "categoryId": 4,
@@ -440,7 +448,7 @@
     {
       "id": "37",
       "name": "Lanig Holds Lips",
-      "price": 15000,
+      "price": 1000,
       "capacity": 20,
       "image": "https://f.nooncdn.com/p/v1683885789/N41889543A_1.jpg?width=240",
       "categoryId": 4,
@@ -451,7 +459,7 @@
     {
       "id": "38",
       "name": "Shodai Soccer Socks",
-      "price": 15000,
+      "price": 1300,
       "capacity": 20,
       "image": "https://f.nooncdn.com/p/pzsku/ZB91FAB61099563630F52Z/45/_/1732626502/71758d5e-368c-4442-9e5b-7ce3ee496764.jpg",
       "categoryId": 5,
@@ -462,7 +470,7 @@
     {
       "id": "39",
       "name": "Mikasa Football FT-5",
-      "price": 15000,
+      "price": 1100,
       "capacity": 20,
       "image": "https://f.nooncdn.com/p/v1579521777/N33641733A_1.jpg?width=240",
       "categoryId": 5,
@@ -473,7 +481,7 @@
     {
       "id": "40",
       "name": "CM Football 434",
-      "price": 15000,
+      "price": 50000,
       "capacity": 20,
       "image": "https://f.nooncdn.com/p/pzsku/Z3BC7C090EE4E4BD39E59Z/45/_/1739358089/55dacaf3-c17e-4c1c-a07f-dfe7f2f29abd.jpg",
       "categoryId": 5,
@@ -484,7 +492,7 @@
     {
       "id": "41",
       "name": "Adidas Strips Gloves",
-      "price": 15000,
+      "price": 2000,
       "capacity": 20,
       "image": "https://f.nooncdn.com/p/pzsku/ZC0B5EC27C6D29D8B2B43Z/45/_/1725456324/d7efeb8b-69da-4fe8-8139-0ce7a74e68a9.jpg",
       "categoryId": 5,
@@ -495,7 +503,7 @@
     {
       "id": "42",
       "name": "Anti-latex for Yoga",
-      "price": 15000,
+      "price": 5000,
       "capacity": 20,
       "image": "https://f.nooncdn.com/p/v1614198428/N44712782A_1.jpg",
       "categoryId": 5,
@@ -506,7 +514,7 @@
     {
       "id": "43",
       "name": "Abdominal Training Device",
-      "price": 15000,
+      "price": 2500,
       "capacity": 20,
       "image": "https://f.nooncdn.com/p/v1614190796/N44712638A_1.jpg",
       "categoryId": 5,
@@ -517,7 +525,7 @@
     {
       "id": "44",
       "name": "Scooter for Kid's",
-      "price": 15000,
+      "price": 1000,
       "capacity": 20,
       "image": "https://f.nooncdn.com/p/pzsku/Z75686A3F8071B9C82DD3Z/45/1741557727/11ac0f9f-2002-451a-9cea-9de2569a7dbb.jpg",
       "categoryId": 6,
@@ -528,7 +536,7 @@
     {
       "id": "45",
       "name": "Balladon Trouth",
-      "price": 15000,
+      "price": 1500,
       "capacity": 20,
       "image": "https://f.nooncdn.com/p/v1636612527/N13712119A_1.jpg",
       "categoryId": 6,
@@ -781,7 +789,14 @@
     {
       "id": "fff7",
       "customerId": "c56e",
-      "items": [],
+      "items": [
+        {
+          "productId": 3,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "pending"
+        }
+      ],
       "status": "processing"
     }
   ],
@@ -910,43 +925,222 @@
       "amount": 32410,
       "status": "processing",
       "orderdate": "09/05/2025"
+    },
+    {
+      "id": "eaeb",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 3,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        }
+      ],
+      "amount": 16210,
+      "status": "processing",
+      "orderdate": "09/05/2025"
+    },
+    {
+      "id": "ae48",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 2,
+          "sellerId": "1",
+          "status": "processing"
+        },
+        {
+          "productId": 3,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        }
+      ],
+      "amount": 48610,
+      "status": "processing",
+      "orderdate": "09/05/2025"
+    },
+    {
+      "id": "206b",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        }
+      ],
+      "amount": 16210,
+      "status": "processing",
+      "orderdate": "09/05/2025"
+    },
+    {
+      "id": "7909",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 3,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        }
+      ],
+      "amount": 16210,
+      "status": "pending",
+      "orderdate": "10/05/2025"
+    },
+    {
+      "id": "4246",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 3,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        }
+      ],
+      "amount": 16210,
+      "status": "pending",
+      "orderdate": "10/05/2025"
+    },
+    {
+      "id": "1e3d",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 3,
+          "sellerId": "1",
+          "status": "processing"
+        }
+      ],
+      "amount": 48610,
+      "status": "pending",
+      "orderdate": "10/05/2025"
+    },
+    {
+      "id": "4d3f",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        }
+      ],
+      "amount": 16210,
+      "status": "pending",
+      "orderdate": "10/05/2025"
     }
   ],
   "review": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "productId": 22,
       "sellerId": 223,
-      "orderReview": "fafa"
+      "orderReview": "on fire"
     },
     {
       "id": "b9c7",
-      "orderReview": "afafa",
+      "orderReview": "top el top",
       "productId": "3",
       "userId": "c56e",
       "sellerId": "1"
     },
     {
       "id": "db3a",
-      "orderReview": "affafaf",
+      "orderReview": "top",
       "productId": "3",
       "userId": "c56e",
       "sellerId": "1"
     },
     {
       "id": "86dd",
-      "orderReview": "sgsg",
+      "orderReview": "on fire",
       "productId": "3",
       "userId": "c56e",
       "sellerId": "1"
     },
     {
       "id": "fc21",
-      "orderReview": "bmhbhnmvbhjb",
+      "orderReview": "to7fa",
       "productId": "1",
       "userId": "c56e",
       "sellerId": "1"
+    },
+    {
+      "id": "65b1",
+      "orderReview": "GAMEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaD",
+      "productId": "3",
+      "userId": "c56e",
+      "sellerId": "1"
+    },
+    {
+      "id": "4719",
+      "orderReview": "to7ffa",
+      "productId": "5",
+      "userId": "c56e",
+      "sellerId": "1",
+      "date": "2025-05-10T13:09:49.112Z"
+    },
+    {
+      "id": "f57d",
+      "orderReview": "ganj",
+      "productId": "8",
+      "userId": "c56e",
+      "sellerId": "1",
+      "date": "today.getDate().toString().padStart(2, '0')}/05/ 2025"
+    },
+    {
+      "id": "9063",
+      "orderReview": "afaf",
+      "productId": "3",
+      "userId": "c56e",
+      "sellerId": "1",
+      "date": "today.getDate().toString().padStart(2, '0')}/05/ 2025"
+    },
+    {
+      "id": "8a95",
+      "orderReview": "afaf",
+      "productId": "5",
+      "userId": "c56e",
+      "sellerId": "1",
+      "date": "10/05/2025"
+    },
+    {
+      "id": "6021",
+      "orderReview": "hdh",
+      "productId": "5",
+      "userId": "c56e",
+      "sellerId": "1",
+      "date": "10/05/2025"
+    },
+    {
+      "id": "94b9",
+      "orderReview": "fafaf",
+      "userId": "c56e",
+      "rating": "4",
+      "date": "10/05/2025"
+    },
+    {
+      "id": "eeda",
+      "orderReview": "fafafaf",
+      "userId": "c56e",
+      "rating": "3",
+      "date": "10/05/2025"
+    },
+    {
+      "id": "0eb9",
+      "orderReview": "GAGAG",
+      "userId": "c56e",
+      "rating": "3",
+      "date": "10/05/2025"
     }
   ]
 }
