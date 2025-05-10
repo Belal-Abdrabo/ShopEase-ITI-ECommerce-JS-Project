@@ -1,4 +1,4 @@
-// Wait for the page to load
+adminCheckAuthentication();
 window.addEventListener('load', function() {
     const url = "http://localhost:3000/cartcheckout"; // Base URL for fetching data
     const orderTableBody = document.querySelector('#admin-orders-table');

@@ -1,3 +1,20 @@
+const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
+if(user)
+{
+    
+    if(user.role == "admin")
+    {
+        window.location.href = "./admin/admin-dashboard.html";
+    }
+    else if(user.role == "seller")
+    {
+        window.location.href = "./seller/seller-dashboard.html";
+    }
+    else if(user.role == "customer")
+    {
+        window.location.href = "../index.html";
+    }
+}
 window.addEventListener('load', function(){
     const form = document.querySelector("#login-form");
     const email = document.querySelector("#email");
@@ -7,23 +24,6 @@ window.addEventListener('load', function(){
     const passwordErrorMessage = document.querySelector("#password-login-error");
     const url = "http://localhost:3000/users";
 
-    const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
-    if(user)
-    {
-        
-        if(user.role == "admin")
-        {
-            window.location.href = "./admin/admin-dashboard.html";
-        }
-        else if(user.role == "seller")
-        {
-            window.location.href = "./seller/seller-dashboard.html";
-        }
-        else if(user.role == "customer")
-        {
-            window.location.href = "../index.html";
-        }
-    }
     form.addEventListener("keyup", function(event){
         if(event.target.id == "email")
         {
@@ -117,6 +117,8 @@ window.addEventListener('load', function(){
     }
   
     const login = (_email, _password) => {
+        console.log(`${url}?email=${_email}`);
+        
         fetch(`${url}?email=${_email}`)
             .then((result) => result.json())
             .then((users) => {
@@ -159,7 +161,8 @@ window.addEventListener('load', function(){
                         loginErrorMessage.style.display = "block";
                         loginErrorMessage.textContent = "❌ Wrong password.";
                     }
-                } else {
+                } 
+                else {
                     loginErrorMessage.style.display = "block";
                     loginErrorMessage.textContent = "❌ invalid login credentials";
                 }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src ="./Js/common.js"></script>
     <script src="./Js/index.js"></script>
+    <script src="./Js/index-access.js"></script>
 </head>
 <body>
     <header>
@@ -24,14 +25,14 @@
                     <a href="./index.html" class="active">Home</a>
                     <a href="./pages/products.html">Products</a>
                     <a href="./pages/categories.html">Categories</a>
-                    <a href="./pages/login.html" id="login">Login</a>
-                    <a href="./pages/register.html" id="register">Register</a>
-                    <a href="./pages/customer/cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
-                    <a href="./pages/customer/user-profile.html" class="profile-link"><i class="fas fa-user-circle"></i>Profile</a> <!-- Add this new logout link -->
-                    <a href="login.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <a href="./pages/login.html" style="display: none;" id="login">Login</a>
+                    <a href="./pages/register.html" style="display: none;" id="register">Register</a>
+                    <a href="admin-dashboard.html" style="display: none;" id="dashboard" class="dashboard-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="./pages/customer/cart.html" style="display: none;" id="cart" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="./pages/customer/user-profile.html" style="display: none;" id="profile" class="profile-link"><i class="fas fa-user-circle"></i>Profile</a> <!-- Add this new logout link -->
+                    <a href="login.html" style="display: none;" id="logout" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
             </div>
-       
         </nav>
     </header>
 

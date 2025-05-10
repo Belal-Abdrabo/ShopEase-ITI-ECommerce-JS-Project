@@ -1,14 +1,6 @@
 // Wait for the page to load
+let currentUser = sellerCheckAuthentication();
 window.addEventListener('load', function() {
-    let currentUser = isAuthenticated();
-    if(currentUser)
-    {
-
-    }
-    else{
-        window.location.href = '../login.html';
-    }
-
     const url = "http://localhost:3000/cartcheckout"; // Base URL for fetching data
     const orderTableBody = document.querySelector('#admin-orders-table');
     

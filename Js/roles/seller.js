@@ -1,28 +1,5 @@
-// Admin (45%) 
-// Admins are responsible for managing the overall platform. Their tasks include 
-// monitoring user activities, managing the product catalog, and ensuring compliance 
-// with platform policies. 
-// Key Features: 
-// • User Management: 
-    // o Add, edit, or remove users (Customers and Sellers). 
-    // o Manage user roles and permissions. 
-// • Product Management: 
-    // o Approve or reject products submitted by Sellers. 
-    // o Edit or delete existing products. 
-// • Order Management: 
-    // o View and manage all orders. 
-
-
-   // adminCheckAuthentication();
-window.addEventListener("load", function() {
-    let currentUser = isAuthenticated();
-    if(currentUser)
-    {
-
-    }
-    else{
-        window.location.href = '../login.html';
-    }
+   let currentUser = sellerCheckAuthentication();
+   window.addEventListener("load", function() {
     const cards = document.querySelectorAll(".stat-number");
     const url = 'http://localhost:3000/';
     let productsCount;

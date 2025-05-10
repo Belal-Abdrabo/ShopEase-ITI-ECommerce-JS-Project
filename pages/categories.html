@@ -6,10 +6,10 @@
     <title>ShopEase | Categories</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/categories.css">
-    <a href="./customer/user-profile.html" class="cart-icon"><i class="fas fa-shopping-cart">dd</i></a>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="../Js/common.js"></script>
     <script src="../Js/categories.js"></script>
+    <script src="../Js/category-access.js"></script>
 </head>
 <body>
     <header>
@@ -23,16 +23,17 @@
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </div>
                 <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="products.html">Products</a>
-                    <a href="categories.html" class="active">Categories</a>
-                    <a href="login.html">Login</a>
-                    <a href="register.html">Register</a>
-                    <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
-                    <a href="./pages/customer/user-profile.html" class="cart-icon"><img style="width:50px;" src="../images/Default.webp" alt="User Avatar"></a>
-
+                    <a href="../index.html">Home</a>
+                    <a href="./products.html">Products</a>
+                    <a href="./categories.html" class="active">Categories</a>
+                    <a href="./login.html" style="display: none;" id="login">Login</a>
+                    <a href="./register.html" style="display: none;" id="register">Register</a>
+                    <a href="admin-dashboard.html" style="display: none;" id="dashboard" class="dashboard-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="./customer/cart.html" style="display: none;" id="cart" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="./customer/user-profile.html" style="display: none;" id="profile" class="profile-link"><i class="fas fa-user-circle"></i>Profile</a>
+                    <a href="login.html" style="display: none;" id="logout" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
-                <div class="mobile-menu-btn">
+                <div class="mobile-menu-btn" style="display: none;">
                     <i class="fas fa-bars"></i>
                 </div>
             </div>
