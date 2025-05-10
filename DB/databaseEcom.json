@@ -757,7 +757,31 @@
     },
     {
       "id": "2",
-      "name": "Accessories"
+      "name": "Fashion"
+    },
+    {
+      "id": "3",
+      "name": "Home & Kitchen"
+    },
+    {
+      "id": "4",
+      "name": "Beauty & Personal Care"
+    },
+    {
+      "id": "5",
+      "name": "Sports & Outdoors"
+    },
+    {
+      "id": "6",
+      "name": "Toys & Games"
+    },
+    {
+      "id": "7",
+      "name": "Books & Media"
+    },
+    {
+      "id": "8",
+      "name": "Health & Wellness"
     }
   ],
   "orders": [
@@ -830,6 +854,11 @@
       "id": "f28d",
       "customerId": "77ea",
       "items": []
+    },
+    {
+      "id": "a17a",
+      "customerId": "8acc",
+      "items": []
     }
   ],
   "cartcheckout": [
@@ -841,19 +870,6 @@
           "productId": 3,
           "quantity": 3,
           "status": "processing",
-          "sellerId": "1"
-        }
-      ],
-      "amount": 48610,
-      "status": "processing"
-    },
-    {
-      "id": "530c",
-      "customerId": "c56e",
-      "items": [
-        {
-          "productId": 3,
-          "quantity": 3,
           "sellerId": "1"
         }
       ],
