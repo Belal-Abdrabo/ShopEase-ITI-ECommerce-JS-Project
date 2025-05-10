@@ -1353,6 +1353,9 @@
 .logout-link:hover {
   color: var(--primary-color);
 }
+.logout-link i {
+  font-size: 1.5rem;
+}
   
 /* Dashboard Link Styles */
 .dashboard-link {

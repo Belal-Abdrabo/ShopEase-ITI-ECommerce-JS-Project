@@ -119,7 +119,7 @@ getAllProducts().then(products =>{
             }
             tr.innerHTML += `<td>
                 <div class="action-buttons">
-                    <a href="seller-edit-product.html?productId=${product.id}" class="btn btn-sm btn-secondary" title="Edit">
+                    <a href="./admin-product-edit.html?productId=${product.id}" class="btn btn-sm btn-secondary" title="Edit">
                         <i class="fas fa-edit"></i>
                     </a>
                 </div>
