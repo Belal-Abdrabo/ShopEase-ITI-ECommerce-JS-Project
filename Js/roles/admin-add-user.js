@@ -1,7 +1,5 @@
 //check if the user is logged in and has the role of admin
 adminCheckAuthentication();
-
-
 window.addEventListener("load", function () {
     const form = document.querySelector('#register-form');
     const fullName = document.querySelector('#fullname');
@@ -9,6 +7,7 @@ window.addEventListener("load", function () {
     const password = document.querySelector('#password');
     const confirmPassword = document.querySelector('#confirm-password');
     const accountTypeRadios = document.getElementsByName('account-type');
+    const genderTypeRadios = document.getElementsByName('gender');
     const termsCheckbox = document.querySelector('#terms');
 
     const nameError = document.querySelector('#fullname-error');
@@ -60,7 +59,7 @@ window.addEventListener("load", function () {
         // then use .find() to get the radio button that is currently checked,
         // and finally get its value ("customer" or "seller")
         const selectedRole = [...accountTypeRadios].find(r => r.checked).value;
-
+        const selectedGender = [...genderTypeRadios].find(r => r.checked).value;
         let isValid = true;
 
         // Validate again on submit
@@ -108,6 +107,8 @@ window.addEventListener("load", function () {
                         email: emailVal,
                         password: passwordVal,
                         role: selectedRole,
+                        gender: selectedGender,
+                        address: '',
                         registrationDate: new Date().toISOString().split('T')[0], // Format: YYYY-MM-DD
                     };
                     

@@ -1,3 +1,21 @@
+const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
+if(user)
+{
+    
+    if(user.role == "admin")
+    {
+        window.location.href = "./admin/admin-dashboard.html";
+    }
+    else if(user.role == "seller")
+    {
+        window.location.href = "./seller/seller-dashboard.html";
+    }
+    else if(user.role == "customer")
+    {
+        window.location.href = "../index.html";
+    }
+}
+
 window.addEventListener("load", function () {
     const form = document.querySelector('#register-form');
     const fullName = document.querySelector('#fullname');
@@ -5,6 +23,8 @@ window.addEventListener("load", function () {
     const password = document.querySelector('#password');
     const confirmPassword = document.querySelector('#confirm-password');
     const accountTypeRadios = document.getElementsByName('account-type');
+    const genderTypeRadios = document.getElementsByName('gender');
+
     const termsCheckbox = document.querySelector('#terms');
 
     const nameError = document.querySelector('#fullname-error');
@@ -13,24 +33,6 @@ window.addEventListener("load", function () {
     const confirmPasswordError = document.querySelector('#confirm-password-error');
 
     const url = "http://localhost:3000/";
-
-    const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
-    if(user)
-    {
-        
-        if(user.role == "admin")
-        {
-            window.location.href = "./admin/admin-dashboard.html";
-        }
-        else if(user.role == "seller")
-        {
-            window.location.href = "./seller/seller-dashboard.html";
-        }
-        else if(user.role == "customer")
-        {
-            window.location.href = "../index.html";
-        }
-    }
 
     const isValidEmail = (email) => {
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -74,7 +76,7 @@ window.addEventListener("load", function () {
         // then use .find() to get the radio button that is currently checked,
         // and finally get its value ("customer" or "seller")
         const selectedRole = [...accountTypeRadios].find(r => r.checked).value;
-
+        const selectedGender = [...genderTypeRadios].find(r => r.checked).value;
         let isValid = true;
 
         // Validate again on submit
@@ -125,6 +127,9 @@ window.addEventListener("load", function () {
                         email: emailVal,
                         password: passwordVal,
                         role: selectedRole,
+                        gender: selectedGender,
+                        address: '',
+                        phone:'',
                         registrationDate: new Date().toISOString().split('T')[0] // Format: YYYY-MM-DD
                     };
                     

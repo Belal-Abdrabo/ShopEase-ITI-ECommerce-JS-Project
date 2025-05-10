@@ -1,3 +1,4 @@
+adminCheckAuthentication();
 window.addEventListener('load', function() {
 
     // Get form elements by their IDs

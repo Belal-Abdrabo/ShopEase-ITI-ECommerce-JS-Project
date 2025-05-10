@@ -1,3 +1,4 @@
+const currentUser = customerCheckAuthentication();
 window.addEventListener('load', function () {
   const currentUser = isAuthenticated();
   let s = cartsize();

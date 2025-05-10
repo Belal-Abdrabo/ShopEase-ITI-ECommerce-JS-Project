@@ -1354,6 +1354,21 @@
   color: var(--primary-color);
 }
   
+/* Dashboard Link Styles */
+.dashboard-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+}
+
+.dashboard-link:hover {
+  color: var(--primary-color);
+}
+
+.dashboard-link i {
+  font-size: 1.1rem;
+}
   /* Responsive Styles */
   @media (min-width: 768px) {
     .auth-image {
@@ -1393,6 +1408,14 @@
   @media (max-width: 767px) {
     .nav-links {
       flex-wrap: wrap;
+  }
+  
+  .dashboard-link, .profile-link, .logout-link {
+      margin-top: 0.5rem;
+  }
+    .nav-links {
+      flex-wrap: wrap;
+    }
     .team-grid {
       grid-template-columns: 1fr;
       max-width: 400px;
@@ -1439,4 +1462,3 @@
     font-size: 0.875rem;
     margin-top: 0.5rem;
   }
-}

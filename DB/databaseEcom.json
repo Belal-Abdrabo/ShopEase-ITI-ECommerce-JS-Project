@@ -1,1 +1,1014 @@
-
+{
+  "users": [
+    {
+      "id": "b817",
+      "userName": "ahmed",
+      "email": "ahmed@gmail.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "edfe",
+      "userName": "belal",
+      "email": "fafaf@fafafa.com",
+      "password": "1478",
+      "role": "admin"
+    },
+    {
+      "userName": "ahmed",
+      "email": "ahmed@gmail.com",
+      "role": "customer",
+      "password": "123456",
+      "id": "a5fb"
+    },
+    {
+      "userName": "belal abdoo",
+      "email": "belal@gmail.com",
+      "role": "customer",
+      "password": "123456",
+      "address": "6 of october ",
+      "gender": "male",
+      "phone": "015567011223",
+      "id": "c56e"
+    },
+    {
+      "id": "d959",
+      "userName": "ahmed",
+      "email": "belal21@gmail.com",
+      "password": "123456",
+      "role": "customer",
+      "registrationDate": "2025-05-08"
+    },
+    {
+      "id": "1",
+      "userName": "tech.eg",
+      "email": "tech@gmail.com",
+      "password": "123456",
+      "role": "seller",
+      "registrationDate": "2025-05-07"
+    },
+    {
+      "id": "256",
+      "userName": "admin",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "role": "admin",
+      "registrationDate": "2025-05-09"
+    },
+    {
+      "id": "8acc",
+      "userName": "Mariem",
+      "email": "mariem@gmail.com",
+      "password": "123456@m",
+      "role": "customer",
+      "gender": "female",
+      "address": "",
+      "registrationDate": "2025-05-10"
+    },
+    {
+      "id": "77ea",
+      "userName": "zohra",
+      "email": "zohra@gmail.com",
+      "password": "123456",
+      "role": "customer",
+      "gender": "female",
+      "address": "",
+      "phone": "",
+      "registrationDate": "2025-05-10"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Canon camera",
+      "price": 15000,
+      "image": "https://f.nooncdn.com/p/v1662029536/N33956021A_1.jpg",
+      "categoryId": 1,
+      "sellerId": "1",
+      "capacity": 7,
+      "productDescription": "Capture every moment with this high-quality camera. Perfect for both photography enthusiasts and professionals, this camera provides exceptional image quality, a variety of settings, and ease of use for every situation.",
+      "status": "available"
+    },
+    {
+      "id": "2",
+      "name": "Airbods",
+      "price": 500,
+      "image": "https://f.nooncdn.com/p/v1686824034/N53409767A_1.jpg",
+      "capacity": 0,
+      "categoryId": 1,
+      "sellerId": "1",
+      "productDescription": "Airbods are sleek and high-quality wireless earbuds designed for a premium listening experience. They offer clear sound, noise cancellation, and a comfortable fit for long hours of use. Ideal for music lovers, travelers, or anyone on the go.",
+      "status": "out of stock"
+    },
+    {
+      "id": "3",
+      "name": "Iphone 16 Pro Max",
+      "price": 15000,
+      "capacity": 13,
+      "image": "https://f.nooncdn.com/p/pnsku/N70105592V/45/_/1726043633/aa2f8393-ed30-467b-b456-c8b10fad6e8f.jpg ",
+      "categoryId": 1,
+      "sellerId": "1",
+      "productDescription": "The iPhone 16 Pro Max is Apple’s flagship smartphone, offering a perfect blend of performance, camera quality, and design. With an advanced A16 chip, stunning display, and long-lasting battery life, it’s designed for users who demand the best in technology.",
+      "status": "available"
+    },
+    {
+      "id": "4",
+      "name": "Galaxy S24",
+      "price": 500,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pnsku/N70035265V/45/_/1712239189/479179d5-3f20-4b07-96bf-3ae9bca7b58e.jpg?width=240",
+      "categoryId": 1,
+      "sellerId": "1",
+      "productDescription": "The Samsung Galaxy S24 delivers cutting-edge performance with an ultra-responsive screen, powerful processors, and a remarkable camera setup. A perfect device for gamers, content creators, and tech enthusiasts who need a phone that can do it all.",
+      "status": "available"
+    },
+    {
+      "id": "5",
+      "name": "Sony HeadPhone",
+      "price": 15000,
+      "capacity": 18,
+      "image": "https://f.nooncdn.com/p/v1678773717/N53391622A_1.jpg",
+      "categoryId": 1,
+      "sellerId": "1",
+      "productDescription": "Sony Headphones deliver premium sound quality with noise-canceling technology, providing an immersive audio experience. Whether you’re listening to music, gaming, or working, these headphones ensure comfort and crystal-clear sound.",
+      "status": "available"
+    },
+    {
+      "id": "6",
+      "name": "ASUS TUF A15",
+      "price": 15000,
+      "capacity": 18,
+      "image": "https://f.nooncdn.com/p/pnsku/N70122720V/45/_/1729658809/3558255e-34ef-40eb-a886-c94f630bc42c.jpg",
+      "categoryId": 1,
+      "sellerId": "1",
+      "productDescription": "ASUS TUF A15 is a high-performance gaming laptop with powerful specs that can handle the most demanding games and software. Featuring an impressive display, smooth graphics, and robust cooling system, it's designed for avid gamers.",
+      "status": "available"
+    },
+    {
+      "id": "7",
+      "name": "Camera",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-iN9SAsV5gtoXlPsTKKwc-NZkcU7uOQVLcA&s",
+      "categoryId": 1,
+      "sellerId": "1",
+      "productDescription": "Capture every moment with this high-quality camera. Perfect for both photography enthusiasts and professionals, this camera provides exceptional image quality, a variety of settings, and ease of use for every situation.",
+      "status": "available"
+    },
+    {
+      "id": "8",
+      "name": "VivoBook Go 15",
+      "price": 15000,
+      "capacity": 19,
+      "image": "https://f.nooncdn.com/p/pnsku/N70126355V/45/_/1730702857/6899d98c-8ee2-4dc7-81c9-8f02f0f67aa7.jpg",
+      "categoryId": 1,
+      "sellerId": "1",
+      "productDescription": "The VivoBook Go 15 is a lightweight, budget-friendly laptop designed for everyday use. It features a compact design, efficient performance, and a long-lasting battery. Ideal for students, casual users, and those working from home.",
+      "status": "available"
+    },
+    {
+      "id": "9",
+      "name": "Anker HeadPhone",
+      "price": 15000,
+      "capacity": 18,
+      "image": "https://f.nooncdn.com/p/pnsku/N70001661V/45/_/1695298129/ea3a2f33-979a-4a0e-acbf-12c59c095581.jpg",
+      "categoryId": 1,
+      "sellerId": "1",
+      "productDescription": "Anker Headphones offer a superior listening experience with enhanced sound clarity and noise isolation. Their ergonomic design ensures comfort, making them perfect for both long listening sessions and traveling.",
+      "status": "available"
+    },
+    {
+      "id": "10",
+      "name": "Mibro Lite 3",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/Z84C87906433D2BAB83CEZ/45/_/1738499146/30d0a523-2dde-4226-acf3-68c49db3d61a.jpg",
+      "categoryId": 1,
+      "sellerId": "1",
+      "productDescription": "Mibro Lite 3 is a budget-friendly smartwatch with a stylish design and a variety of health and fitness tracking features. Track your daily activities, monitor your heart rate, and get notifications right on your wrist.",
+      "status": "available"
+    },
+    {
+      "id": "11",
+      "name": "Chaoi Redmi",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pnsku/N70156801V/45/_/1740459776/dd3c5699-c43e-437b-91f8-b1df5e227f8e.jpg",
+      "categoryId": 1,
+      "sellerId": "1",
+      "productDescription": "Chaoi Redmi offers incredible value with reliable performance, excellent battery life, and a large display. It’s a perfect option for users looking for an affordable phone with solid specs and features.",
+      "status": "available"
+    },
+    {
+      "id": "12",
+      "name": "Watch GT 4",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pnsku/N53436110A/45/_/1695734215/938d2a3c-759f-4a3c-9009-6dd7f5bc4281.jpg",
+      "categoryId": 1,
+      "sellerId": "1",
+      "productDescription": "The Watch GT 4 is a smartwatch with advanced health monitoring, including heart rate and sleep tracking. Stylish and durable, it’s perfect for fitness enthusiasts and those who want to stay connected without reaching for their phone.",
+      "status": "available"
+    },
+    {
+      "id": "13",
+      "name": "MSI Laptop",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pnsku/N70144379V/45/_/1737369976/8a35d0af-19ad-443b-9809-fa9e3ec03728.jpg?width=240",
+      "categoryId": 1,
+      "sellerId": "1",
+      "productDescription": "MSI Laptop is built for gaming and professional use, featuring powerful processors, high-refresh-rate display, and solid-state storage for seamless performance. Whether for gaming or intensive tasks, it’s ready for anything.",
+      "status": "available"
+    },
+    {
+      "id": "14",
+      "name": "MacBook Air MLXW3",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pnsku/N53330831A/45/_/1710144331/042382c8-9b74-4a3b-bd69-ea814cf4f093.jpg?width=240",
+      "categoryId": 1,
+      "sellerId": "1",
+      "productDescription": "The MacBook Air MLXW3 is a thin and lightweight laptop that doesn't compromise on performance. With its Retina display, long battery life, and powerful M1 chip, it’s perfect for users who need a portable device for both work and entertainment.",
+      "status": "available"
+    },
+    {
+      "id": "15",
+      "name": "Sony Playstation 5",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1669724765/N40633047A_1.jpg",
+      "categoryId": 1,
+      "sellerId": "1",
+      "productDescription": "The Sony PlayStation 5 is the latest gaming console with exceptional performance, 4K graphics, and a library of games. It’s perfect for gamers who want to experience the next level of gaming with lightning-fast load times and incredible graphics.",
+      "status": "available"
+    },
+    {
+      "id": "16",
+      "name": "Sony DualSense Wireless PS5",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1686219590/N53410810A_1.jpg",
+      "categoryId": 1,
+      "sellerId": "1",
+      "productDescription": "The Sony DualSense Wireless PS5 controller enhances your gaming experience with haptic feedback, adaptive triggers, and a comfortable design. Perfect for next-gen gaming on the PlayStation 5, it allows players to feel every moment in the game.",
+      "status": "available"
+    },
+    {
+      "id": "17",
+      "name": "American Eagle Polo",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/ZF3EE03DADF9D82133FA6Z/45/_/1739952104/42764910-85d6-4632-9244-f071f430f88b.jpg",
+      "categoryId": 2,
+      "sellerId": "1",
+      "productDescription": "Classic American Eagle Polo made with soft, breathable fabric, offering a stylish and comfortable fit for casual wear.",
+      "status": "available"
+    },
+    {
+      "id": "18",
+      "name": "American Eagle Tropical",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/Z2F4B03464336968734BAZ/45/_/1739952638/77002e86-ca33-4729-8e05-e76c6c2fe364.jpg",
+      "categoryId": 2,
+      "sellerId": "1",
+      "productDescription": "Tropical-inspired American Eagle shirt, perfect for sunny days. Featuring vibrant colors and a lightweight fabric for comfort and style.",
+      "status": "available"
+    },
+    {
+      "id": "19",
+      "name": "Dot Jeans",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/Z2CD73C8974D46F9AB36AZ/45/_/1735031318/64fa2265-8270-4eb9-a7fa-7913736fd410.jpg",
+      "categoryId": 2,
+      "sellerId": "1",
+      "productDescription": "Trendy Dot Jeans designed for both comfort and fashion. Featuring a classic fit with a playful dot print, perfect for everyday wear.",
+      "status": "available"
+    },
+    {
+      "id": "20",
+      "name": "American Eagle Wool Housing",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/Z55D51575408BA83618CDZ/45/_/1739952152/abcd2808-f8ac-4da8-ab42-48fd778581ba.jpg",
+      "categoryId": 2,
+      "sellerId": "1",
+      "productDescription": "Premium wool housing jacket from American Eagle. Crafted for warmth and style, perfect for cooler weather and outdoor activities.",
+      "status": "available"
+    },
+    {
+      "id": "21",
+      "name": "Adidas Galaxy 7",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/ZA04278616910E8472E4AZ/45/_/1738242676/1ee4090f-41cb-4706-bd5c-27061de49063.jpg",
+      "categoryId": 2,
+      "sellerId": "1",
+      "productDescription": "Adidas Galaxy 7 sneakers, combining comfort, durability, and style. Designed for athletes and fashion-forward individuals alike.",
+      "status": "available"
+    },
+    {
+      "id": "22",
+      "name": "Defacto Smart Men's Jacket",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/Z61A671CE16757DBBAD7DZ/45/_/1713342818/c1d68ca0-038b-486b-b306-db5bd59dfeea.jpg",
+      "categoryId": 2,
+      "sellerId": "1",
+      "productDescription": "Defacto Smart Men's Jacket, a versatile and stylish outerwear option. Crafted for comfort and sophistication, perfect for casual or formal occasions.",
+      "status": "available"
+    },
+    {
+      "id": "23",
+      "name": "Tommy Hilfiger Watch",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1667234008/N37604866A_1.jpg",
+      "categoryId": 2,
+      "sellerId": "1",
+      "productDescription": "Timeless elegance with the Tommy Hilfiger Watch. Featuring a sleek design with precision timekeeping, perfect for both formal and casual settings.",
+      "status": "available"
+    },
+    {
+      "id": "24",
+      "name": "Adidas Runfalco 5",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/ZE4A0DD1299D8B18A2B83Z/45/_/1738242655/b8140c40-ff5d-4b41-9147-eeac72d7b94f.jpg",
+      "categoryId": 2,
+      "sellerId": "1",
+      "productDescription": "Adidas Runfalco 5 running shoes, designed for optimal performance and comfort. Perfect for athletes and fitness enthusiasts looking to upgrade their gear.",
+      "status": "available"
+    },
+    {
+      "id": "25",
+      "name": "Sunglasses Vithydia Men",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/Z6C2CF9D5C75A61C5E5F6Z/45/_/1658335507/020eeaa9-3953-42e0-9472-7b0169db3898.jpg",
+      "categoryId": 2,
+      "sellerId": "1",
+      "productDescription": "Stylish Vithydia Men's Sunglasses, offering UV protection with a modern, sleek design. Perfect for adding a touch of sophistication to your outdoor look.",
+      "status": "available"
+    },
+    {
+      "id": "26 ",
+      "name": "Metal safe box",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/ZC0C05BEFB4051C6B7DD0Z/45/_/1716549714/6706e05f-b0ba-4326-83d6-e613a5f74e90.jpg",
+      "categoryId": 3,
+      "sellerId": "1",
+      "productDescription": "A robust and secure metal safe box designed to protect your valuables. Ideal for home, office, or business use, featuring a spacious interior with a secure locking mechanism for peace of mind.",
+      "status": "available"
+    },
+    {
+      "id": "27 ",
+      "name": "spectator 150 x 150",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1656847921/N52343463A_1.jpg",
+      "categoryId": 3,
+      "sellerId": "1",
+      "productDescription": " A high-quality, sturdy spectator seating solution perfect for events or sports arenas. Designed for comfort and durability, this model offers an ideal seating experience for a large audience.",
+      "status": "available"
+    },
+    {
+      "id": "28",
+      "name": "Clock Black Diamond",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/ZEC75F8C8A8420D6D9D62Z/45/_/1644360876/e2cc658c-5044-4d5c-aa62-b139874a811b.jpg",
+      "categoryId": 3,
+      "sellerId": "1",
+      "productDescription": "A luxurious black diamond-themed clock with a sleek, modern design. This timepiece brings elegance to any room, featuring precise timekeeping with a visually striking aesthetic.",
+      "status": "available"
+    },
+    {
+      "id": "29",
+      "name": "Clock Najaf",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/Z690185A9896BEB9058C3Z/45/_/1721727049/61fd6213-4357-4d51-ac96-a973b4810a62.jpg",
+      "categoryId": 3,
+      "sellerId": "1",
+      "productDescription": "A beautifully crafted clock inspired by traditional Najaf design. Combining classic elegance with modern functionality, this clock is perfect for adding a sophisticated touch to any home or office",
+      "status": "available"
+    },
+    {
+      "id": "30",
+      "name": "National Dolab",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/Z41FF8792026B88359A2FZ/45/_/1715868171/feba1fc8-5a4e-489d-9a0b-f2e119c26a43.jpg",
+      "categoryId": 3,
+      "sellerId": "1",
+      "productDescription": " A versatile and spacious storage solution, the National Dolab offers ample room for organizing and protecting your belongings. Perfect for use in homes, offices, or warehouses, ensuring your items stay organized and secure.",
+      "status": "available"
+    },
+    {
+      "id": "31",
+      "name": " box of transparent plastic face wipes",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1658990714/N43384078A_1.jpg",
+      "categoryId": 3,
+      "sellerId": "1",
+      "productDescription": " A convenient box of soft, transparent plastic face wipes ideal for gentle facial cleaning and refreshing. Perfect for daily use or on-the-go, offering effective skincare in a practical, travel-friendly packaging.",
+      "status": "available"
+    },
+    {
+      "id": "32",
+      "name": "Cosarks Bimble for Youth",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1656332407/N20615172A_1.jpg",
+      "categoryId": 4,
+      "sellerId": "1",
+      "productDescription": "A refreshing youth fragrance with a modern twist for everyday confidence and style.",
+      "status": "available"
+    },
+    {
+      "id": "33",
+      "name": "Lattafa Mayar",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/Z256BE86A85CCE09792FFZ/45/1746286916/ad6fd0b0-2c62-41de-9938-c6141c415f75.jpg",
+      "categoryId": 4,
+      "sellerId": "1",
+      "productDescription": "A bold and long-lasting unisex perfume with rich oriental floral notes.",
+      "status": "available"
+    },
+    {
+      "id": "34",
+      "name": "BB Anti-Defective Cream",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/Z4F78754C190653C41344Z/45/_/1739358919/55fd8919-745f-4470-b118-7c5c8e0b23eb.jpg",
+      "categoryId": 4,
+      "sellerId": "1",
+      "productDescription": "A skin-perfecting BB cream that smooths complexion, corrects blemishes, and hydrates skin.",
+      "status": "available"
+    },
+    {
+      "id": "35",
+      "name": "Sibal Mascara Xtera 3D",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pnsku/N30389060A/45/_/1740311870/3f84b76f-f634-4a7c-91b4-261c044156c6.jpg",
+      "categoryId": 4,
+      "sellerId": "1",
+      "productDescription": "A 3D volumizing mascara that adds bold lift and definition to every lash.",
+      "status": "available"
+    },
+    {
+      "id": "36",
+      "name": "Mascara Lash Princess Follium",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1672653538/N11031427A_1.jpg",
+      "categoryId": 4,
+      "sellerId": "1",
+      "productDescription": "Fan-favorite lash mascara that delivers dramatic length and a fanned-out lash effect.",
+      "status": "available"
+    },
+    {
+      "id": "37",
+      "name": "Lanig Holds Lips",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1683885789/N41889543A_1.jpg?width=240",
+      "categoryId": 4,
+      "sellerId": "1",
+      "productDescription": "A nourishing lip balm that locks in moisture and keeps lips smooth and soft all day.",
+      "status": "available"
+    },
+    {
+      "id": "38",
+      "name": "Shodai Soccer Socks",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/ZB91FAB61099563630F52Z/45/_/1732626502/71758d5e-368c-4442-9e5b-7ce3ee496764.jpg",
+      "categoryId": 5,
+      "sellerId": "1",
+      "productDescription": "High-quality soccer socks designed for breathability, comfort, and athletic performance.",
+      "status": "available"
+    },
+    {
+      "id": "39",
+      "name": "Mikasa Football FT-5",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1579521777/N33641733A_1.jpg?width=240",
+      "categoryId": 5,
+      "sellerId": "1",
+      "productDescription": "Professional-grade Mikasa football with durable construction and superior grip.",
+      "status": "available"
+    },
+    {
+      "id": "40",
+      "name": "CM Football 434",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/Z3BC7C090EE4E4BD39E59Z/45/_/1739358089/55dacaf3-c17e-4c1c-a07f-dfe7f2f29abd.jpg",
+      "categoryId": 5,
+      "sellerId": "1",
+      "productDescription": "Sturdy and lightweight football ideal for training and recreational matches.",
+      "status": "available"
+    },
+    {
+      "id": "41",
+      "name": "Adidas Strips Gloves",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/ZC0B5EC27C6D29D8B2B43Z/45/_/1725456324/d7efeb8b-69da-4fe8-8139-0ce7a74e68a9.jpg",
+      "categoryId": 5,
+      "sellerId": "1",
+      "productDescription": "Durable gloves with Adidas styling, offering comfort and grip for training or cold weather.",
+      "status": "available"
+    },
+    {
+      "id": "42",
+      "name": "Anti-latex for Yoga",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1614198428/N44712782A_1.jpg",
+      "categoryId": 5,
+      "sellerId": "1",
+      "productDescription": "Anti-latex resistance bands designed to improve flexibility and strength during yoga sessions.",
+      "status": "available"
+    },
+    {
+      "id": "43",
+      "name": "Abdominal Training Device",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1614190796/N44712638A_1.jpg",
+      "categoryId": 5,
+      "sellerId": "1",
+      "productDescription": "Compact and powerful ab trainer to help strengthen and tone your core muscles.",
+      "status": "available"
+    },
+    {
+      "id": "44",
+      "name": "Scooter for Kid's",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/Z75686A3F8071B9C82DD3Z/45/1741557727/11ac0f9f-2002-451a-9cea-9de2569a7dbb.jpg",
+      "categoryId": 6,
+      "sellerId": "1",
+      "productDescription": "A lightweight and foldable scooter designed for young kids to ride safely and have fun outdoors.",
+      "status": "available"
+    },
+    {
+      "id": "45",
+      "name": "Balladon Trouth",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1636612527/N13712119A_1.jpg",
+      "categoryId": 6,
+      "sellerId": "1",
+      "productDescription": "A colorful toy that encourages active play and coordination through rolling and tossing fun.",
+      "status": "available"
+    },
+    {
+      "id": "46",
+      "name": "Crocodil Teeth Lightweight",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1635775062/N30517603A_1.jpg",
+      "categoryId": 6,
+      "sellerId": "1",
+      "productDescription": "A hilarious and suspenseful game where kids press teeth until the croc snaps!",
+      "status": "available"
+    },
+    {
+      "id": "47",
+      "name": "Smart Novelty",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1648975455/N53053957A_1.jpg",
+      "categoryId": 6,
+      "sellerId": "1",
+      "productDescription": "Interactive educational toy that lights up and plays sounds to boost creativity and learning.",
+      "status": "available"
+    },
+    {
+      "id": "48",
+      "name": "Junior Colorful Round",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1585734410/N34124852A_1.jpg",
+      "categoryId": 6,
+      "sellerId": "1",
+      "productDescription": "Soft, colorful, and fun round toy designed for toddlers to toss, roll, and learn colors.",
+      "status": "available"
+    },
+    {
+      "id": "49",
+      "name": "HR Helicopter",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1576075903/N32595883A_1.jpg",
+      "categoryId": 6,
+      "sellerId": "1",
+      "productDescription": "Remote-controlled helicopter toy with LED lights and stable flight for indoor fun.",
+      "status": "available"
+    },
+    {
+      "id": "50",
+      "name": "How to Talk to Anyone",
+      "price": 15000,
+      "capacity": 1,
+      "image": "https://f.nooncdn.com/p/v1517204958/N13145745A_1.jpg",
+      "categoryId": 7,
+      "sellerId": "1",
+      "productDescription": "A practical guide to mastering the art of conversation and building social confidence.",
+      "status": "available"
+    },
+    {
+      "id": "51",
+      "name": "Apathy English Paper",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pnsku/N13148670A/45/_/1727267000/c1626a34-bee8-4e43-bb97-93c931595c99.jpg",
+      "categoryId": 7,
+      "sellerId": "1",
+      "productDescription": "A thought-provoking piece reflecting on emotional disconnect and the power of words.",
+      "status": "available"
+    },
+    {
+      "id": "52",
+      "name": "Your Psychological Contract",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pnsku/N48987347A/45/_/1746690935/60717b84-f66e-4b96-944f-c80056e69bfa.jpg",
+      "categoryId": 7,
+      "sellerId": "1",
+      "productDescription": "An insightful book about workplace expectations, trust, and the invisible agreements we make.",
+      "status": "available"
+    },
+    {
+      "id": "53",
+      "name": "Morning Coffee With Yourself",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1628084989/N49755964A_1.jpg",
+      "categoryId": 7,
+      "sellerId": "1",
+      "productDescription": "A gentle and reflective book on self-care, mindfulness, and emotional healing.",
+      "status": "available"
+    },
+    {
+      "id": "54",
+      "name": "Never Lie",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/ZF3A05088DE3DA966A952Z/45/_/1735767673/c6eca9bd-b9a4-4271-b932-d83470876724.jpg",
+      "categoryId": 7,
+      "sellerId": "1",
+      "productDescription": "A gripping psychological thriller full of secrets, suspense, and unexpected twists.",
+      "status": "available"
+    },
+    {
+      "id": "55",
+      "name": "Twisted Love",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/Z3436A726A54E2D5510DDZ/45/1743132026/38edf29b-c442-4b41-84a3-b80c99313783.jpg",
+      "categoryId": 7,
+      "sellerId": "1",
+      "productDescription": "A dark and emotional romance that explores love, obsession, and betrayal.",
+      "status": "available"
+    },
+    {
+      "id": "56",
+      "name": "Nitro D3 Vitamin",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1600876100/N32255110A_1.jpg",
+      "categoryId": 8,
+      "sellerId": "1",
+      "productDescription": "Supports bone health and immune function with a high dose of Vitamin D3.",
+      "status": "available"
+    },
+    {
+      "id": "57",
+      "name": "Malti Vitamin",
+      "price": 15000,
+      "capacity": 1,
+      "image": "https://f.nooncdn.com/p/pzsku/Z7F2767313EB751AFFD4CZ/45/_/1678096924/484067fe-0750-4f5b-bc70-4acf9a91f7e1.jpg",
+      "categoryId": 8,
+      "sellerId": "1",
+      "productDescription": "Complete daily multivitamin formula to support overall health and vitality.",
+      "status": "available"
+    },
+    {
+      "id": "58",
+      "name": "Valodal Vitamin",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/Z5B4C0F18257CF74F466DZ/45/_/1737629710/f36b585a-f270-47ca-b3cf-3e5c1b60372d.jpg",
+      "categoryId": 8,
+      "sellerId": "1",
+      "productDescription": "Vitamin blend that supports energy levels, brain health, and immunity.",
+      "status": "available"
+    },
+    {
+      "id": "59",
+      "name": "Wellman Multiple Vitamin",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1594305763/N39171712A_1.jpg",
+      "categoryId": 8,
+      "sellerId": "1",
+      "productDescription": "Tailored for men's health, promoting stamina, energy, and focus.",
+      "status": "available"
+    },
+    {
+      "id": "60",
+      "name": "Centrum Silver Disk",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/v1683696709/N53404687A_1.jpg",
+      "categoryId": 8,
+      "sellerId": "1",
+      "productDescription": "Specialized multivitamin for adults 50+ to support heart, brain, and eye health.",
+      "status": "available"
+    },
+    {
+      "id": "61",
+      "name": "Green Tea Capsule",
+      "price": 15000,
+      "capacity": 20,
+      "image": "https://f.nooncdn.com/p/pzsku/ZC26E4D51F8AA9A12C9CCZ/45/_/1676988880/b0cb58be-7d50-475f-bf3e-a7a0716b7fda.jpg",
+      "categoryId": 8,
+      "sellerId": "1",
+      "productDescription": "Natural antioxidant that supports metabolism and fat burning.",
+      "status": "available"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Electronics"
+    },
+    {
+      "id": "2",
+      "name": "Accessories"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "checkoutid": "31",
+      "customerId": 1,
+      "sellerId": 2,
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Laptop",
+          "price": 15000,
+          "quantity": 1
+        }
+      ],
+      "date": "2023-10-01",
+      "status": "active",
+      "total": 15000
+    },
+    {
+      "id": "2",
+      "checkoutid": "31",
+      "customerId": "b817",
+      "sellerId": 2,
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Laptop",
+          "price": 15000,
+          "quantity": 1
+        }
+      ],
+      "date": "2023-10-01",
+      "status": "processing",
+      "total": 15000
+    }
+  ],
+  "cart": [
+    {
+      "id": "ed77",
+      "customerId": "b817",
+      "status": "processing",
+      "items": [
+        {
+          "productId": 2,
+          "quantity": 2,
+          "sellerId": 2,
+          "status": "processing"
+        },
+        {
+          "productId": 1,
+          "sellerId": 2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "fff7",
+      "customerId": "c56e",
+      "items": [],
+      "status": "pending"
+    },
+    {
+      "id": "0d42",
+      "customerId": "d959",
+      "items": []
+    },
+    {
+      "id": "f28d",
+      "customerId": "77ea",
+      "items": []
+    }
+  ],
+  "cartcheckout": [
+    {
+      "id": "0add",
+      "customerId": "78af",
+      "items": [
+        {
+          "productId": 3,
+          "quantity": 3,
+          "status": "processing",
+          "sellerId": "1"
+        }
+      ],
+      "amount": 48610,
+      "status": "processing"
+    },
+    {
+      "id": "530c",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 3,
+          "quantity": 3,
+          "sellerId": "1"
+        }
+      ],
+      "amount": 48610,
+      "status": "processing"
+    },
+    {
+      "id": "c126",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 3,
+          "quantity": 1,
+          "sellerId": "1"
+        }
+      ],
+      "amount": 16210,
+      "status": "processing"
+    },
+    {
+      "id": "c61c",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        }
+      ],
+      "amount": 16210,
+      "status": "processing"
+    },
+    {
+      "id": "ab0b",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        },
+        {
+          "productId": 5,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        }
+      ],
+      "amount": 32410,
+      "status": "processing"
+    },
+    {
+      "id": "751d",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 6,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        }
+      ],
+      "amount": 16210,
+      "status": "processing",
+      "orderdate": "2025-05-08T20:49:29.584Z"
+    },
+    {
+      "id": "abf0",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 8,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        }
+      ],
+      "amount": 16210,
+      "status": "processing",
+      "orderdate": "08/05/2025"
+    },
+    {
+      "id": "79d3",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 6,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        },
+        {
+          "productId": 5,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        }
+      ],
+      "amount": 32410,
+      "status": "processing",
+      "orderdate": "09/05/2025"
+    },
+    {
+      "id": "9459",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 9,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "pending"
+        }
+      ],
+      "amount": 16210,
+      "status": "pending",
+      "orderdate": "10/05/2025"
+    }
+  ],
+  "review": [
+    {
+      "id": "1",
+      "userId": 1,
+      "productId": 22,
+      "sellerId": 223,
+      "orderReview": "fafa"
+    },
+    {
+      "id": "b9c7",
+      "orderReview": "afafa",
+      "productId": "3",
+      "userId": "c56e",
+      "sellerId": "1"
+    },
+    {
+      "id": "db3a",
+      "orderReview": "affafaf",
+      "productId": "3",
+      "userId": "c56e",
+      "sellerId": "1"
+    },
+    {
+      "id": "86dd",
+      "orderReview": "sgsg",
+      "productId": "3",
+      "userId": "c56e",
+      "sellerId": "1"
+    },
+    {
+      "id": "fc21",
+      "orderReview": "bmhbhnmvbhjb",
+      "productId": "1",
+      "userId": "c56e",
+      "sellerId": "1"
+    }
+  ]
+}

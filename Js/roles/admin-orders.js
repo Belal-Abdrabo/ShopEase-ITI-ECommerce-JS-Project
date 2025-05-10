@@ -1,3 +1,4 @@
+adminCheckAuthentication();
 window.addEventListener('load', function () {
     const orderTableBody = document.querySelector('#admin-orders-table');
     const url = "http://localhost:3000/cartcheckout";
