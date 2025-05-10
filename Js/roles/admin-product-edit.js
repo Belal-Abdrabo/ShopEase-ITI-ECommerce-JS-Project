@@ -1,3 +1,4 @@
+adminCheckAuthentication();
 window.addEventListener('load', function() {
     // Get the productId from the URL parameters
     const urlParams = new URLSearchParams(window.location.search);

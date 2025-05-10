@@ -1,13 +1,5 @@
+let currentUser = sellerCheckAuthentication();
 window.addEventListener('load', function () {
-    let currentUser = isAuthenticated();
-    if(currentUser)
-    {
-
-    }
-    else
-    {
-        window.location.href = '../login.html';
-    }
     const sellerName = document.querySelector("#seller-name");
     sellerName.innerHTML = currentUser.userName;
     let currentPage = 1;

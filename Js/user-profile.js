@@ -1,9 +1,6 @@
+const currentUser = customerCheckAuthentication();
 window.addEventListener('load', function () {
-    const currentUser = isAuthenticated();
     let s = cartsize();
-    if (!currentUser) {
-        window.location.href = '../login.html';
-    }
     let x = currentUser.id;
     const userProfile = document.querySelector('#personal-info-form');
 

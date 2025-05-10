@@ -22,6 +22,31 @@ const adminCheckAuthentication = function () {
     }
 
 }
+const sellerCheckAuthentication = function () {
+    const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
+    if (user) {
+        if (user.role == "admin" || user.role == "customer") {
+            window.location.href = "../access-denied.html";
+        }
+    }
+    else {
+        window.location.href = "../access-denied.html";
+    }
+    return user;
+}
+
+const customerCheckAuthentication = function () {
+    const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
+    if (user) {
+        if (user.role == "admin" || user.role == "seller") {
+            window.location.href = "../access-denied.html";
+        }
+    }
+    else {
+        window.location.href = "../access-denied.html";
+    }
+    return user;
+}
 
 // Check if user role has access to the page or not
 const isHasAccess = function (page, role) {

@@ -1,3 +1,21 @@
+const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
+if(user)
+{
+    
+    if(user.role == "admin")
+    {
+        window.location.href = "./admin/admin-dashboard.html";
+    }
+    else if(user.role == "seller")
+    {
+        window.location.href = "./seller/seller-dashboard.html";
+    }
+    else if(user.role == "customer")
+    {
+        window.location.href = "../index.html";
+    }
+}
+
 window.addEventListener("load", function () {
     const form = document.querySelector('#register-form');
     const fullName = document.querySelector('#fullname');
@@ -13,24 +31,6 @@ window.addEventListener("load", function () {
     const confirmPasswordError = document.querySelector('#confirm-password-error');
 
     const url = "http://localhost:3000/";
-
-    const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
-    if(user)
-    {
-        
-        if(user.role == "admin")
-        {
-            window.location.href = "./admin/admin-dashboard.html";
-        }
-        else if(user.role == "seller")
-        {
-            window.location.href = "./seller/seller-dashboard.html";
-        }
-        else if(user.role == "customer")
-        {
-            window.location.href = "../index.html";
-        }
-    }
 
     const isValidEmail = (email) => {
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;

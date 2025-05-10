@@ -1,3 +1,4 @@
+adminCheckAuthentication();
 window.addEventListener('load', function () {
     let currentUser = isAuthenticated();
     if(currentUser)

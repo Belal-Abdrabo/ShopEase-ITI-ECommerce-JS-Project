@@ -1,7 +1,5 @@
 //check if the user is logged in and has the role of admin
 adminCheckAuthentication();
-
-
 window.addEventListener("load", function () {
     const form = document.querySelector('#register-form');
     const fullName = document.querySelector('#fullname');

@@ -1,3 +1,4 @@
+adminCheckAuthentication();
 window.addEventListener('load', function() {
     // Get the userId from the URL query parameters
     const urlParams = new URLSearchParams(window.location.search);

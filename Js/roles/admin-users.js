@@ -1,5 +1,5 @@
 //check if user is logged in and has admin role
-//adminCheckAuthentication();
+adminCheckAuthentication();
 window.addEventListener('load', function(event){
     let currentPage = 1;
     let pageCount = 0;
