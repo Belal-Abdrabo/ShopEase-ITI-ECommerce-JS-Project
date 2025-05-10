@@ -1,4 +1,6 @@
 window.addEventListener('load', function () {
+     const params = new URLSearchParams(window.location.search);
+    let cat = params.get('id');
     const productUrl = "http://localhost:3000/products";
     const searchInput = document.getElementById('searchInput');
     let searchQuery = ""; 
@@ -16,7 +18,11 @@ window.addEventListener('load', function () {
     let productsData = [];
     let currentPage = 1;
     const itemsPerPage = 9;
-    let selectedCategory = 'all'; // store selected category globally
+    let selectedCategory = cat;
+    if(cat === null){
+        selectedCategory = 'all';
+    }
+    // store selected category globally
     let minPrice = 0;  // Initially, no price filter applied
     let maxPrice = null;
 
