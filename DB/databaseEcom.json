@@ -46,7 +46,7 @@
       "password": "123456",
       "role": "seller",
       "registrationDate": "2025-05-09"
-     },
+    },
     {
       "id": "23f7",
       "userName": "ABDOO MOZA",
@@ -65,8 +65,7 @@
       "categoryId": "1",
       "sellerId": "1",
       "productDescription": "Capture every moment with this high-quality camera. Perfect for both photography enthusiasts and professionals, this camera provides exceptional image quality, a variety of settings, and ease of use for every situation.",
-      "id": "1"
-      "capacity": 0,
+      "id": "1",
       "status": "out of stock"
     },
     {
@@ -84,7 +83,7 @@
       "id": "3",
       "name": "Iphone 16 Pro Max",
       "price": 15000,
-      "capacity": 10,
+      "capacity": 8,
       "image": "https://f.nooncdn.com/p/pnsku/N70105592V/45/_/1726043633/aa2f8393-ed30-467b-b456-c8b10fad6e8f.jpg ",
       "categoryId": 1,
       "sellerId": "1",
@@ -172,7 +171,7 @@
       "id": "11",
       "name": "Chaoi Redmi",
       "price": 15000,
-      "capacity": 20,
+      "capacity": 19,
       "image": "https://f.nooncdn.com/p/pnsku/N70156801V/45/_/1740459776/dd3c5699-c43e-437b-91f8-b1df5e227f8e.jpg",
       "categoryId": 1,
       "sellerId": "1",
@@ -238,7 +237,7 @@
       "id": "17",
       "name": "American Eagle Polo",
       "price": 15000,
-      "capacity": 20,
+      "capacity": 19,
       "image": "https://f.nooncdn.com/p/pzsku/ZF3EE03DADF9D82133FA6Z/45/_/1739952104/42764910-85d6-4632-9244-f071f430f88b.jpg",
       "categoryId": 2,
       "sellerId": "1",
@@ -612,7 +611,7 @@
       "id": "51",
       "name": "Apathy English Paper",
       "price": 15000,
-      "capacity": 20,
+      "capacity": 19,
       "image": "https://f.nooncdn.com/p/pnsku/N13148670A/45/_/1727267000/c1626a34-bee8-4e43-bb97-93c931595c99.jpg",
       "categoryId": 7,
       "sellerId": "1",
@@ -822,15 +821,8 @@
     {
       "id": "fff7",
       "customerId": "c56e",
-      "items": [
-        {
-          "productId": 3,
-          "quantity": 1,
-          "sellerId": "1",
-          "status": "pending"
-        }
-      ],
-      "status": "processing"
+      "items": [],
+      "status": "pending"
     }
   ],
   "cartcheckout": [
@@ -1095,6 +1087,57 @@
       "amount": 16210,
       "status": "pending",
       "orderdate": "10/05/2025"
+    },
+    {
+      "id": "c792",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 3,
+          "quantity": 2,
+          "sellerId": "1",
+          "status": "pending"
+        }
+      ],
+      "amount": 32410,
+      "status": "pending",
+      "orderdate": "10/05/2025"
+    },
+    {
+      "id": "e3f9",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 17,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "pending"
+        }
+      ],
+      "amount": 16210,
+      "status": "pending",
+      "orderdate": "10/05/2025"
+    },
+    {
+      "id": "289f",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 11,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "pending"
+        },
+        {
+          "productId": 51,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "pending"
+        }
+      ],
+      "amount": 32410,
+      "status": "pending",
+      "orderdate": "10/05/2025"
     }
   ],
   "review": [
@@ -1106,99 +1149,12 @@
       "orderReview": "on fire"
     },
     {
-      "id": "b9c7",
-      "orderReview": "top el top",
-      "productId": "3",
-      "userId": "c56e",
-      "sellerId": "1"
-    },
-    {
-      "id": "db3a",
-      "orderReview": "top",
-      "productId": "3",
-      "userId": "c56e",
-      "sellerId": "1"
-    },
-    {
-      "id": "86dd",
-      "orderReview": "on fire",
-      "productId": "3",
-      "userId": "c56e",
-      "sellerId": "1"
-    },
-    {
-      "id": "fc21",
-      "orderReview": "to7fa",
-      "productId": "1",
-      "userId": "c56e",
-      "sellerId": "1"
-    },
-    {
-      "id": "65b1",
-      "orderReview": "GAMEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaD",
-      "productId": "3",
-      "userId": "c56e",
-      "sellerId": "1"
-    },
-    {
-      "id": "4719",
-      "orderReview": "to7ffa",
-      "productId": "5",
+      "id": "fab4",
+      "orderReview": "fafafa",
+      "productId": "51",
       "userId": "c56e",
       "sellerId": "1",
-      "date": "2025-05-10T13:09:49.112Z"
-    },
-    {
-      "id": "f57d",
-      "orderReview": "ganj",
-      "productId": "8",
-      "userId": "c56e",
-      "sellerId": "1",
-      "date": "today.getDate().toString().padStart(2, '0')}/05/ 2025"
-    },
-    {
-      "id": "9063",
-      "orderReview": "afaf",
-      "productId": "3",
-      "userId": "c56e",
-      "sellerId": "1",
-      "date": "today.getDate().toString().padStart(2, '0')}/05/ 2025"
-    },
-    {
-      "id": "8a95",
-      "orderReview": "afaf",
-      "productId": "5",
-      "userId": "c56e",
-      "sellerId": "1",
-      "date": "10/05/2025"
-    },
-    {
-      "id": "6021",
-      "orderReview": "hdh",
-      "productId": "5",
-      "userId": "c56e",
-      "sellerId": "1",
-      "date": "10/05/2025"
-    },
-    {
-      "id": "94b9",
-      "orderReview": "fafaf",
-      "userId": "c56e",
-      "rating": "4",
-      "date": "10/05/2025"
-    },
-    {
-      "id": "eeda",
-      "orderReview": "fafafaf",
-      "userId": "c56e",
-      "rating": "3",
-      "date": "10/05/2025"
-    },
-    {
-      "id": "0eb9",
-      "orderReview": "GAGAG",
-      "userId": "c56e",
-      "rating": "3",
+      "rating": "1",
       "date": "10/05/2025"
     }
   ]
