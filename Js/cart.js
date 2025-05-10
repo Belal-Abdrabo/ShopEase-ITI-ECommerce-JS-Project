@@ -113,23 +113,61 @@ window.addEventListener('load', function (evernt) {
                                 body: JSON.stringify(usercart)
                             });
                         }
-                    });
+                    }); 
 
+                    // deletbtn.addEventListener("click", () => {
+
+                    //     usercart.items.splice(index, 1); // it delete from position index of array of items and 1 to delete only one item
+
+                    //     // Update the cart for delet
+                    //     fetch(`http://localhost:3000/cart/${usercart.id}`, {
+                    //         method: 'PUT',
+                    //         headers: {
+                    //             'Content-Type': 'application/json'
+                    //         },
+                    //         body: JSON.stringify(usercart)
+                    //     }).then(() => {
+                    //         newItem.remove();
+                    //     }).catch(err => console.error('Error updating cart:', err));
+                    // });
+                   
+                                    
                     deletbtn.addEventListener("click", () => {
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: `Do you want to remove ${prod.name} from the cart?`,
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6',
+                        confirmButtonText: 'Yes, delete it!',
+                        cancelButtonText: 'Cancel'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            usercart.items.splice(index, 1); // Remove item from the cart array
 
-                        usercart.items.splice(index, 1); // it delete from position index of array of items and 1 to delete only one item
-
-                        // Update the cart for delet
-                        fetch(`http://localhost:3000/cart/${usercart.id}`, {
-                            method: 'PUT',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify(usercart)
-                        }).then(() => {
-                            newItem.remove();
-                        }).catch(err => console.error('Error updating cart:', err));
+                            // Update the cart in the backend
+                            fetch(`http://localhost:3000/cart/${usercart.id}`, {
+                                method: 'PUT',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(usercart)
+                            }).then(() => {
+                                newItem.remove(); // Remove the item from the DOM
+                                Swal.fire(
+                                    'Deleted!',
+                                    'The item has been removed from your cart.',
+                                    'success'
+                                );
+                            }).catch(err => {
+                                console.error('Error updating cart:', err);
+                                Swal.fire('Error', 'Something went wrong while updating the cart.', 'error');
+                            });
+                        }
                     });
+                });
+
                     cartContainer.appendChild(newItem);
                 }
 
@@ -206,7 +244,7 @@ window.addEventListener('load', function (evernt) {
                     customerId: x,
                     items: itemsToCheckout,
                     amount: totalp * 0.08 + 10 + totalp,
-                    status: "processing",
+                    status: "pending",
                     orderdate:`${today.getDate().toString().padStart(2, '0')}/${(today.getMonth()+1).toString().padStart(2, '0')}/${today.getFullYear()}`
                    
                 })
@@ -247,7 +285,15 @@ window.addEventListener('load', function (evernt) {
                    
                 });
                 document.querySelectorAll(".cart-item").forEach(item => item.remove());
-                alert("Checkout successful! Your order has been placed.");  
+                  Swal.fire({
+                    icon: 'success',
+                    title: 'Order Placed!',
+                    text: 'Your order has been successfully placed.',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    window.location.href = '../../index.html';
+                });
+
                 console.log("Checkout successful! Your order has been placed.");
                 window.location.href = '../../index.html'; // Redirect to home page or order confirmation page
             })

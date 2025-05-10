@@ -7,42 +7,63 @@ window.addEventListener('load', function () {
     const next = document.getElementById('r');
     const left = document.getElementById('l');
     const pag = document.getElementsByClassName('h2-pag')[0];
-    searchInput.addEventListener('input', function () {
-        searchQuery = this.value;
-        currentPage = 1;
-        renderProducts(currentPage);
-      });
-      
+    
+    // Price range elements
+    const minPriceInput = document.getElementById('min-price');
+    const maxPriceInput = document.getElementById('max-price');
+    const applyPriceButton = document.querySelector('.filter-section .btn');
+
     let productsData = [];
     let currentPage = 1;
     const itemsPerPage = 9;
     let selectedCategory = 'all'; // store selected category globally
+    let minPrice = 0;  // Initially, no price filter applied
+    let maxPrice = null;
+
+    // Update minPrice and maxPrice when the price filter is applied
+    applyPriceButton.addEventListener('click', function () {
+        minPrice = parseFloat(minPriceInput.value) || 0;
+        maxPrice = parseFloat(maxPriceInput.value) || null;
+        currentPage = 1;
+        renderProducts(currentPage);
+    });
+
     function getFilteredProducts() {
         let filtered = selectedCategory === 'all'
           ? productsData
           : productsData.filter(product => product.categoryId == selectedCategory);
-      
+        
+        // Filter by search query
+        searchInput.addEventListener('input', function () { searchQuery = this.value; currentPage = 1; renderProducts(currentPage); });
+        
         if (searchQuery.trim() !== "") {
           filtered = filtered.filter(product =>
             product.name.toLowerCase().includes(searchQuery.toLowerCase())
           );
         }
 
-        return filtered;
+        // Filter by price range, if the price filter is applied
+        if (maxPrice !== null) {
+            filtered = filtered.filter(product => 
+                product.price >= minPrice && product.price <= maxPrice
+            );
+        }
 
-      }
+        return filtered;
+    }
+
     function renderProducts(page) {
-        const filteredProducts = getFilteredProducts(); // filter based on selectedCategory
+        const filteredProducts = getFilteredProducts();
         const start = (page - 1) * itemsPerPage;
         const end = start + itemsPerPage;
         const currentItems = filteredProducts.slice(start, end);
 
         container.innerHTML = '';
-        currentItems.filter(i => i.status != "pending" || i.status != "rejected").forEach(product => {
+        currentItems.filter(i => i.status !== "pending" || i.status !== "rejected").forEach(product => {
             const div = document.createElement('div');
             div.innerHTML = `
                 <div class="product-card">
-                    <div class="product-badge">${product.status}</div>
+                    <div class="product-badge" id="stat">${product.status}</div>
                     <div class="product-image">
                         <img src="${product.image}" alt="${product.name}">
                         <div class="product-actions">
@@ -68,22 +89,29 @@ window.addEventListener('load', function () {
                     </div>
                 </div>
             `;
+            if(product.status === "out of stock"){
+                let c = div.querySelector('.product-badge');
+                c.style.backgroundColor = 'red';
+            }
             container.appendChild(div);
-
 
             // Add event listener to the cart button
             const cartprod = div.querySelector('.cartprod');
-            cartprod.addEventListener('click', function () {
-                const productId = parseInt(this.getAttribute('product-id'));
-                handleAddToCart(productId, product.sellerId); 
-            });
-            
-            
+            if(product.status === "out of stock"){
+                let c = div.querySelector('.cartprod');
+                c.style.display = 'none';
+            } else {
+                cartprod.addEventListener('click', function () {
+                    const productId = parseInt(this.getAttribute('product-id'));
+                    handleAddToCart(productId, product.sellerId); 
+                });
+            }
         });
         
         const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
         pag.innerHTML = `<h2> ${page} of ${totalPages}</h2>`;
     }
+
     fetch(productUrl)
         .then(response => response.json())
         .then(data => {
@@ -93,16 +121,15 @@ window.addEventListener('load', function () {
         .catch(error => {
             console.error("Error fetching products:", error);
         });
+
     categoryButtons.forEach(button => {
         button.addEventListener('click', function () {
-            selectedCategory = this.getAttribute('data-category'); //  update global filter
+            selectedCategory = this.getAttribute('data-category');
             currentPage = 1;
             renderProducts(currentPage);
         });
     });
-    // Add event listeners for pagination buttons
 
-   
     next.addEventListener('click', function () {
         const filtered = getFilteredProducts();
         const totalPages = Math.ceil(filtered.length / itemsPerPage);
@@ -118,7 +145,4 @@ window.addEventListener('load', function () {
             renderProducts(currentPage);
         }
     });
-
-
-  
 });
