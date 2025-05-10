@@ -546,6 +546,7 @@
   .social-icons a:hover {
     background-color: var(--primary-color);
   }
+
   
   .footer-column ul li {
     margin-bottom: 0.75rem;
@@ -748,6 +749,16 @@
     border-radius: var(--radius-lg);
     padding: 2rem;
     box-shadow: var(--shadow);
+  }
+  .user-reviews{
+        display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    background-color: var(--background-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+
   }
   
   .product-gallery {
@@ -1086,29 +1097,116 @@
     margin-bottom: 2rem;
   }
   
-  .review {
+.user-reviews {
+    display: flex;
+    flex-direction: column; /* Stack reviews vertically */
+    gap: 2rem;
+    margin-bottom: 3rem;
+    background-color: var(--background-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.review {
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
-  }
-  
-  .review:last-child {
+    transition: background-color 0.3s;
+}
+
+.review:last-child {
     border-bottom: none;
     margin-bottom: 0;
-  }
-  
-  .review-header {
+}
+
+.review:hover {
+    background-color: rgba(0, 0, 0, 0.02); /* subtle hover */
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+}
+
+.review-header {
     display: flex;
+    align-items: center;
     gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .review-header img {
+    margin-bottom: 0.75rem;
+}
+
+.review-header img {
     width: 50px;
     height: 50px;
     border-radius: var(--radius-full);
     object-fit: cover;
-  }
+    border: 2px solid var(--primary-color);
+}
+
+.review-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-heading);
+}
+
+.review-rating i {
+    color: gold;
+    margin-right: 2px;
+}
+.swal2-input{
+    width: 300PX;
+    
+}
+
+.review-date {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    display: block;
+    margin-top: 2px;
+}
+.reviewForm {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.rating input[type="radio"] {
+  display: none;
+}
+
+.rating label {
+  font-size: 25px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.rating input[type="radio"]:checked ~ label {
+  color: gold;
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+  color: gold;
+}
+
+.review-content p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-body);
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    border-left: 3px solid var(--primary-color);
+    padding-top: 0.5rem;
+
+    word-wrap: break-word; 
+    overflow-wrap: break-word;   
+    white-space: normal;            
+    max-width: 100%;                
+    box-sizing: border-box;
+}
+
+
   
   .review-rating {
     color: #f59e0b;

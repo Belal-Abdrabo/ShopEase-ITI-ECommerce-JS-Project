@@ -183,56 +183,72 @@ window.addEventListener('load', function () {
 
     // Event delegation for review items
 
-    orderContainer.addEventListener("click", function (e) {
-        const btn = e.target;
-      
-        // Open review form
-        if (btn.classList.contains("addReviewBtn")) {
-          const reviewForm = btn.nextElementSibling;
-          reviewForm.style.display = "block";
+// Import SweetAlert2 if you're using npm/yarn
+// import Swal from 'sweetalert2';
+
+orderContainer.addEventListener("click", function (e) {
+  const btn = e.target;
+
+  // Open review form using SweetAlert2
+  if (btn.classList.contains("btn-secondary")) {
+    // Create the SweetAlert2 modal content
+    Swal.fire({
+      title: 'Write a Review',
+      html: `
+        <textarea id="reviewText" class="swal2-input" placeholder="Write your review..." rows="4"></textarea>
+        <div class="rating" style="margin-top: 10px;">
+          <input type="radio" name="rating" value="1" id="star1"><label for="star1">☆</label>
+          <input type="radio" name="rating" value="2" id="star2"><label for="star2">☆</label>
+          <input type="radio" name="rating" value="3" id="star3"><label for="star3">☆</label>
+          <input type="radio" name="rating" value="4" id="star4"><label for="star4">☆</label>
+          <input type="radio" name="rating" value="5" id="star5"><label for="star5">☆</label>
+        </div>
+      `,
+      focusConfirm: false,
+      preConfirm: () => {
+        const reviewText = document.getElementById('reviewText').value.trim();
+        const rating = document.querySelector('input[name="rating"]:checked');
+        const ratingValue = rating ? rating.value : null;
+
+        if (reviewText === "") {
+          Swal.showValidationMessage("Please write something first.");
+          return false;
         }
-      
-        // Submit review
-        if (btn.classList.contains("submitReview")) {
-          const form = btn.closest(".reviewForm");
-          const textarea = form.querySelector(".reviewText");
-          const review = textarea.value.trim();
-      
-          if (review === "") {
-            alert("Please write something first.");
-            return;
-          }
-      
-          alert("Review submitted: " + review);
-          textarea.value = "";
-          form.style.display = "none";
 
-          fetch(`http://localhost:3000/review`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ orderReview: review, productId: btn.dataset.prodid,userId:x ,sellerId:btn.dataset.sellerid})
-          })
-            .then(response => response.json())
-            .then(data => {
-              console.log('Review submitted:', data);
-            })
-            .catch(error => {
-              console.error('Error submitting review:', error);
-            });
+        if (ratingValue === null) {
+          Swal.showValidationMessage("Please select a rating.");
+          return false;
         }
-        // Cancel review
-        if (btn.classList.contains("cancelReview")) {
-          const form = btn.closest(".reviewForm");
-          form.querySelector(".reviewText").value = "";
-          form.style.display = "none";
-        }
-      });
-      
 
-    
+        // Submit review and rating
+        const today = new Date();
+        const data = {
+          orderReview: reviewText,
+          productId: btn.dataset.prodid,
+          userId: x,
+          sellerId: btn.dataset.sellerid,
+          rating: ratingValue,
+          date: `${today.getDate().toString().padStart(2, '0')}/${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getFullYear()}`
+        };
 
-
-
+        return fetch(`http://localhost:3000/review`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Review submitted:', data);
+          Swal.fire('Success', 'Your review has been submitted.', 'success');
+        })
+        .catch(error => {
+          console.error('Error submitting review:', error);
+          Swal.fire('Error', 'Something went wrong. Please try again.', 'error');
+        });
+      }
+    });
+  }
+});
 
 })
 

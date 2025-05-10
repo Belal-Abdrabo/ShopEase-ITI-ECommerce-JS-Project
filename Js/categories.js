@@ -1,1 +1,4 @@
-//categories.js
+window.addEventListener('load', function () {
+
+
+})

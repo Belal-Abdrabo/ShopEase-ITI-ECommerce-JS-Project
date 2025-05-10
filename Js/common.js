@@ -12,15 +12,12 @@ const isAuthenticated = function () {
 
 const adminCheckAuthentication = function () {
     const user = isAuthenticated();  //return user data if user is logged in or flase if not logged in
-    if(user)
-    {
-        if(user.role == "seller"|| user.role == "customer")
-        {
+    if (user) {
+        if (user.role == "seller" || user.role == "customer") {
             window.location.href = "../access-denied.html";
         }
     }
-    else
-    {
+    else {
         window.location.href = "../access-denied.html";
     }
 
@@ -62,14 +59,13 @@ const getAllUsers = function () {
         });
 }
 //GET url/posts?_page=1&_per_page=25
-const getUserByPagination = function(pageNum, countPerPage)
-{
+const getUserByPagination = function (pageNum, countPerPage) {
     return fetch(url + 'users?_page=' + pageNum + '&_limit=' + countPerPage)
-            .then(res => res.json())
-            .catch(err =>{
-                console.error('Error:', err);
-                return [];
-            });
+        .then(res => res.json())
+        .catch(err => {
+            console.error('Error:', err);
+            return [];
+        });
 }
 
 // Get specific user by email
@@ -331,7 +327,7 @@ const postCartUsingCustomerId = function (customerId) {
 //     }
 // };
 
-const handleAddToCart = async function(productId, sellerId) {
+const handleAddToCart = async function (productId, sellerId) {
     const currentUser = isAuthenticated();
     const cartUrl = "http://localhost:3000/cart";
     const productUrl = `http://localhost:3000/products/${productId}`;
@@ -349,26 +345,60 @@ const handleAddToCart = async function(productId, sellerId) {
 
         // Find item in cart
         const itemIndex = userCart.items.findIndex(item => item.productId == productId);
-
         if (itemIndex !== -1) {
             const currentQty = userCart.items[itemIndex].quantity;
             if (currentQty < capacity && capacity > 0) {
                 userCart.items[itemIndex].quantity += 1;
             } else {
-                alert("You reached the product capacity limit!");
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Limit Reached',
+                    text: 'You have reached the product capacity limit!',
+                    confirmButtonText: 'OK'
+                });
                 return;
             }
-        } else if(capacity > 0) {
+        } else if (capacity > 0) {
             userCart.items.push({
                 productId: productId,
                 quantity: 1,
                 sellerId: sellerId,
                 status: "pending"
             });
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Out of Stock',
+                text: 'This product is currently out of stock!',
+                confirmButtonText: 'OK'
+            });
         }
-        else{
-            alert("product is out of stock!");
-        }
+
+        //         if (itemIndex !== -1) {
+        //             const currentQty = userCart.items[itemIndex].quantity;
+        //             if (currentQty < capacity && capacity > 0) {
+        //                 userCart.items[itemIndex].quantity += 1;
+        //             } else {
+        //                 alert("You reached the product capacity limit!");
+        //                 return;
+        //             }
+        //         } else if(capacity > 0) {
+        //             userCart.items.push({
+        //                 productId: productId,
+        //                 quantity: 1,
+        //                 sellerId: sellerId,
+        //                 status: "processing"
+        //             });
+        //         }
+        //         else{
+        //             Swal.fire({
+        //     icon: 'error',
+        //     title: 'Out of Stock',
+        //     text: 'This product is currently out of stock!',
+        //     confirmButtonText: 'OK'
+        // });
+
+        //         }
 
         // Update the cart
         const updateRes = await fetch(`${cartUrl}/${userCart.id}`, {
@@ -389,9 +419,9 @@ const handleAddToCart = async function(productId, sellerId) {
 
 
 
-let cartSize = 0; 
+let cartSize = 0;
 
-const cartsize = function() {
+const cartsize = function () {
     const currentUser = isAuthenticated();
     const cartUrl = "http://localhost:3000/cart";
 
@@ -403,7 +433,7 @@ const cartsize = function() {
                 cartSize = userCart.items.length; // Set global variable to cart size
                 console.log("Cart size:", cartSize);
             } else {
-                cartSize = 0; 
+                cartSize = 0;
                 console.log("No cart found for the user.");
             }
         })
