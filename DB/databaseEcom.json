@@ -79,26 +79,26 @@
   ],
   "products": [
     {
-      "id": "1",
       "name": "Canon camera",
       "price": 15000,
-      "image": "https://f.nooncdn.com/p/v1662029536/N33956021A_1.jpg",
-      "categoryId": 1,
-      "sellerId": "1",
       "capacity": 7,
+      "image": "https://f.nooncdn.com/p/v1662029536/N33956021A_1.jpg",
+      "categoryId": "1",
+      "sellerId": "1",
       "productDescription": "Capture every moment with this high-quality camera. Perfect for both photography enthusiasts and professionals, this camera provides exceptional image quality, a variety of settings, and ease of use for every situation.",
-      "status": "available"
+      "status": "available",
+      "id": "1"
     },
     {
-      "id": "2",
       "name": "Airbods",
       "price": 500,
+      "capacity": 10,
       "image": "https://f.nooncdn.com/p/v1686824034/N53409767A_1.jpg",
-      "capacity": 0,
-      "categoryId": 1,
+      "categoryId": "1",
       "sellerId": "1",
       "productDescription": "Airbods are sleek and high-quality wireless earbuds designed for a premium listening experience. They offer clear sound, noise cancellation, and a comfortable fit for long hours of use. Ideal for music lovers, travelers, or anyone on the go.",
-      "status": "out of stock"
+      "status": "out of stock",
+      "id": "2"
     },
     {
       "id": "3",

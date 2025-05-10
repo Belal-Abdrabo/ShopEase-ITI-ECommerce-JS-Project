@@ -8,6 +8,8 @@
     let recentProductsTableBody = document.querySelector("#recent-products-table-body");
 //#region update seller cards
     //update productsCount card
+    let x = this.document.querySelector(".seller-name");
+    x.textContent = `Welcome back, ${currentUser.userName}`;
     fetch(url+'products')
     .then(response => response.json())
     .then(data =>

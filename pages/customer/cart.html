@@ -22,14 +22,12 @@
                     <input type="text" placeholder="Search products...">
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </div>
-                <div class="nav-links">
+                   <div class="nav-links">
                     <a href="../../index.html">Home</a>
                     <a href="../products.html">Products</a>
                     <a href="../categories.html">Categories</a>
-                    <a href="#" class="cart-icon active"><i class="fas fa-shopping-cart"></i></a>
-                    <a href="../../pages/customer/user-profile.html" class="cart-icon"><img style="width:50px; " src="../../images/Default.webp" alt="User Avatar"></a>
-                    
-                    <button id="logout">Logout</button> 
+                    <a href="../customer/user-profile.html" id="profile" title="profile" class="profile-link" ><i class="fas fa-user-circle"></i></a> <!-- Add this new logout link -->
+                    <a href="../login.html" id="logout" class="logout-link" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
                 </div>
                 <div class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
@@ -109,78 +107,7 @@
                 <h2 class="section-title">Recently Viewed</h2>
                 <div class="product-grid">
                     <!-- Static recently viewed products -->
-                    <div class="product-card">
-                        <div class="product-badge">New</div>
-                        <img src="images/product4.jpg" alt="Wireless Earbuds">
-                        <div class="product-info">
-                            <h3>Wireless Earbuds</h3>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span>(42)</span>
-                            </div>
-                            <p class="product-price">$89.99</p>
-                            <a href="../product-detail.html?id=1" class="btn btn-secondary">View Details</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="product-badge sale">Sale</div>
-                        <img src="images/product5.jpg" alt="Laptop Backpack">
-                        <div class="product-info">
-                            <h3>Laptop Backpack</h3>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span>(28)</span>
-                            </div>
-                            <p class="product-price">
-                                <span class="original-price">$69.99</span>
-                                $49.99
-                            </p>
-                            <a href="../product-detail.html?id=4" class="btn btn-secondary">View Details</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <img src="images/product6.jpg" alt="Fitness Tracker">
-                        <div class="product-info">
-                            <h3>Fitness Tracker</h3>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span>(56)</span>
-                            </div>
-                            <p class="product-price">$59.99</p>
-                            <a href="../product-detail.html?id=6" class="btn btn-secondary">View Details</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <img src="images/product7.jpg" alt="Portable Charger">
-                        <div class="product-info">
-                            <h3>Portable Charger</h3>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                                <span>(37)</span>
-                            </div>
-                            <p class="product-price">$39.99</p>
-                            <a href="../product-detail.html?id=3" class="btn btn-secondary">View Details</a>
-                        </div>
-                    </div>
+                
                 </div>
             </section>
         </div>
