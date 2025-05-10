@@ -37,7 +37,7 @@ window.addEventListener('load', function (evernt) {
                     let newItem = cartItem.cloneNode(true); //to get fresh copy of the cart item layout
                     cost = prod.price * usercart.items[index].quantity;
                     usercart.items[index].sellerId = prod.sellerId;
-                    usercart.status = "processing"; //
+                    usercart.status = "pending"; //
                     totalp += cost;
                     suptotal.innerHTML = ` `;       
                     tax.innerHTML = ` `;

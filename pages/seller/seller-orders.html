@@ -3,91 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopEase | Admin - Order Management</title>
+    <title>ShopEase | Seller Dashboard</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/admin.css">
-    <link rel="stylesheet" href="../../css/admin-orders.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="../../Js/common.js"></script>
-    <script src="../../Js/roles/admin-orders.js"></script>
+    <script src="../../js/roles/seller-orders.js"></script>
 </head>
 <body class="admin-body">
     <div class="admin-container">
-        <!-- Admin Sidebar -->
+        <!-- Sidebar -->
         <aside class="admin-sidebar">
             <div class="sidebar-header">
-                <a href="admin-dashboard.html" class="logo">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span>ShopEase</span>
-                </a>
-                <span class="admin-badge">Admin</span>
+                <div class="logo">
+                    <a href="index.html">ShopEase</a>
+                </div>
+                <span class="admin-badge seller-badge">Seller</span>
             </div>
-            
             <nav class="sidebar-nav">
                 <ul>
                     <li>
-                        <a href="admin-dashboard.html">
+                        <a href="seller-dashboard.html">
                             <i class="fas fa-tachometer-alt"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a href="admin-users.html">
-                            <i class="fas fa-users"></i>
-                            <span>User Management</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="admin-products.html">
+                        <a href="seller-products.html">
                             <i class="fas fa-box"></i>
-                            <span>Product Management</span>
+                            <span>My Products</span>
                         </a>
                     </li>
                     <li class="active">
-                        <a href="admin-orders.html">
+                        <a href="seller-orders.html">
                             <i class="fas fa-shopping-cart"></i>
-                            <span>Order Management</span>
+                            <span>Orders</span>
                         </a>
                     </li>
+                    <li>
                 </ul>
             </nav>
-            
             <div class="sidebar-footer">
-                <a href="index.html" target="_blank">
-                    <i class="fas fa-external-link-alt"></i>
-                    <span>View Store</span>
-                </a>
-                <a href="login.html" class="logout">
+                <a href="index.html">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>
             </div>
         </aside>
-        
-        <!-- Admin Main Content -->
-        <div class="admin-main">
-            <!-- Admin Header -->
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- seller Header -->
             <header class="admin-header">
                 <div class="header-search">
-                    <input type="text" placeholder="Search orders..." id="searchInput">
+                    <input type="text" id="searchInput" placeholder="Search...">
                     <button><i class="fas fa-search"></i></button>
                 </div>
                 <div class="header-actions">
                     <div class="notifications">
                         <button class="notification-btn">
                             <i class="fas fa-bell"></i>
-                            <span class="badge">3</span>
                         </button>
                     </div>
                     <div class="admin-profile">
-                        <img src="../../images/DefaultProfile.webp" alt="Admin User">
-                        <span>Admin User</span>
+                        <img src="../../images/DefaultProfile.webp" alt="Seller">
+                        <span id="seller-name"></span>
                     </div>
                 </div>
             </header>
             
-            <!-- Admin Content -->
-            <div class="admin-content">
+             <!-- seller Content -->
+             <div class="admin-content">
                 <!-- Page Header -->
                 <div class="page-header">
                     <div>
@@ -345,7 +331,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 </body>
 </html>

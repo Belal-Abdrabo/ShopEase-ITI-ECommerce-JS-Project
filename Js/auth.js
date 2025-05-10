@@ -128,7 +128,7 @@ window.addEventListener('load', function(){
                         console.log("✅ Logged in successfully");
                         let UserDto = {
                             id: user.id,
-                            fullName: user.fullName,
+                            userName: user.userName,
                             email: user.email,
                             role: user.role,
                         };

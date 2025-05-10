@@ -1,4 +1,3 @@
-
 {
   "users": [
     {
@@ -41,6 +40,14 @@
       "registrationDate": "2025-05-08"
     },
     {
+      "id": "1",
+      "userName": "Tech.Eg",
+      "email": "tech@gmail.com",
+      "password": "123456",
+      "role": "seller",
+      "registrationDate": "2025-05-09"
+     },
+    {
       "id": "23f7",
       "userName": "ABDOO MOZA",
       "email": "ABDOO@GMAIL.COM",
@@ -51,14 +58,15 @@
   ],
   "products": [
     {
-      "id": "1",
       "name": "Canon camera",
-      "price": 15000,
+      "price": 1159,
+      "capacity": 29,
       "image": "https://f.nooncdn.com/p/v1662029536/N33956021A_1.jpg",
-      "categoryId": 1,
+      "categoryId": "1",
       "sellerId": "1",
-      "capacity": 0,
       "productDescription": "Capture every moment with this high-quality camera. Perfect for both photography enthusiasts and professionals, this camera provides exceptional image quality, a variety of settings, and ease of use for every situation.",
+      "id": "1"
+      "capacity": 0,
       "status": "out of stock"
     },
     {
@@ -729,7 +737,31 @@
     },
     {
       "id": "2",
-      "name": "Accessories"
+      "name": "Fashion"
+    },
+    {
+      "id": "3",
+      "name": "Home & Kitchen"
+    },
+    {
+      "id": "4",
+      "name": "Beauty & Personal Care"
+    },
+    {
+      "id": "5",
+      "name": "Sports & Outdoors"
+    },
+    {
+      "id": "6",
+      "name": "Toys & Games"
+    },
+    {
+      "id": "7",
+      "name": "Books & Media"
+    },
+    {
+      "id": "8",
+      "name": "Health & Wellness"
     }
   ],
   "orders": [
@@ -804,7 +836,7 @@
   "cartcheckout": [
     {
       "id": "0add",
-      "customerId": "78af",
+      "customerId": "b817",
       "items": [
         {
           "productId": 3,
@@ -814,11 +846,12 @@
         }
       ],
       "amount": 48610,
-      "status": "processing"
+      "status": "processing",
+      "orderdate": "07/05/2025"
     },
     {
       "id": "530c",
-      "customerId": "c56e",
+      "customerId": "b817",
       "items": [
         {
           "productId": 3,
@@ -827,7 +860,8 @@
         }
       ],
       "amount": 48610,
-      "status": "processing"
+      "status": "pending",
+      "orderdate": "07/05/2025"
     },
     {
       "id": "c126",
@@ -840,7 +874,8 @@
         }
       ],
       "amount": 16210,
-      "status": "processing"
+      "status": "shipped",
+      "orderdate": "08/05/2025"
     },
     {
       "id": "c61c",
@@ -854,7 +889,8 @@
         }
       ],
       "amount": 16210,
-      "status": "processing"
+      "status": "processing",
+      "orderdate": "08/05/2025"
     },
     {
       "id": "ab0b",
@@ -864,17 +900,18 @@
           "productId": 1,
           "quantity": 1,
           "sellerId": "1",
-          "status": "processing"
+          "status": "pending"
         },
         {
           "productId": 5,
           "quantity": 1,
-          "sellerId": "1",
+          "sellerId": "2",
           "status": "processing"
         }
       ],
       "amount": 32410,
-      "status": "processing"
+      "status": "pending",
+      "orderdate": "08/05/2025"
     },
     {
       "id": "751d",
@@ -888,8 +925,8 @@
         }
       ],
       "amount": 16210,
-      "status": "processing",
-      "orderdate": "2025-05-08T20:49:29.584Z"
+      "status": "delivered",
+      "orderdate": "08/05/2025"
     },
     {
       "id": "abf0",
@@ -903,21 +940,42 @@
         }
       ],
       "amount": 16210,
-      "status": "processing",
+      "status": "shipped",
       "orderdate": "08/05/2025"
     },
     {
-      "id": "79d3",
+      "id": "abf1",
       "customerId": "c56e",
       "items": [
         {
-          "productId": 6,
+          "productId": 8,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        }
+      ],
+      "amount": 16210,
+      "status": "shipped",
+      "orderdate": "08/05/2025"
+    },
+    {
+      "id": "abf2",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 8,
           "quantity": 1,
           "sellerId": "1",
           "status": "processing"
         },
         {
-          "productId": 5,
+          "productId": 8,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "processing"
+        },
+        {
+          "productId": 8,
           "quantity": 1,
           "sellerId": "1",
           "status": "processing"

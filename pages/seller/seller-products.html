@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="../../Js/common.js"></script>
-    <script src="../../Js/roles/seller.js"></script>
+    <script src="../../js/roles/seller-products.js"></script>
 </head>
 <body class="admin-body">
     <div class="admin-container">
@@ -22,13 +22,13 @@
             </div>
             <nav class="sidebar-nav">
                 <ul>
-                    <li class="active">
+                    <li>
                         <a href="seller-dashboard.html">
                             <i class="fas fa-tachometer-alt"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="seller-products.html">
                             <i class="fas fa-box"></i>
                             <span>My Products</span>
@@ -52,150 +52,47 @@
 
         <!-- Main Content -->
         <main class="admin-main">
+            <!-- seller Header -->
             <header class="admin-header">
                 <div class="header-search">
-                    <input type="text" placeholder="Search...">
+                    <input type="text" id="searchInput" placeholder="Search...">
                     <button><i class="fas fa-search"></i></button>
                 </div>
                 <div class="header-actions">
                     <div class="notifications">
                         <button class="notification-btn">
                             <i class="fas fa-bell"></i>
-                            <span class="badge">2</span>
                         </button>
                     </div>
                     <div class="admin-profile">
-                        <img src="images/seller-avatar.jpg" alt="Seller">
+                        <img src="../../images/DefaultProfile.webp" alt="Seller">
                         <span id="seller-name"></span>
-                        <i class="fas fa-chevron-down"></i>
                     </div>
                 </div>
             </header>
-
+            
+            <!-- Admin Content -->
             <div class="admin-content">
+                <!-- Page Header -->
                 <div class="page-header">
-                    <h1>Dashboard</h1>
-                    <p>Welcome back, Admin User</p>
-                </div>
-
-                <!-- Stats Cards -->
-                <div class="stats-grid">
-                    
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background-color: rgba(54, 162, 235, 0.2);">
-                            <i class="fas fa-shopping-bag" style="color: #36a2eb;"></i>
-                        </div>
-                        <div class="stat-details">
-                            <h3>Total Products</h3>
-                            <p class="stat-number">1,257</p>
-                        </div>
+                    <div>
+                        <h1>Product Management</h1>
+                        <p>Manage your store products</p>
                     </div>
-                    
-                    <div class="stat-card">
-                        <div class="stat-icon" style="background-color: rgba(255, 99, 132, 0.2);">
-                            <i class="fas fa-shopping-cart" style="color: #ff6384;"></i>
-                        </div>
-                        <div class="stat-details">
-                            <h3>Total orders</h3>
-                            <p class="stat-number">$128,450</p>
-                        </div>
+                    <div>
+                        <a href="./seller-add-product.html" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Add New Product
+                        </a>
                     </div>
                 </div>
-
-                <!-- Recent Orders -->
+                
+                <!-- Filters Container -->
+               
+                
+                <!-- Products Table -->
                 <div class="admin-card">
                     <div class="card-header">
-                        <h2>Recent Orders</h2>
-                        <a href="admin-orders.html" class="btn btn-outline">View All</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="admin-table">
-                            <thead>
-                                <tr>
-                                    <th>Order ID</th>
-                                    <th>Customer</th>
-                                    <th>Date</th>
-                                    <th>Amount</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="table-body">
-                                <tr>
-                                    <td>#ORD-5289</td>
-                                    <td>John Smith</td>
-                                    <td>May 1, 2025</td>
-                                    <td>$125.99</td>
-                                    <td><span class="status-badge delivered">Delivered</span></td>
-                                    <td>
-                                        <div class="action-buttons">
-                                            <button class="btn-icon"><i class="fas fa-eye"></i></button>
-                                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#ORD-5288</td>
-                                    <td>Emily Johnson</td>
-                                    <td>May 1, 2025</td>
-                                    <td>$89.50</td>
-                                    <td><span class="status-badge shipped">Shipped</span></td>
-                                    <td>
-                                        <div class="action-buttons">
-                                            <button class="btn-icon"><i class="fas fa-eye"></i></button>
-                                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#ORD-5287</td>
-                                    <td>Michael Brown</td>
-                                    <td>April 30, 2025</td>
-                                    <td>$245.00</td>
-                                    <td><span class="status-badge processing">Processing</span></td>
-                                    <td>
-                                        <div class="action-buttons">
-                                            <button class="btn-icon"><i class="fas fa-eye"></i></button>
-                                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#ORD-5286</td>
-                                    <td>Sarah Wilson</td>
-                                    <td>April 30, 2025</td>
-                                    <td>$78.25</td>
-                                    <td><span class="status-badge pending">Pending</span></td>
-                                    <td>
-                                        <div class="action-buttons">
-                                            <button class="btn-icon"><i class="fas fa-eye"></i></button>
-                                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#ORD-5285</td>
-                                    <td>David Lee</td>
-                                    <td>April 29, 2025</td>
-                                    <td>$156.75</td>
-                                    <td><span class="status-badge delivered">Delivered</span></td>
-                                    <td>
-                                        <div class="action-buttons">
-                                            <button class="btn-icon"><i class="fas fa-eye"></i></button>
-                                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Recent Products -->
-                <div class="admin-card">
-                    <div class="card-header">
-                        <h2>Recent Products</h2>
-                        <a href="admin-products.html" class="btn btn-outline">View All</a>
+                        <h2>Products</h2>
                     </div>
                     <div class="table-responsive">
                         <table class="admin-table">
@@ -210,7 +107,7 @@
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody id="recent-products-table-body">
+                            <tbody id="admin-products-table">
                                 <!-- Laptop Product (from the provided object) 
                                 <tr>
                                     <td>
@@ -421,6 +318,13 @@
                                 </tr> -->
                             </tbody>
                         </table>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="btn-page" id="previous" disabled><i class="fas fa-chevron-left"></i></button>
+                        <span class="pagination-ellipsis">1 of 1</span>
+                        <button class="btn-page" id="next"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>

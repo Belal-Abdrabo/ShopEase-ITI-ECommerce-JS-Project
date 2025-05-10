@@ -151,7 +151,6 @@ usersTableBody.addEventListener('click', function(event) {
                     <td>${user.role}</td>
                     <td>
                         <div class="action-buttons">
-                            <a href="../customer/user-details.html?userId=${user.id}"><button class="btn-icon"><i class="fas fa-eye"></i></button></a>
                             <a href="./admin-edit-user.html?userId=${user.id}"><button class="btn-icon"><i class="fas fa-edit"></i></button></a>
                             <button class="btn-icon" id="delete-user"><i class="fas fa-trash"></i></button>
                         </div>

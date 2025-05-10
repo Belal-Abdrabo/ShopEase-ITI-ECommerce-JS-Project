@@ -1,5 +1,15 @@
 window.addEventListener('load', function() {
+    let currentUser = isAuthenticated();
+    if(currentUser)
+    {
+
+    }
+    else{
+        window.location.href = '../login.html';
+    }
     // Get the productId from the URL parameters
+    const sellerName = document.querySelector("#seller-name");
+    sellerName.innerHTML = currentUser.userName;
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('productId');
 
@@ -123,7 +133,7 @@ window.addEventListener('load', function() {
             capacity: parseInt(productCapacityInput.value.trim()),
             image: productImageInput.value.trim(),
             categoryId: productCategoryInput.value.trim(),
-            sellerId: productSellerInput.value.trim(), // Adding sellerId as part of the product update
+            sellerId: currentUser.id,
             productDescription: productDescriptionInput.value.trim(),
             status: productStatusInput.value.trim(),
         };

@@ -13,7 +13,7 @@
     // o View and manage all orders. 
 
 
-    adminCheckAuthentication();
+  //  adminCheckAuthentication();
 window.addEventListener("load", function() {
     const cards = document.querySelectorAll(".stat-number");
     const url = 'http://localhost:3000/';
@@ -55,7 +55,7 @@ window.addEventListener("load", function() {
     ).catch(error => console.error('Error:', error));
 
     //update ordersCount card
-    fetch(url+'orders')
+    fetch(url+'cartcheckout')
     .then(response => response.json())
     .then(data =>
     {
@@ -81,13 +81,12 @@ window.addEventListener("load", function() {
                 row.innerHTML = `
                 <td>${order.id}</td>
                 <td>${customer.userName}</td>
-                <td>${order.date}</td>
-                <td>${order.total}</td>
+                <td>${order.orderdate}</td>
+                <td>$${order.amount}</td>
                 <td><span class="status-badge ${order.status}">${order.status}</span></td>
                 <td>
-                    <div class="action-buttons">
-                        <button class="btn-icon"><i class="fas fa-eye"></i></button>   
-                        <a href="../editOrder.html?orderId=${order.id}"><button class="btn-icon"><i class="fas fa-edit"></i></button></a>
+                    <div class="action-buttons">  
+                        <a href="./admin-view-order.html?orderId=${order.id}"><button class="btn-icon"><i class="fas fa-edit"></i></button></a>
                     </div>
                 </td>  
                 `
@@ -98,35 +97,52 @@ window.addEventListener("load", function() {
     // #endregion
     
 // #region update recent products table
-    recentProductsTableBody.innerHTML = ""; //clear table body
-    getAllProducts().then(products =>{
-        let first6Products = products.slice(0, 6); //get first 6 products
-        first6Products.forEach(product =>{
-            getCategoryById(product.categoryId).then(data =>{
-                console.log(`category: ${data.name}`);
-                product.category = data.name; //add category to product object
-                let row = document.createElement('tr');
-                row.innerHTML = `
-                <tr>
-                    <td>${product.id}</td>
-                    <td>${product.name}</td>
-                    <td>${product.category}</td>
-                    <td>${product.price}</td>
-                    <td><span class="status-badge active">Active</span></td>
-                    <td>
-                        <div class="action-buttons">
-                            <a href="../product-datails/id=${product.id}"><button class="btn-icon"><i class="fas fa-eye"></i></button></a>
-                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                            <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                        </div>
-                    </td>
-                </tr>
-                `;
-                recentProductsTableBody.appendChild(row);
-            })//end of getCategoryById
-    }) //end of forEach
+recentProductsTableBody.innerHTML = ""; //clear table body
+getAllProducts().then(products =>{
+    let first6Products = products.filter(p => p.sellerId == currentUser.id).slice(0, 6); //get first 6 products
+    first6Products.forEach(product =>{
+        getCategoryById(product.categoryId).then(data =>{
+            console.log(`category: ${data.name}`);
+            product.category = data.name; //add category to product object
+            let tr = document.createElement('tr');
+            tr.innerHTML = `
+            <td>
+                <div class="user-info">
+                    <img src=${product.image} alt="Smart Watch">
+                </div>
+            </td>
+            <td>${product.id}</td>
+            <td>${product.category || "Category Not Found"}</td>
+            <td>$${product.price}</td>
+            <td>${product.capacity}</td>
+        `;
+        if(product.status=="pending")
+            {
+                tr.innerHTML += `<td><span class="status-badge pending">Pending Approval</span></td>`;
+            }
+        else 
+            {
+                if(product.status=="out of stock" || product.status == 'rejected')
+                {
+                    tr.innerHTML += `<td><span class="status-badge suspended">${product.status}</span></td>`
+                }
+                else{
+                    tr.innerHTML += `<td><span class="status-badge active">${product.status}</span></td>`
 
-}) //end of getallProducts
+                }
+            }
+            tr.innerHTML += `<td>
+                <div class="action-buttons">
+                    <a href="seller-edit-product.html?productId=${product.id}" class="btn btn-sm btn-secondary" title="Edit">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </div>
+            </td>`;
+            recentProductsTableBody.appendChild(tr);
+        })//end of getCategoryById
+}) //end of forEach
+
+})
 
 // #endregion
 

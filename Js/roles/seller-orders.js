@@ -1,4 +1,14 @@
 window.addEventListener('load', function () {
+    let currentUser = isAuthenticated();
+    if(currentUser)
+    {
+
+    }
+    else{
+        window.location.href = '../login.html';
+    }
+    const sellerName = document.querySelector("#seller-name");
+    sellerName.innerHTML = currentUser.userName;
     const orderTableBody = document.querySelector('#admin-orders-table');
     const url = "http://localhost:3000/cartcheckout";
     let currentPage = 1;
@@ -16,7 +26,7 @@ window.addEventListener('load', function () {
         .then(response => response.json())
         .then(data => {
             orderTableBody.innerHTML='';
-            orders = data;
+            orders = data.filter(order => order.items.some(i => i.sellerId == currentUser.id));
             clonedOrders = [...orders];
             orderCount = clonedOrders.length;
             pageCount = Math.ceil(orderCount / countPerPage);
@@ -81,22 +91,13 @@ window.addEventListener('load', function () {
                 <td>$${order.amount}</td>
                 <td>cash</td>
                 <td>
-                    <select style="border:none" class="status-select status-badge ${order.status}" data-order-id=${order.id}>
-                    <option value="processing">processing</option>
-                    <option value="shipped">shipped</option>
-                    <option value="pending">pending</option>
-                    <option value="delivered">delivered</option>
-                    </select>
+                    <span class="status-select status-badge ${order.status}">${order.status}</span>
                 </td>
                 <td>
-                    <div class="action-buttons">
-                        <a href="admin-view-order.html?orderId=${order.id}" class="btn btn-sm btn-primary" title="View">
+                        <a href="seller-view-order.html?orderId=${order.id}" class="btn btn-sm btn-primary" title="View order">
                             <i class="fas fa-eye"></i>
                         </a>
-                        <button class="btn btn-sm btn-danger delete-btn" data-order-id=${order.id} title="Cancel Order">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
+                    
                 </td>
             `;
             orderTableBody.appendChild(tr);

@@ -3,48 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopEase | Admin - Edit Product</title>
+    <title>ShopEase | Seller Dashboard</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/admin.css">
     <link rel="stylesheet" href="../../css/admin-product-edit.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="../../js/common.js"></script>
-    <script src="../../js/roles/admin-product-edit.js"></script>
+    <script src="../../Js/common.js"></script>
+    <script src="../../js/roles/seller-edit-product.js"></script>
 </head>
 <body class="admin-body">
     <div class="admin-container">
-        <!-- Admin Sidebar -->
+        <!-- Sidebar -->
         <aside class="admin-sidebar">
             <div class="sidebar-header">
                 <div class="logo">
                     <a href="index.html">ShopEase</a>
                 </div>
-                <span class="admin-badge">Admin</span>
+                <span class="admin-badge seller-badge">Seller</span>
             </div>
             <nav class="sidebar-nav">
                 <ul>
                     <li>
-                        <a href="admin-dashboard.html">
+                        <a href="seller-dashboard.html">
                             <i class="fas fa-tachometer-alt"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="admin-users.html">
-                            <i class="fas fa-users"></i>
-                            <span>User Management</span>
-                        </a>
-                    </li>
                     <li class="active">
-                        <a href="admin-products.html">
+                        <a href="seller-products.html">
                             <i class="fas fa-box"></i>
-                            <span>Product Management</span>
+                            <span>My Products</span>
                         </a>
                     </li>
                     <li>
-                        <a href="admin-orders.html">
+                        <a href="seller-orders.html">
                             <i class="fas fa-shopping-cart"></i>
-                            <span>Order Management</span>
+                            <span>Orders</span>
                         </a>
                     </li>
                 </ul>
@@ -59,22 +53,21 @@
 
         <!-- Main Content -->
         <main class="admin-main">
+            <!-- seller Header -->
             <header class="admin-header">
                 <div class="header-search">
-                    <input type="text" placeholder="Search products...">
+                    <input type="text" id="searchInput" placeholder="Search...">
                     <button><i class="fas fa-search"></i></button>
                 </div>
                 <div class="header-actions">
                     <div class="notifications">
                         <button class="notification-btn">
                             <i class="fas fa-bell"></i>
-                            <span class="badge">3</span>
                         </button>
                     </div>
                     <div class="admin-profile">
-                        <img src="../../images/DefaultProfile.webp" alt="Admin">
-                        <span>Admin User</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <img src="../../images/DefaultProfile.webp" alt="Seller">
+                        <span id="seller-name"></span>
                     </div>
                 </div>
             </header>
@@ -85,23 +78,9 @@
                         <h1>Edit Product</h1>
                     </div>
                     <div>
-                        <a href="admin-products.html" class="btn btn-outline">
+                        <a href="./seller-products.html" class="btn btn-outline">
                             <i class="fas fa-arrow-left"></i> Back to Products
                         </a>
-                    </div>
-                </div>
-
-                <!-- Product Status Alert -->
-                <div class="alert alert-success">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="alert-content">
-                        <h3>Product Available</h3>
-                        <p>This product is currently available and visible in the store.</p>
-                    </div>
-                    <div class="alert-actions">
-                        <button class="btn btn-outline">
-                            <i class="fas fa-eye-slash"></i> Hide Product
-                        </button>
                     </div>
                 </div>
 
@@ -143,7 +122,7 @@
                             
                             <div class="form-group">
                                 <label for="product-status">Status</label>
-                                <select id="product-status">
+                                <select id="product-status" disabled>
                                     <option value="available" selected>Available</option>
                                     <option value="out of stock">Out of Stock</option>
                                     <option value="pending">pending</option>
@@ -198,6 +177,5 @@
             </div>
         </main>
     </div>
-
 </body>
 </html>

@@ -8,6 +8,8 @@ window.addEventListener('load', function () {
     {
         window.location.href = '../login.html';
     }
+    const sellerName = document.querySelector("#seller-name");
+    sellerName.innerHTML = currentUser.userName;
     let currentPage = 1;
     let pageCount = 0;
     let productCount = 0;
@@ -195,21 +197,7 @@ window.addEventListener('load', function () {
             `;
             if(product.status=="pending")
                 {
-                    tr.innerHTML += `<td><span class="status-badge pending">Pending Approval</span></td>
-                    <td>
-                        <div class="action-buttons">
-                            <a href="admin-product-edit.html?productId=${product.id}" class="btn btn-sm btn-secondary" title="Edit">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <button class="btn btn-sm btn-success" data-product-id="${product.id}" id="approve"  title="Approve">
-                                <i class="fas fa-check"></i>
-                            </button>
-                            <button class="btn btn-sm btn-danger" title="Reject" data-product-id="${product.id}" id="reject">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </td>`
-                    
+                    tr.innerHTML += `<td><span class="status-badge pending">Pending Approval</span></td>`;
                 }
             else 
                 {
@@ -221,9 +209,10 @@ window.addEventListener('load', function () {
                         tr.innerHTML += `<td><span class="status-badge active">${product.status}</span></td>`
 
                     }
-                    tr.innerHTML += `<td>
+                }
+                tr.innerHTML += `<td>
                     <div class="action-buttons">
-                        <a href="admin-product-edit.html?productId=${product.id}" class="btn btn-sm btn-secondary" title="Edit">
+                        <a href="seller-edit-product.html?productId=${product.id}" class="btn btn-sm btn-secondary" title="Edit">
                             <i class="fas fa-edit"></i>
                         </a>
                         <button class="btn btn-sm btn-danger delete-btn"  data-product-id="${product.id}" title="Delete">
@@ -231,7 +220,6 @@ window.addEventListener('load', function () {
                         </button>
                     </div>
                 </td>`;
-                }
             productsTableBody.appendChild(tr);
         });
     }
