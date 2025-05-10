@@ -37,7 +37,7 @@ window.addEventListener('load', function (evernt) {
                     let newItem = cartItem.cloneNode(true); //to get fresh copy of the cart item layout
                     cost = prod.price * usercart.items[index].quantity;
                     usercart.items[index].sellerId = prod.sellerId;
-                    usercart.status = "processing"; //
+                    usercart.status = "pending"; //
                     totalp += cost;
                     suptotal.innerHTML = ` `;       
                     tax.innerHTML = ` `;
@@ -206,7 +206,7 @@ window.addEventListener('load', function (evernt) {
                     customerId: x,
                     items: itemsToCheckout,
                     amount: totalp * 0.08 + 10 + totalp,
-                    status: "processing",
+                    status: "pending",
                     orderdate:`${today.getDate().toString().padStart(2, '0')}/${(today.getMonth()+1).toString().padStart(2, '0')}/${today.getFullYear()}`
                    
                 })

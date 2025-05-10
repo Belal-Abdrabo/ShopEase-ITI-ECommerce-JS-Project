@@ -8,6 +8,8 @@ window.addEventListener('load', function() {
         window.location.href = '../login.html';
     }
     // Get the productId from the URL parameters
+    const sellerName = document.querySelector("#seller-name");
+    sellerName.innerHTML = currentUser.userName;
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('productId');
 

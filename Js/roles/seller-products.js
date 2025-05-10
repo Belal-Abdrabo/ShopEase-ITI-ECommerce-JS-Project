@@ -8,6 +8,8 @@ window.addEventListener('load', function () {
     {
         window.location.href = '../login.html';
     }
+    const sellerName = document.querySelector("#seller-name");
+    sellerName.innerHTML = currentUser.userName;
     let currentPage = 1;
     let pageCount = 0;
     let productCount = 0;

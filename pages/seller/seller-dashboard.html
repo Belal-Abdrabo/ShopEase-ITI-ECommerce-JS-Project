@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../../Js/common.js"></script>
+    <script src="../../Js/roles/seller.js"></script>
 </head>
 <body class="admin-body">
     <div class="admin-container">
@@ -38,12 +40,6 @@
                             <span>Orders</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="seller-profile.html">
-                            <i class="fas fa-user"></i>
-                            <span>Profile</span>
-                        </a>
-                    </li>
                 </ul>
             </nav>
             <div class="sidebar-footer">
@@ -70,7 +66,7 @@
                     </div>
                     <div class="admin-profile">
                         <img src="images/seller-avatar.jpg" alt="Seller">
-                        <span>Michael Brown</span>
+                        <span id="seller-name"></span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                 </div>
@@ -78,30 +74,30 @@
 
             <div class="admin-content">
                 <div class="page-header">
-                    <h1>Seller Dashboard</h1>
-                    <p>Welcome back, Michael</p>
+                    <h1>Dashboard</h1>
+                    <p>Welcome back, Admin User</p>
                 </div>
 
                 <!-- Stats Cards -->
                 <div class="stats-grid">
+                    
                     <div class="stat-card">
-                        <div class="stat-icon" style="background-color: rgba(114, 225, 40, 0.2);">
-                            <i class="fas fa-box" style="color: #72e128;"></i>
+                        <div class="stat-icon" style="background-color: rgba(54, 162, 235, 0.2);">
+                            <i class="fas fa-shopping-bag" style="color: #36a2eb;"></i>
                         </div>
                         <div class="stat-details">
                             <h3>Total Products</h3>
-                            <p class="stat-number">48</p>
-                            <p class="stat-change positive">+5 <span>from last month</span></p>
+                            <p class="stat-number">1,257</p>
                         </div>
                     </div>
+                    
                     <div class="stat-card">
-                        <div class="stat-icon" style="background-color: rgba(54, 162, 235, 0.2);">
-                            <i class="fas fa-shopping-cart" style="color: #36a2eb;"></i>
+                        <div class="stat-icon" style="background-color: rgba(255, 99, 132, 0.2);">
+                            <i class="fas fa-shopping-cart" style="color: #ff6384;"></i>
                         </div>
                         <div class="stat-details">
-                            <h3>Total Orders</h3>
-                            <p class="stat-number">156</p>
-                            <p class="stat-change positive">+12 <span>from last month</span></p>
+                            <h3>Total orders</h3>
+                            <p class="stat-number">$128,450</p>
                         </div>
                     </div>
                 </div>
@@ -110,14 +106,13 @@
                 <div class="admin-card">
                     <div class="card-header">
                         <h2>Recent Orders</h2>
-                        <a href="seller-orders.html" class="btn btn-outline">View All</a>
+                        <a href="admin-orders.html" class="btn btn-outline">View All</a>
                     </div>
                     <div class="table-responsive">
                         <table class="admin-table">
                             <thead>
                                 <tr>
                                     <th>Order ID</th>
-                                    <th>Product</th>
                                     <th>Customer</th>
                                     <th>Date</th>
                                     <th>Amount</th>
@@ -125,39 +120,38 @@
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="table-body">
                                 <tr>
                                     <td>#ORD-5289</td>
-                                    <td>Wireless Headphones</td>
                                     <td>John Smith</td>
                                     <td>May 1, 2025</td>
-                                    <td>$129.99</td>
+                                    <td>$125.99</td>
                                     <td><span class="status-badge delivered">Delivered</span></td>
                                     <td>
                                         <div class="action-buttons">
                                             <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-5288</td>
+                                    <td>Emily Johnson</td>
+                                    <td>May 1, 2025</td>
+                                    <td>$89.50</td>
+                                    <td><span class="status-badge shipped">Shipped</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>#ORD-5287</td>
-                                    <td>Smart Watch</td>
-                                    <td>Emily Johnson</td>
+                                    <td>Michael Brown</td>
                                     <td>April 30, 2025</td>
-                                    <td>$149.99</td>
-                                    <td><span class="status-badge shipped">Shipped</span></td>
-                                    <td>
-                                        <div class="action-buttons">
-                                            <button class="btn-icon"><i class="fas fa-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#ORD-5285</td>
-                                    <td>Laptop Backpack</td>
-                                    <td>David Lee</td>
-                                    <td>April 29, 2025</td>
-                                    <td>$59.99</td>
+                                    <td>$245.00</td>
                                     <td><span class="status-badge processing">Processing</span></td>
                                     <td>
                                         <div class="action-buttons">
@@ -167,11 +161,10 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>#ORD-5283</td>
-                                    <td>Coffee Maker</td>
+                                    <td>#ORD-5286</td>
                                     <td>Sarah Wilson</td>
-                                    <td>April 28, 2025</td>
-                                    <td>$89.99</td>
+                                    <td>April 30, 2025</td>
+                                    <td>$78.25</td>
                                     <td><span class="status-badge pending">Pending</span></td>
                                     <td>
                                         <div class="action-buttons">
@@ -180,6 +173,252 @@
                                         </div>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>#ORD-5285</td>
+                                    <td>David Lee</td>
+                                    <td>April 29, 2025</td>
+                                    <td>$156.75</td>
+                                    <td><span class="status-badge delivered">Delivered</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Recent Products -->
+                <div class="admin-card">
+                    <div class="card-header">
+                        <h2>Recent Products</h2>
+                        <a href="admin-products.html" class="btn btn-outline">View All</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>ID</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-products-table-body">
+                                <!-- Laptop Product (from the provided object) 
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="../itiECommerce_JS_Project/images/herp-image.jpg" alt="Laptop">
+                                            <div>
+                                                <strong>Laptop</strong>
+                                                <div class="product-sales">Seller: ShopEase Official</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>1</td>
+                                    <td>Electronics</td>
+                                    <td>$15,000.00</td>
+                                    <td>20</td>
+                                    <td><span class="status-badge active">Available</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="admin-product-edit.html?id=1" class="btn btn-sm btn-secondary" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <button class="btn btn-sm btn-primary" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                              
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="images/product8.jpg" alt="Gaming Headset">
+                                            <div>
+                                                <strong>Gaming Headset</strong>
+                                                <div class="product-sales">Seller: Tech Gadgets Inc.</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>8</td>
+                                    <td>Electronics</td>
+                                    <td>$149.99</td>
+                                    <td>25</td>
+                                    <td><span class="status-badge pending">Pending Approval</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="admin-product-edit.html?id=8" class="btn btn-sm btn-secondary" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <button class="btn btn-sm btn-success" title="Approve">
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger" title="Reject">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="images/product9.jpg" alt="Mechanical Keyboard">
+                                            <div>
+                                                <strong>Mechanical Keyboard</strong>
+                                                <div class="product-sales">Seller: Tech Gadgets Inc.</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>9</td>
+                                    <td>Electronics</td>
+                                    <td>$89.99</td>
+                                    <td>15</td>
+                                    <td><span class="status-badge pending">Pending Approval</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="admin-product-edit.html?id=9" class="btn btn-sm btn-secondary" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <button class="btn btn-sm btn-success" id="approve" title="Approve">
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger" id="reject" title="Reject">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                               Published Products 
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="images/product2.jpg" alt="Smart Watch">
+                                            <div>
+                                                <strong>Smart Watch</strong>
+                                                <div class="product-sales">Seller: ShopEase Official</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>2</td>
+                                    <td>Electronics</td>
+                                    <td>$199.99</td>
+                                    <td>28</td>
+                                    <td><span class="status-badge active">Available</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="admin-product-edit.html?id=2" class="btn btn-sm btn-secondary" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <button class="btn btn-sm btn-primary" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="images/product3.jpg" alt="Bluetooth Speaker">
+                                            <div>
+                                                <strong>Bluetooth Speaker</strong>
+                                                <div class="product-sales">Seller: ShopEase Official</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>3</td>
+                                    <td>Electronics</td>
+                                    <td>$79.99</td>
+                                    <td>56</td>
+                                    <td><span class="status-badge active">Available</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="admin-product-edit.html?id=3" class="btn btn-sm btn-secondary" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <button class="btn btn-sm btn-primary" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="images/product4.jpg" alt="Wireless Earbuds">
+                                            <div>
+                                                <strong>Wireless Earbuds</strong>
+                                                <div class="product-sales">Seller: Tech Gadgets Inc.</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>4</td>
+                                    <td>Electronics</td>
+                                    <td>$89.99</td>
+                                    <td>5</td>
+                                    <td><span class="status-badge processing">Low Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="admin-product-edit.html?id=4" class="btn btn-sm btn-secondary" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <button class="btn btn-sm btn-primary" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="images/product6.jpg" alt="Fitness Tracker">
+                                            <div>
+                                                <strong>Fitness Tracker</strong>
+                                                <div class="product-sales">Seller: ShopEase Official</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>6</td>
+                                    <td>Electronics</td>
+                                    <td>$59.99</td>
+                                    <td>0</td>
+                                    
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="admin-product-edit.html?id=6" class="btn btn-sm btn-secondary" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <button class="btn btn-sm btn-primary" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>

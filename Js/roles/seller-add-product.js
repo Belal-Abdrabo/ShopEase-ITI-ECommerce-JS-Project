@@ -9,6 +9,8 @@ window.addEventListener('load', function() {
         window.location.href = '../login.html';
     }
     // Get form elements by their IDs
+    const sellerName = document.querySelector("#seller-name");
+    sellerName.innerHTML = currentUser.userName;
     const productNameInput = document.getElementById('product-name');
     const productDescriptionInput = document.getElementById('product-description');
     const productCategoryInput = document.getElementById('product-category');

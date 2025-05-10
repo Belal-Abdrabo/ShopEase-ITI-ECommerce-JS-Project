@@ -830,7 +830,7 @@
         }
       ],
       "amount": 48610,
-      "status": "pending",
+      "status": "processing",
       "orderdate": "07/05/2025"
     },
     {
@@ -844,7 +844,7 @@
         }
       ],
       "amount": 48610,
-      "status": "shipped",
+      "status": "pending",
       "orderdate": "07/05/2025"
     },
     {
@@ -884,17 +884,17 @@
           "productId": 1,
           "quantity": 1,
           "sellerId": "1",
-          "status": "processing"
+          "status": "pending"
         },
         {
           "productId": 5,
           "quantity": 1,
-          "sellerId": "1",
+          "sellerId": "2",
           "status": "processing"
         }
       ],
       "amount": 32410,
-      "status": "shipped",
+      "status": "pending",
       "orderdate": "08/05/2025"
     },
     {

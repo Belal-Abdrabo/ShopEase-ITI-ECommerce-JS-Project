@@ -163,7 +163,7 @@ const getCategoryById = function (id) {
 
 // Get all orders
 const getAllOrders = function () {
-    const url = 'http://localhost:3000/orders';
+    const url = 'http://localhost:3000/cartcheckout';
     return fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -363,7 +363,7 @@ const handleAddToCart = async function(productId, sellerId) {
                 productId: productId,
                 quantity: 1,
                 sellerId: sellerId,
-                status: "processing"
+                status: "pending"
             });
         }
         else{

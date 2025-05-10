@@ -1,4 +1,13 @@
 window.addEventListener('load', function () {
+    let currentUser = isAuthenticated();
+    if(currentUser)
+    {
+
+    }
+    else
+    {
+        window.location.href = '../login.html';
+    }
     let currentPage = 1;
     let pageCount = 0;
     let productCount = 0;
@@ -23,7 +32,7 @@ window.addEventListener('load', function () {
     fetch(url+`products`)
         .then(response => response.json())
         .then(data => {
-            products = data;
+            products = data.filter(p => p.sellerId == currentUser.id);
             fetch("http://localhost:3000/categories")
             .then(response => response.json())
             .then(data =>{
