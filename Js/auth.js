@@ -117,6 +117,8 @@ window.addEventListener('load', function(){
     }
   
     const login = (_email, _password) => {
+        console.log(`${url}?email=${_email}`);
+        
         fetch(`${url}?email=${_email}`)
             .then((result) => result.json())
             .then((users) => {
@@ -159,7 +161,8 @@ window.addEventListener('load', function(){
                         loginErrorMessage.style.display = "block";
                         loginErrorMessage.textContent = "❌ Wrong password.";
                     }
-                } else {
+                } 
+                else {
                     loginErrorMessage.style.display = "block";
                     loginErrorMessage.textContent = "❌ invalid login credentials";
                 }

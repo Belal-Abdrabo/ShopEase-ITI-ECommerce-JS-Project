@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/detail.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    
 </head>
 <body>
     <header>
@@ -24,11 +24,14 @@
                 </div>
                 <div class="nav-links">
                     <a href="../index.html">Home</a>
-                    <a href="./products.html">Products</a>
+                    <a href="./products.html" class="active">Products</a>
                     <a href="./categories.html">Categories</a>
-                    
-                    <a href="./customer/cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
-                    <a href="./pages/customer/user-profile.html" class="cart-icon"><img style="width:50px;" src="../images/Default.webp" alt="User Avatar"></a>
+                    <a href="./login.html" style="display: none;" id="login">Login</a>
+                    <a href="./register.html" style="display: none;" id="register">Register</a>
+                    <a href="admin-dashboard.html" style="display: none;" id="dashboard" class="dashboard-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="./customer/cart.html" style="display: none;" id="cart" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="./customer/user-profile.html" style="display: none;" id="profile" class="profile-link"><i class="fas fa-user-circle"></i>Profile</a> <!-- Add this new logout link -->
+                    <a href="login.html" style="display: none;" id="logout" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
             </div>
         </nav>
@@ -70,7 +73,7 @@
                     <br>
                     <br><br><br><br>
                     <div class="product-actions">
-                        <button class="btn btn-primary btn-lg"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button id="addToCart" class="btn btn-primary btn-lg"><i class="fas fa-shopping-cart" ></i> Add to Cart</button>
                     </div>
                 </div>
             </section>
@@ -152,6 +155,7 @@
     </footer>
     <script src="../Js/common.js"></script>
     <script src="../Js/product-details.js"></script>
+    <script src="../Js/product-detail-access.js"></script>
 </body>
 </html>
 

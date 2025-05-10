@@ -507,21 +507,25 @@ const cartsize = function () {
 
 
 //logout method
-// const logOut = function()
-// {
-//     localStorage.removeItem("loggedInUser");
-//     window.location.href = "http://127.0.0.1:5500/index.html";
-// }
-// const isValidEmail = function (_emailValue, _errorMessageElement){
-//     if(_emailValue === '')
-//     {
-//         _errorMessageElement.style.display = "block";
-//         _errorMessageElement.textContent = "Please fill Email field"
-//     }
-// }
-// window.addEventListener("load", function() {
-//     const logout = document.querySelector("#logout");
-//     logout.addEventListener("click", function(){
-//         logOut();
-//     });
-// });
+const logOut = function()
+{
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "http://127.0.0.1:5500/index.html"; 
+}
+const isValidEmail = function (_emailValue, _errorMessageElement){
+    if(_emailValue === '')
+    {
+        _errorMessageElement.style.display = "block";
+        _errorMessageElement.textContent = "Please fill Email field"
+    }
+}
+window.addEventListener("load", function() {
+    if(isAuthenticated)
+    {
+        const logout = document.querySelector("#logout");
+        logout.addEventListener("click", function(e){
+            e.preventDefault();
+            logOut();
+        }); 
+    }
+});

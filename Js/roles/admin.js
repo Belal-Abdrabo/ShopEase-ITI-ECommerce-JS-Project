@@ -85,7 +85,7 @@ window.addEventListener("load", function() {
 // #region update recent products table
 recentProductsTableBody.innerHTML = ""; //clear table body
 getAllProducts().then(products =>{
-    let first6Products = products.filter(p => p.sellerId == currentUser.id).slice(0, 6); //get first 6 products
+    let first6Products = products.slice(0, 6); //get first 6 products
     first6Products.forEach(product =>{
         getCategoryById(product.categoryId).then(data =>{
             console.log(`category: ${data.name}`);

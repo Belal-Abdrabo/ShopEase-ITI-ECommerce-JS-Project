@@ -1,4 +1,5 @@
 window.addEventListener('load', function () {
+    const currentUser = isAuthenticated();
     const productUrl = "http://localhost:3000/products";
     const searchInput = document.getElementById('searchInput');
     let searchQuery = ""; 
@@ -93,19 +94,21 @@ window.addEventListener('load', function () {
                 let c = div.querySelector('.product-badge');
                 c.style.backgroundColor = 'red';
             }
+
             container.appendChild(div);
 
             // Add event listener to the cart button
             const cartprod = div.querySelector('.cartprod');
-            if(product.status === "out of stock"){
-                let c = div.querySelector('.cartprod');
-                c.style.display = 'none';
+            if(product.status === "out of stock" || currentUser.role != 'customer'){
+                //let c = div.querySelector('.cartprod');
+                cartprod.style.display = 'none';
             } else {
                 cartprod.addEventListener('click', function () {
                     const productId = parseInt(this.getAttribute('product-id'));
                     handleAddToCart(productId, product.sellerId); 
                 });
             }
+            console.log(currentUser.role != 'customer');
         });
         
         const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);

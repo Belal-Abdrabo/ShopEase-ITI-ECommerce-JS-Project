@@ -140,11 +140,19 @@ usersTableBody.addEventListener('click', function(event) {
     const updateUsersTable = function(_users){
         usersTableBody.innerHTML = '';
         _users.forEach(user => {
+            let image;
+            if(user.gender == 'male' || !user.gender)
+            {
+                image = '../../images/DefaultProfile.webp';
+            }
+            else{
+                image = '../../images/userFemail.png';
+            }
             const tr  = document.createElement('tr');
             tr.innerHTML = `
                     <td>${user.id}</td>
                     <td class="user-info">
-                        <img src="../../images/DefaultProfile.webp" alt="User">
+                        <img src=${image} alt="User">
                         <span>${user.userName}</span>
                     </td>
                     <td>${user.email}</td>

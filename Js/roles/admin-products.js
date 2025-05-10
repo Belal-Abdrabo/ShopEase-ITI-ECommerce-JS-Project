@@ -33,7 +33,7 @@ window.addEventListener('load', function () {
     fetch(url+`products`)
         .then(response => response.json())
         .then(data => {
-            products = data.filter(p => p.sellerId == currentUser.id);
+            products = data;
             fetch("http://localhost:3000/categories")
             .then(response => response.json())
             .then(data =>{
