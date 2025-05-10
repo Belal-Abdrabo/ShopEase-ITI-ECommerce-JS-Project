@@ -602,8 +602,9 @@
   
   .auth-image img {
     width: 100%;
-    height: 100%;
+    height: 60%;
     object-fit: cover;
+    margin-top: 100px;
   }
   
   .auth-form {
@@ -1352,6 +1353,9 @@
 
 .logout-link:hover {
   color: var(--primary-color);
+}
+.logout-link i {
+  font-size: 1.5rem;
 }
   
 /* Dashboard Link Styles */
