@@ -245,7 +245,6 @@ window.addEventListener('load', function (evernt) {
                 div.className = 'product-card';
 
                 div.innerHTML = `
-                    <div class="product-card">
                         
                         <img src="${product.image}" alt="${product.name}">
                         <div class="product-info">
@@ -261,7 +260,6 @@ window.addEventListener('load', function (evernt) {
                             <p class="product-price">${product.price} EGP</p>
                             <a href="../product-detail.html?id=${product.id}" class="btn btn-secondary">View Details</a>
                         </div>
-                    </div>
                 `;
 
                 productGrid.appendChild(div);

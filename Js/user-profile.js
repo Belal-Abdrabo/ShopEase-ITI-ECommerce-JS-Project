@@ -59,7 +59,7 @@ window.addEventListener('load', function () {
 
 
   const orderContainer = document.querySelector('.orders-list');
-  const pag = document.querySelector('.h2-pag');
+  const pag = document.querySelector('.pagination-ellipsis');
   const next = document.querySelector('#r');
   const prev = document.querySelector('#l');
   const addreviewo = document.getElementById("addReviewBtn")
@@ -91,7 +91,7 @@ window.addEventListener('load', function () {
 
     const totalPages = Math.ceil(allOrders.length / itemsPerPage);
     orderContainer.innerHTML = '';
-    pag.innerHTML = `<h2>Page ${page} of ${totalPages}</h2>`;
+    pag.innerHTML = `${page} of ${totalPages}`;
 
     currentItems.forEach(order => {
       const newOrder = document.createElement('div');
@@ -104,7 +104,7 @@ window.addEventListener('load', function () {
         <span class="order-date">${order.orderdate}</span>
       </div>
       <div class="order-status">
-        <span class="status-badge delivered">${order.status}</span>
+        <span class="status-badge ${order.status}">${order.status}</span>
       </div>`;
 
       const orderItems = document.createElement('div');

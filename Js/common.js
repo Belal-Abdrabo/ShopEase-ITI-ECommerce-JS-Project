@@ -510,7 +510,8 @@ const cartsize = function () {
 const logOut = function()
 {
     localStorage.removeItem("loggedInUser");
-    window.location.href = "http://127.0.0.1:5500/index.html"; 
+    //window.location.href = "http://127.0.0.1:5500/index.html"; 
+    window.location.href = "file:///D:/College/skills/Full%20Stack/iti/JavaScript/main/iti_ECommerce_JS_Project/index.html";
 }
 const isValidEmail = function (_emailValue, _errorMessageElement){
     if(_emailValue === '')

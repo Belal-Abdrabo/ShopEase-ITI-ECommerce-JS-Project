@@ -9,8 +9,8 @@ window.addEventListener('load', function () {
     const categoryButtons = document.querySelectorAll('.categoriesbutton');
     const next = document.getElementById('r');
     const left = document.getElementById('l');
-    const pag = document.getElementsByClassName('h2-pag')[0];
-    
+    const pag = document.getElementsByClassName('pagination-ellipsis')[0];
+    let totalPages;
     // Price range elements
     const minPriceInput = document.getElementById('min-price');
     const maxPriceInput = document.getElementById('max-price');
@@ -117,8 +117,8 @@ window.addEventListener('load', function () {
             console.log(currentUser.role != 'customer');
         });
         
-        const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
-        pag.innerHTML = `<h2> ${page} of ${totalPages}</h2>`;
+        totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+        pag.innerHTML = `${page} of ${totalPages}`;
     }
 
     fetch(productUrl)
@@ -141,7 +141,7 @@ window.addEventListener('load', function () {
 
     next.addEventListener('click', function () {
         const filtered = getFilteredProducts();
-        const totalPages = Math.ceil(filtered.length / itemsPerPage);
+       // const totalPages = Math.ceil(filtered.length / itemsPerPage);
         if (currentPage < totalPages) {
             currentPage++;
             renderProducts(currentPage);
