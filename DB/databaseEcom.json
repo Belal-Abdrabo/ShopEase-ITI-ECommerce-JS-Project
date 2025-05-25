@@ -1,13 +1,6 @@
 {
   "users": [
     {
-      "id": "b817",
-      "userName": "ahmed",
-      "email": "ahmed@gmail.com",
-      "password": "123456",
-      "role": "customer"
-    },
-    {
       "id": "edfe",
       "userName": "belal",
       "email": "fafaf@fafafa.com",
@@ -22,11 +15,11 @@
       "id": "a5fb"
     },
     {
-      "userName": "belal abdoo",
+      "userName": "belal Ahmed",
       "email": "belal@gmail.com",
       "role": "customer",
       "password": "123456",
-      "address": "6 of october ",
+      "address": "giza",
       "gender": "male",
       "phone": "015567011223",
       "id": "c56e"
@@ -75,20 +68,16 @@
       "address": "",
       "phone": "",
       "registrationDate": "2025-05-10"
+    },
+    {
+      "userName": "Mona Ali Ahmed",
+      "email": "mona@gmail.com",
+      "role": "customer",
+      "password": "123456",
+      "id": "5d18"
     }
   ],
   "products": [
-    {
-      "name": "Canon camera",
-      "price": 15681,
-      "capacity": 7,
-      "image": "https://f.nooncdn.com/p/v1662029536/N33956021A_1.jpg",
-      "categoryId": "1",
-      "sellerId": "1",
-      "productDescription": "Capture every moment with this high-quality camera. Perfect for both photography enthusiasts and professionals, this camera provides exceptional image quality, a variety of settings, and ease of use for every situation.",
-      "status": "available",
-      "id": "1"
-    },
     {
       "name": "Airbods",
       "price": 650,
@@ -170,7 +159,7 @@
       "id": "9",
       "name": "Anker HeadPhone",
       "price": 1250,
-      "capacity": 18,
+      "capacity": 17,
       "image": "https://f.nooncdn.com/p/pnsku/N70001661V/45/_/1695298129/ea3a2f33-979a-4a0e-acbf-12c59c095581.jpg",
       "categoryId": 1,
       "sellerId": "1",
@@ -739,14 +728,36 @@
       "status": "available"
     },
     {
-      "id": "61",
       "name": "Green Tea Capsule",
       "price": 150,
       "capacity": 20,
       "image": "https://f.nooncdn.com/p/pzsku/ZC26E4D51F8AA9A12C9CCZ/45/_/1676988880/b0cb58be-7d50-475f-bf3e-a7a0716b7fda.jpg",
-      "categoryId": 8,
+      "categoryId": "8",
       "sellerId": "1",
       "productDescription": "Natural antioxidant that supports metabolism and fat burning.",
+      "status": "available",
+      "id": "61"
+    },
+    {
+      "id": "f537",
+      "name": "Samsung Led",
+      "price": 21000,
+      "capacity": 20,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQDs84Pq4DJafQ-chdSuElI4HwB9jaHOfN8A&s",
+      "categoryId": "1",
+      "sellerId": "1",
+      "productDescription": "samsung tv",
+      "status": "available"
+    },
+    {
+      "id": "efe1",
+      "name": "belal",
+      "price": 2,
+      "capacity": 9,
+      "image": "https://toyota.com.eg/storage/2739/conversions/image-(28)-optimized.png",
+      "categoryId": "6",
+      "sellerId": "1",
+      "productDescription": "belalaaalll",
       "status": "available"
     }
   ],
@@ -842,7 +853,38 @@
     {
       "id": "fff7",
       "customerId": "c56e",
-      "items": [],
+      "items": [
+        {
+          "productId": 3,
+          "quantity": 3,
+          "sellerId": "1",
+          "status": "pending"
+        },
+        {
+          "productId": 4,
+          "quantity": 7,
+          "sellerId": "1",
+          "status": "pending"
+        },
+        {
+          "productId": 5,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "pending"
+        },
+        {
+          "productId": 6,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "pending"
+        },
+        {
+          "productId": 7,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "pending"
+        }
+      ],
       "status": "pending"
     },
     {
@@ -931,7 +973,7 @@
           "productId": 6,
           "quantity": 1,
           "sellerId": "1",
-          "status": "processing"
+          "status": "shipped"
         }
       ],
       "amount": 16210,
@@ -1015,6 +1057,21 @@
       "amount": 205642,
       "status": "pending",
       "orderdate": "17/05/2025"
+    },
+    {
+      "id": "8da0",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 9,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "pending"
+        }
+      ],
+      "amount": 73294.48,
+      "status": "processing",
+      "orderdate": "17/05/2025"
     }
   ],
   "review": [
@@ -1049,9 +1106,18 @@
     {
       "id": "fc21",
       "orderReview": "bmhbhnmvbhjb",
-      "productId": "1",
+      "productId": null,
       "userId": "c56e",
       "sellerId": "1"
+    },
+    {
+      "id": "5b28",
+      "orderReview": "Nice One",
+      "productId": "9",
+      "userId": "c56e",
+      "sellerId": "1",
+      "rating": "1",
+      "date": "17/05/2025"
     }
   ]
 }

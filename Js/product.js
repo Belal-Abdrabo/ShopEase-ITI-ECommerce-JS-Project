@@ -65,8 +65,8 @@ window.addEventListener('load', function () {
         const end = start + itemsPerPage;
         const currentItems = filteredProducts.slice(start, end);
 
-        container.innerHTML = '';
-        currentItems.filter(i => i.status !== "pending" || i.status !== "rejected").forEach(product => {
+        container.innerHTML = '';             //pending
+        currentItems.filter(i => i.status != "pending" && i.status != "rejected").forEach(product => {
             const div = document.createElement('div');
             div.innerHTML = `
                 <div class="product-card">
