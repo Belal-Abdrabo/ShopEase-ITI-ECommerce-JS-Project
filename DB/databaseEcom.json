@@ -853,38 +853,7 @@
     {
       "id": "fff7",
       "customerId": "c56e",
-      "items": [
-        {
-          "productId": 3,
-          "quantity": 3,
-          "sellerId": "1",
-          "status": "pending"
-        },
-        {
-          "productId": 4,
-          "quantity": 7,
-          "sellerId": "1",
-          "status": "pending"
-        },
-        {
-          "productId": 5,
-          "quantity": 1,
-          "sellerId": "1",
-          "status": "pending"
-        },
-        {
-          "productId": 6,
-          "quantity": 1,
-          "sellerId": "1",
-          "status": "pending"
-        },
-        {
-          "productId": 7,
-          "quantity": 1,
-          "sellerId": "1",
-          "status": "pending"
-        }
-      ],
+      "items": [],
       "status": "pending"
     },
     {
@@ -1072,6 +1041,57 @@
       "amount": 73294.48,
       "status": "processing",
       "orderdate": "17/05/2025"
+    },
+    {
+      "id": "8517",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 5,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "pending"
+        },
+        {
+          "productId": 6,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "pending"
+        }
+      ],
+      "amount": 64821.88,
+      "status": "pending",
+      "orderdate": "26/05/2025"
+    },
+    {
+      "id": "db69",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 7,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "pending"
+        }
+      ],
+      "amount": 71944.48,
+      "status": "pending",
+      "orderdate": "26/05/2025"
+    },
+    {
+      "id": "664d",
+      "customerId": "c56e",
+      "items": [
+        {
+          "productId": 3,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "pending"
+        }
+      ],
+      "amount": 78850,
+      "status": "pending",
+      "orderdate": "26/05/2025"
     }
   ],
   "review": [
