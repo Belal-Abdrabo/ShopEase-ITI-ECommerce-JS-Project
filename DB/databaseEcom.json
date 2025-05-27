@@ -911,7 +911,7 @@
         }
       ],
       "amount": 16210,
-      "status": "pending"
+      "status": "shipped"
     },
     {
       "id": "c61c",
@@ -925,7 +925,7 @@
         }
       ],
       "amount": 16210,
-      "status": "processing"
+      "status": "shipped"
     },
     {
       "id": "ab0b",
@@ -1088,21 +1088,6 @@
         }
       ],
       "amount": 71944.48,
-      "status": "pending",
-      "orderdate": "26/05/2025"
-    },
-    {
-      "id": "664d",
-      "customerId": "c56e",
-      "items": [
-        {
-          "productId": 3,
-          "quantity": 1,
-          "sellerId": "1",
-          "status": "pending"
-        }
-      ],
-      "amount": 78850,
       "status": "pending",
       "orderdate": "26/05/2025"
     }
