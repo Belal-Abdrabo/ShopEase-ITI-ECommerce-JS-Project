@@ -109,6 +109,7 @@ window.addEventListener("load", function () {
                         role: selectedRole,
                         gender: selectedGender,
                         address: '',
+                        phone: '',
                         registrationDate: new Date().toISOString().split('T')[0], // Format: YYYY-MM-DD
                     };
                     

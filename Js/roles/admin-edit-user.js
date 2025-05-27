@@ -8,6 +8,7 @@ window.addEventListener('load', function() {
     const userNameInput = document.getElementById('username');
     const emailInput = document.getElementById('email');
     const roleInput = document.getElementById('role');
+     const genderInput = document.getElementById('gender');
     const currentPasswordInput = document.getElementById('current-password');
     const newPasswordInput = document.getElementById('new-password');
     const confirmPasswordInput = document.getElementById('confirm-password');
@@ -28,6 +29,7 @@ window.addEventListener('load', function() {
           userNameInput.value = user.userName;
           emailInput.value = user.email;
           roleInput.value = user.role;
+          genderInput.value = user.gender;
           currentPasswordInput.value = user.password; // Assuming you want to show the current password (not recommended for security reasons)
           document.getElementById('user-id').value = user.id;
           document.getElementById('registration-date').value = user.registrationDate || "Not Available"; 
@@ -69,7 +71,11 @@ window.addEventListener('load', function() {
                         const updatedUser = {
                             userName: userNameInput.value,
                             email: updatedEmail,
-                            role: roleInput.value
+                            role: roleInput.value,
+                            gender: genderInput.value,
+                            address: user.address || "", // Assuming address is optional
+                            phoneNumber: user.phoneNumber || "", // Assuming phone number is optional
+                            registrationDate: document.getElementById('registration-date').value || "Not Available"
                         };
 
                         // If a new password is provided, include it in the update

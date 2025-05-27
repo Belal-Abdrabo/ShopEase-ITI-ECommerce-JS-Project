@@ -1,13 +1,6 @@
 {
   "users": [
     {
-      "id": "edfe",
-      "userName": "belal",
-      "email": "fafaf@fafafa.com",
-      "password": "1478",
-      "role": "admin"
-    },
-    {
       "userName": "ahmed",
       "email": "ahmed@gmail.com",
       "role": "customer",
@@ -73,6 +66,7 @@
       "userName": "Mona Ali Ahmed",
       "email": "mona@gmail.com",
       "role": "customer",
+      "gender": "female",
       "password": "123456",
       "id": "5d18"
     }
@@ -748,17 +742,6 @@
       "sellerId": "1",
       "productDescription": "samsung tv",
       "status": "available"
-    },
-    {
-      "id": "efe1",
-      "name": "belal",
-      "price": 2,
-      "capacity": 9,
-      "image": "https://toyota.com.eg/storage/2739/conversions/image-(28)-optimized.png",
-      "categoryId": "6",
-      "sellerId": "1",
-      "productDescription": "belalaaalll",
-      "status": "available"
     }
   ],
   "categories": [
@@ -853,7 +836,14 @@
     {
       "id": "fff7",
       "customerId": "c56e",
-      "items": [],
+      "items": [
+        {
+          "productId": 3,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "pending"
+        }
+      ],
       "status": "pending"
     },
     {
@@ -894,11 +884,12 @@
         {
           "productId": 3,
           "quantity": 1,
-          "sellerId": "1"
+          "sellerId": "1",
+          "status": "delivered"
         }
       ],
       "amount": 16210,
-      "status": "processing"
+      "status": "pending"
     },
     {
       "id": "c61c",
@@ -928,7 +919,7 @@
           "productId": 5,
           "quantity": 1,
           "sellerId": "1",
-          "status": "processing"
+          "status": "shipped"
         }
       ],
       "amount": 32410,
