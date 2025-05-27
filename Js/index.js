@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
     fetch("http://localhost:3000/products")
         .then(response => response.json())
         .then(data => {
-            const newProducts = data.slice(-4); // Get last 4 products
+            const newProducts = data.filter(i => i.status != "pending" && i.status != "rejected").slice(-4); // Get last 4 products
 
             newProducts.forEach(product => {
                 const div = document.createElement('div');
