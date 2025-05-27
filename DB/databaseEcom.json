@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "userName": "ahmed",
+      "userName": "Ahmed Ibrahim",
       "email": "ahmed@gmail.com",
       "role": "customer",
       "password": "123456",
@@ -19,8 +19,8 @@
     },
     {
       "id": "d959",
-      "userName": "ahmed",
-      "email": "belal21@gmail.com",
+      "userName": "Ahmed Adel",
+      "email": "adel@gmail.com",
       "password": "123456",
       "role": "customer",
       "registrationDate": "2025-05-08"
@@ -72,11 +72,55 @@
     },
     {
       "id": "0868",
-      "userName": "Ahmed Ibrahim",
-      "email": "ahmed2@gmail.com",
+      "userName": "Mohamed Ibrahim",
+      "email": "mohamed@gmail.com",
       "password": "123456",
       "role": "customer",
       "gender": "male",
+      "address": "",
+      "phone": "",
+      "registrationDate": "2025-05-27"
+    },
+    {
+      "id": "0869",
+      "userName": "Sama",
+      "email": "sama@gmail.com",
+      "password": "123456",
+      "role": "customer",
+      "gender": "female",
+      "address": "",
+      "phone": "",
+      "registrationDate": "2025-05-27"
+    },
+    {
+      "id": "08608",
+      "userName": "Mostafa Alaa",
+      "email": "mostafa@gmail.com",
+      "password": "123456",
+      "role": "customer",
+      "gender": "male",
+      "address": "",
+      "phone": "",
+      "registrationDate": "2025-05-27"
+    },
+    {
+      "id": "08685",
+      "userName": "Ahmed Yasser",
+      "email": "yasser@gmail.com",
+      "password": "123456",
+      "role": "customer",
+      "gender": "male",
+      "address": "",
+      "phone": "",
+      "registrationDate": "2025-05-27"
+    },
+    {
+      "id": "080685",
+      "userName": "Eman Gomaa",
+      "email": "eman@gmail.com",
+      "password": "123456",
+      "role": "customer",
+      "gender": "female",
       "address": "",
       "phone": "",
       "registrationDate": "2025-05-27"
