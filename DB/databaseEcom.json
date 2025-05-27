@@ -744,7 +744,6 @@
       "status": "available"
     },
     {
-      "id": "9f10",
       "name": "iphone 13 pro Max",
       "price": 32500,
       "capacity": 13,
@@ -752,10 +751,10 @@
       "categoryId": "1",
       "sellerId": "1",
       "productDescription": "the new special green iphone 13 pro max",
-      "status": "pending"
+      "status": "available",
+      "id": "9f10"
     },
     {
-      "id": "a90e",
       "name": "Lotus Flowers",
       "price": 500,
       "capacity": 3,
@@ -763,7 +762,8 @@
       "categoryId": "4",
       "sellerId": "1",
       "productDescription": "beautiful flowers",
-      "status": "pending"
+      "status": "rejected",
+      "id": "a90e"
     }
   ],
   "categories": [

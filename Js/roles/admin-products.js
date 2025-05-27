@@ -137,9 +137,18 @@ window.addEventListener('load', function () {
             body: JSON.stringify({ status: "rejected" })
         }).then((result) => {
             if (result.ok) {
-                // updatePagination();
-                // updateTable(clonedProducts);
-                location.reload();
+                clonedProducts.forEach(product => {
+                if (product.id === productId) {
+                    product.status = "rejected"; // Directly modify the object
+                }
+            });
+                Swal.fire({
+                            title: "Good job",
+                            text: "Product Rejected",
+                            icon: "success"
+                            });
+                updatePagination();
+                updateTable(clonedProducts);
             }
         }).catch((err) => {
             console.error("Error rejecting product:", err);
@@ -157,6 +166,16 @@ window.addEventListener('load', function () {
             body: JSON.stringify({ status: "available" })
         }).then((result) => {
             if (result.ok) {
+                clonedProducts.forEach(product => {
+                if (product.id === productId) {
+                    product.status = "available"; // Directly modify the object
+                }
+            });
+                Swal.fire({
+                            title: "Good job",
+                            text: "Product approved successfully!",
+                            icon: "success"
+                            });
                 updatePagination();
                 updateTable(clonedProducts);
             }
