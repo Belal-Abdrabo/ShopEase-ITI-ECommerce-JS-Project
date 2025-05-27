@@ -69,6 +69,17 @@
       "gender": "female",
       "password": "123456",
       "id": "5d18"
+    },
+    {
+      "id": "0868",
+      "userName": "Ahmed Ibrahim",
+      "email": "ahmed2@gmail.com",
+      "password": "123456",
+      "role": "customer",
+      "gender": "male",
+      "address": "",
+      "phone": "",
+      "registrationDate": "2025-05-27"
     }
   ],
   "products": [
@@ -881,53 +892,31 @@
     {
       "id": "a17a",
       "customerId": "8acc",
-      "items": []
+      "items": [],
+      "status": "pending"
     }
   ],
   "cartcheckout": [
     {
-      "id": "0add",
-      "customerId": "78af",
+      "id": "f1e1",
+      "customerId": "8acc",
       "items": [
         {
           "productId": 3,
-          "quantity": 3,
-          "status": "processing",
-          "sellerId": "1"
-        }
-      ],
-      "amount": 48610,
-      "status": "processing"
-    },
-    {
-      "id": "8da0",
-      "customerId": "c56e",
-      "items": [
-        {
-          "productId": 9,
           "quantity": 1,
           "sellerId": "1",
-          "status": "pending"
-        }
-      ],
-      "amount": 73294.48,
-      "status": "processing",
-      "orderdate": "17/05/2025"
-    },
-    {
-      "id": "db69",
-      "customerId": "c56e",
-      "items": [
+          "status": "delivered"
+        },
         {
-          "productId": 7,
+          "productId": 8,
           "quantity": 1,
           "sellerId": "1",
-          "status": "pending"
+          "status": "delivered"
         }
       ],
-      "amount": 71944.48,
-      "status": "pending",
-      "orderdate": "26/05/2025"
+      "amount": 80183.8,
+      "status": "delivered",
+      "orderdate": "27/05/2025"
     }
   ],
   "review": [

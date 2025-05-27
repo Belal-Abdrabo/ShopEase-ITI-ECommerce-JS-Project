@@ -24,7 +24,8 @@
     .then(response => response.json())
     .then(data =>
     {
-        ordersCount = data.filter(order => order.items.some(item => item.sellerId == currentUser.id)).length;
+        let OrdersForCount  = data.filter(order => order.items.some(item => item.sellerId == currentUser.id));
+        ordersCount = OrdersForCount.length;
         cards[1].textContent = ordersCount;
     }
     ).catch(error => console.error('Error:', error));
