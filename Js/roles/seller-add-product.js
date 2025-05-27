@@ -121,7 +121,7 @@ window.addEventListener('load', function() {
             .then(response => response.json())
             .then(data => {
                 alert('Product added successfully');
-                window.location.href = 'admin-products.html'; // Redirect back to products page after success
+                window.location.href = './seller-products.html'; // Redirect back to products page after success
             })
             .catch(error => {
                 console.error('Error updating product:', error);
