@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase | Seller Dashboard</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../../css/admin-product-edit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../../images/favicon-32x32.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../images/favicon-32x32.png" type="image/x-icon">
+    <script src="../../Js/common.js"></script>
+    <script src="../../js/roles/seller-add-product.js"></script>
+</head>
+<body class="admin-body">
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="../../index.html">ShopEase</a>
+                </div>
+                <span class="admin-badge seller-badge">Seller</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="./seller-dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./seller-products.html">
+                            <i class="fas fa-box"></i>
+                            <span>My Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./seller-orders.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="../../index.html" id="logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- seller Header -->
+            <header class="admin-header">
+                <div class="header-search">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                    </div>
+                    <div class="admin-profile">
+                        <img src="../../images/DefaultProfile.webp" alt="Seller">
+                        <span id="seller-name"></span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <div class="page-header">
+                    <div>
+                        <h1>Add New Product</h1>
+                    </div>
+                    <div>
+                        <a href="./seller-products.html" class="btn btn-outline">
+                            <i class="fas fa-arrow-left"></i> Back to Products
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Edit Form -->
+                <form class="product-form" id="product-edit-form">
+                    <div class="form-grid">
+                        <!-- Basic Information -->
+                        <div class="form-section">
+                            <h3 class="section-title">Basic Information</h3>
+                            
+                            <div class="form-group">
+                                <label for="product-name">Product Name <span class="required">*</span></label>
+                                <input type="text" id="product-name" required>
+                                <p id="product-name-error" class="error-message"></p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="product-description">Description <span class="required">*</span></label>
+                                <textarea id="product-description" rows="6" required></textarea>
+                                <p id="product-description-error" class="error-message"></p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="product-category">Category <span class="required">*</span></label>
+                                <select id="product-category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="1" selected>Electronics</option>
+                                    <option value="2">Fashion</option>
+                                    <option value="3">Home & Kitchen</option>
+                                    <option value="4">Beauty & Personal Care</option>
+                                </select>
+                                <p id="product-category-error" class="error-message"></p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="product-status">Status</label>
+                                <select id="product-status" disabled>
+                                    <option value="available" selected>Available</option>
+                                    <option value="out of stock">Out of Stock</option>
+                                    <option value="pending" selected>pending</option>
+                                    <option value="rejected">rejected</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Pricing & Inventory -->
+                        <div class="form-section">
+                            <h3 class="section-title">Pricing & Inventory</h3>
+                             <div class="form-group">
+                                <label for="product-price">Price <span class="required">*</span></label>
+                                <div class="price-input">
+                                    <span class="currency">$</span>
+                                    <input type="number" id="product-price" step="0.01" min="0" required>
+                                </div>
+                                <p id="product-price-error" class="error-message"></p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="product-capacity">Stock Quantity <span class="required">*</span></label>
+                                <input type="number" id="product-capacity" min="0" required>
+                                <p id="product-capacity-error" class="error-message"></p>
+                            </div>
+                        </div>
+                             <div class="form-group">
+                                <label for="product-image">Product image URL</label>
+                                <input type="url" id="product-image" placeholder="product image URL">
+                            </div>
+                        </div>
+                        
+                        <!-- Seller Information -->
+                        <div class="form-section">
+                            <h3 class="section-title">Seller Information</h3>
+                             <div class="form-group">
+                                <label for="product-seller">Seller</label>
+                                <select id="product-seller" >
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Form Actions -->
+                    <div class="form-actions" style="margin-bottom: 40px;">
+                        <button type="button" class="btn btn-outline">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

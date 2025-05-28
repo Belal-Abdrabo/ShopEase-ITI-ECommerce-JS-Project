@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase | Products</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/favicon-32x32.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon-32x32.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="../Js/common.js"></script>
+    <script src="../Js/product.js"></script>
+    <script src="../Js/product-access.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="../index.html">ShopEase</a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-links">
+                    <a href="../index.html">Home</a>
+                    <a href="./products.html" class="active">Products</a>
+                    <a href="./categories.html">Categories</a>
+                    <a href="./login.html" style="display: none;" id="login">Login</a>
+                    <a href="./register.html" style="display: none;" id="register">Register</a>
+                    <a href="admin-dashboard.html" style="display: none;" id="dashboard" class="dashboard-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="./customer/cart.html" style="display: none;" id="cart" class="cart-icon"><i class="fas fa-shopping-cart" style="margin-left: 100px;"></i></a>
+                    <a href="./customer/user-profile.html" style="display: none;" id="profile" class="profile-link"><i class="fas fa-user-circle" title="Profile"></i></a> <!-- Add this new logout link -->
+                    <a href="login.html" style="display: none;" id="logout" class="logout-link"><i class="fas fa-sign-out-alt" title="Logout"></i></a>
+                </div>
+                <div style="display: none;" class="mobile-menu-btn" >
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Products</span>
+            </div>
+
+            <div class="products-layout">
+                <aside class="filters-sidebar">
+                    <div class="filter-section">
+                        <h3>Categories</h3>
+                        <ul class="filter-list">
+                            <li><button class="categoriesbutton" data-category="all">All Categories</button></li>
+                            <li><button class="categoriesbutton" data-category="1">Electronics</button></li> 
+                            <li><button class="categoriesbutton" data-category="2">Fashion</button></li>
+                            <li><button class="categoriesbutton" data-category="3">Home & Kitchen</button></li>
+                            <li><button class="categoriesbutton" data-category="4">Beauty & Personal Care</button></li>
+                            <li><button class="categoriesbutton" data-category="5">Sports & Outdoors</button></li>
+                            <li><button class="categoriesbutton" data-category="6">Toys & Games</button></li>
+                            <li><button class="categoriesbutton" data-category="7">Books & Media</button></li>
+                            <li><button class="categoriesbutton" data-category="8">Health & Wellness</button></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Price Range</h3>
+                        <div class="price-range">
+                            <div class="price-inputs">
+                                <div class="price-input">
+                                    <label for="min-price">Min</label>
+                                    <input type="number" id="min-price" value="0" min="0">
+                                </div>
+                                <div class="price-input">
+                                    <label for="max-price">Max</label>
+                                    <input type="number" id="max-price" value="100000" min="0">
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Apply</button>
+                        </div>
+                    </div>
+
+                </aside>
+                
+                <div class="products-content">
+                    <div class="products-header">
+                        <h1>All Products</h1>
+                 
+                    </div>
+                    
+                    <div class="products-grid">
+                        <!-- Product 1 -->
+                  
+                    </div>
+                    
+                    <div class="pagination">
+                        <a href="#" id="l" class="btn-page next"><i class="fas fa-chevron-left"></i></a>
+                            <!-- <h2 class="h2-pag">1</h2> -->
+                            <span class="pagination-ellipsis"></span>
+                        <a href="#" id="r" class="next"><button class="btn-page"><i class="fas fa-chevron-right"></i></button></a>
+                    </div>
+<!-- 
+                <div class="pagination">
+                    <button class="btn-page" id="l" disabled><i class="fas fa-chevron-left"></i></button>
+                    <span class="pagination-ellipsis"></span>
+                    <button class="btn-page" id="r"><i class="fas fa-chevron-right"></i></button>
+                </div> -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ShopEase</h3>
+                    <p>Your one-stop shop for all your needs. Quality products, competitive prices, and exceptional service.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Returns & Refunds</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Commerce St, City, Country</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@shopease.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ShopEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

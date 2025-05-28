@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase | Admin - View Order</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../../css/admin-view-order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../../images/favicon-32x32.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../images/favicon-32x32.png" type="image/x-icon">
+    <script src="../../Js/common.js"></script>
+    <script src="../../Js/roles/admin-view-order.js"></script>
+</head>
+<body class="admin-body">
+    <div class="admin-container">
+        <!-- Admin Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="../../index.html">ShopEase</a>
+                </div>
+                <span class="admin-badge">Admin</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="admin-dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-users.html">
+                            <i class="fas fa-users"></i>
+                            <span>User Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-products.html">
+                            <i class="fas fa-box"></i>
+                            <span>Product Management</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="admin-orders.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Order Management</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="../../index.html" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>View Store</span>
+                </a>
+                <a href="../../index.html" id="logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <div class="header-search">
+                    <input type="text" placeholder="Search orders...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                    </div>
+                    <div class="admin-profile">
+                        <img src="../../images/DefaultProfile.webp" alt="Admin">
+                        <span>Admin User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <div class="page-header">
+                    <div>
+                        <h1>Order Details</h1>
+                        <p>View and manage order information</p>
+                    </div>
+                    <div>
+                        <a href="admin-orders.html" class="btn btn-outline">
+                            <i class="fas fa-arrow-left"></i> Back to Orders
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Order Header -->
+                <div class="order-header">
+                    <div>
+                        <div class="order-id"></div>
+                        <div class="order-date"></div>
+                        <span class="order-status-large status-processing"></span>
+                    </div>
+                    <div class="order-actions">
+                        <button type="button" class="btn btn-outline danger-btn" id="delete">
+                            <i class="fas fa-trash"></i> Delete order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Order Status Update -->
+                <div class="info-card">
+                    <h3><i class="fas fa-exchange-alt"></i> Update Order Status</h3>
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <select style="flex: 1; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 0.375rem;">
+                            <option value="pending">pending</option>
+                            <option value="processing" selected>processing</option>
+                            <option value="shipped">shipped</option>
+                            <option value="delivered">delivered</option>
+                        </select>
+                        <button class="btn btn-primary" id="update">Update Status</button>
+                    </div>
+                </div>
+                <br>
+                <!-- Order Information Grid -->
+                <div class="order-grid">
+                    <!-- Customer Information -->
+                    <div class="info-card">
+                        <h3><i class="fas fa-user"></i> Customer Information</h3>
+                        <ul class="info-list">
+                            <li>
+                                <span class="info-label">Customer ID:</span>
+                                <span class="info-value">b817</span>
+                            </li>
+                            <li>
+                                <span class="info-label">Email:</span>
+                                <span class="info-value">customer@example.com</span>
+                            </li>
+                            <li>
+                                <span class="info-label">Phone:</span>
+                                <span class="info-value">(555) 123-4567</span>
+                            </li>
+                            <li>
+                                <span class="info-label">Customer Since:</span>
+                                <span class="info-value">2025</span>
+                            </li>
+                            <li>
+                                <span class="info-label">Orders:</span>
+                                <span class="info-value">1 order</span>
+                            </li>
+                        </ul>
+                        <div style="margin-top: 1rem;">
+                            <a href="admin-edit-user.html?id=b817" class="btn btn-outline btn-sm">View Customer</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Items -->
+                <div class="info-card">
+                    <h3><i class="fas fa-box-open"></i> Order Items</h3>
+                    <div class="order-items">
+                        <div class="order-item">
+                            
+                        </div>
+                    </div>
+                    <div class="order-summary">
+                        <div class="summary-row">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- <script>
+        // JavaScript for order status update
+        document.querySelector('.btn-primary').addEventListener('click', function() {
+            const statusSelect = document.querySelector('select');
+            const selectedStatus = statusSelect.value;
+            const statusText = statusSelect.options[statusSelect.selectedIndex].text;
+            
+            // Update the status badge
+            const statusBadge = document.querySelector('.order-status-large');
+            
+            // Remove all existing status classes
+            statusBadge.classList.remove('status-pending', 'status-processing', 'status-shipped', 'status-delivered', 'status-cancelled');
+            
+            // Add the new status class
+            statusBadge.classList.add('status-' + selectedStatus);
+            
+            // Update the status text
+            statusBadge.textContent = statusText;
+            
+            // Here you would typically make an API call to update the order status
+            console.log('Order status updated to:', selectedStatus);
+            
+            // Add a new entry to the timeline
+            const timeline = document.querySelector('.timeline');
+            const now = new Date();
+            const formattedDate = `${now.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} - ${now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}`;
+            
+            // Show a success message
+            alert('Order status updated successfully!');
+        });
+    </script> -->
+</body>
+</html>

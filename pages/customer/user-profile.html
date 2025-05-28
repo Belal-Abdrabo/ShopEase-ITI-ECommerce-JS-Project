@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase | My Profile</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/profile.css">
+    <link rel="stylesheet" href="../../css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../../images/favicon-32x32.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../images/favicon-32x32.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="../../Js/common.js"></script>
+    <script src="../../Js/user-profile.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="../../index.html">ShopEase</a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-links">
+                    <a href="../../index.html">Home</a>
+                    <a href="../products.html">Products</a>
+                    <a href="../categories.html">Categories</a>
+                    <a href="../customer/cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>My Profile</span>
+            </div>
+
+            <section class="profile-section">
+                <div class="profile-sidebar">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <img class="userimg" src="../../images/DefaultProfile.webp" alt="User Avatar">
+                        </div>
+                        <div class="profile-info">
+                            <h3 class="username">Sarah Johnson</h3>
+                            <p class="useremail">sarah.johnson@example.com</p>
+                        </div>
+                    </div>
+                    <nav class="profile-nav">
+                        <ul>
+                            
+                            <li class="active">
+                                <a href="#personal-info" data-tab="personal-info">
+                                    <i class="fas fa-user"></i> Personal Information
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#orders" data-tab="orders">
+                                    <i class="fas fa-shopping-bag"></i> My Orders
+                                </a>
+                            </li>
+                            <!-- Future Edition -->
+                            <!-- <li>
+                                <a href="#addresses" data-tab="addresses">
+                                    <i class="fas fa-map-marker-alt"></i> My Addresses
+                                </a>
+                            </li> -->
+
+                            
+                            <!-- <li>
+                                <a href="#wishlist" data-tab="wishlist">
+                                    <i class="fas fa-heart"></i> Wishlist
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#payment-methods" data-tab="payment-methods">
+                                    <i class="fas fa-credit-card"></i> Payment Methods
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#account-settings" data-tab="account-settings">
+                                    <i class="fas fa-cog"></i> Account Settings
+                                </a>
+                            </li> -->
+                        </ul>
+                    </nav>
+                    <div class="profile-actions">
+                        <a href="../../index.html" class="btn btn-outline btn-block" id="logout" >
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div>
+                </div>
+
+                <div class="profile-content">
+                    <!-- Personal Information Tab -->
+                    <div class="profile-tab active" id="personal-info">
+                        <div class="tab-header">
+                            <h2>Personal Information</h2>
+                            <button class="btn btn-outline edit-btn" id="edit-personal-info">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                        </div>
+
+                        <div class="profile-form">
+                            <form id="personal-info-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="first-name">First Name</label>
+                                        <input type="text" id="first-name" value="Sarah" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name">Last Name</label>
+                                        <input type="text" id="last-name" value="Johnson" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" value="sarah.johnson@example.com" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" value="+1 (555) 123-4567" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Address">Address</label>
+                                    <input type="text" id="adress" value="" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="gender">Gender</label>
+                                    <select id="gender" disabled>
+                                        <option value="female" selected>Female</option>
+                                        <option value="male">Male</option>
+                                    </select>
+                                </div>
+                                <div class="form-actions" style="display: none;">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    <button type="button" class="btn btn-outline" id="cancel-edit">Cancel</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                    
+                    <!-- Orders Tab -->
+                    <div class="profile-tab" id="orders">
+                        <div class="tab-header">
+                            <h2>My Orders</h2>
+                        </div>
+
+                        <!-- <div class="orders-filter">
+                            <div class="filter-group">
+                                <label for="order-status">Filter by Status</label>
+                                <select id="order-status">
+                                    <option value="all">All Orders</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="processing">Processing</option>
+                                    <option value="shipped">Shipped</option>
+                                    <option value="delivered">Delivered</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="order-date">Filter by Date</label>
+                                <select id="order-date">
+                                    <option value="all">All Time</option>
+                                    <option value="last-month">Last Month</option>
+                                    <option value="last-3-months">Last 3 Months</option>
+                                    <option value="last-6-months">Last 6 Months</option>
+                                    <option value="last-year">Last Year</option>
+                                </select>
+                            </div>
+                        </div> -->
+
+                        <div class="orders-list">
+                            <!-- <div class="order-card">
+                                <div class="order-header">
+                                    <div class="order-info">
+                                        <span class="order-id">Order #ORD-5289</span>
+                                        <span class="order-date">May 1, 2025</span>
+                                    </div>
+                                    <div class="order-status">
+                                        <span class="status-badge delivered">Delivered</span>
+                                    </div>
+                                </div>
+                                <div class="order-items">
+                                    <div class="order-item">
+                                        <img src="images/product1.jpg" alt="Wireless Headphones">
+                                        <div class="item-details">
+                                            <h4>Wireless Headphones</h4>
+                                            <p class="item-price">$129.99</p>
+                                            <p class="item-quantity">Qty: 1</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <div class="order-total">
+                                        <span>Total:</span>
+                                        <span class="total-amount">$129.99</span>
+                                    </div>
+                                    <div class="order-actions">
+                                        <a href="order-detail.html?id=5289" class="btn btn-outline btn-sm">View Details</a>
+                                        <button class="btn btn-primary btn-sm">Track Order</button>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <!-- <div class="order-card">
+                                <div class="order-header">
+                                    <div class="order-info">
+                                        <span class="order-id">Order #ORD-5275</span>
+                                        <span class="order-date">April 15, 2025</span>
+                                    </div>
+                                    <div class="order-status">
+                                        <span class="status-badge delivered">Delivered</span>
+                                    </div>
+                                </div>
+                                <div class="order-items">
+                                    <div class="order-item">
+                                        <img src="images/product2.jpg" alt="Smart Watch">
+                                        <div class="item-details">
+                                            <h4>Smart Watch</h4>
+                                            <p class="item-price">$149.99</p>
+                                            <p class="item-quantity">Qty: 1</p>
+                                        </div>
+                                    </div>
+                                    <div class="order-item">
+                                        <img src="images/product3.jpg" alt="Laptop Backpack">
+                                        <div class="item-details">
+                                            <h4>Laptop Backpack</h4>
+                                            <p class="item-price">$59.99</p>
+                                            <p class="item-quantity">Qty: 1</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <div class="order-total">
+                                        <span>Total:</span>
+                                        <span class="total-amount">$209.98</span>
+                                    </div>
+                                    <div class="order-actions">
+                                        <a href="order-detail.html?id=5275" class="btn btn-outline btn-sm">View Details</a>
+                                        <button class="btn btn-primary btn-sm">Track Order</button>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <div class="order-card">
+                                <div class="order-header">
+                                    <div class="order-info">
+                                        <span class="order-id">Order #ORD-5260</span>
+                                        <span class="order-date">March 28, 2025</span>
+                                    </div>
+                                    <div class="order-status">
+                                        <span class="status-badge delivered">Delivered</span>
+                                    </div>
+                                </div>
+                                <div class="order-items">
+                                    <div class="order-item">
+                                        <img src="images/product4.jpg" alt="Coffee Maker">
+                                        <div class="item-details">
+                                            <h4>Coffee Maker</h4>
+                                            <p class="item-price">$89.99</p>
+                                            <p class="item-quantity">Qty: 1</p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <div class="order-total">
+                                        <span>Total:</span>
+                                        <span class="total-amount">$89.99</span>
+                                    </div>
+                                    <div class="order-actions">
+                                        <a href="order-detail.html?id=5260" class="btn btn-outline btn-sm">View Details</a>
+                                        <button class="btn btn-secondary btn-sm">Write Review</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pagination">
+                            <a href="#" id="l" class="page-link next"><i class="fas fa-chevron-left"></i></a>
+                                <span class="pagination-ellipsis"></span>
+                            <a href="#" id="r" class="page-link next"><i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Future Edition Addresses  -->
+                    <!-- <div class="profile-tab" id="addresses">
+                        <div class="tab-header">
+                            <h2>My Addresses</h2>
+                            <button class="btn btn-primary" id="add-address">
+                                <i class="fas fa-plus"></i> Add New Address
+                            </button>
+                        </div>
+
+                        <div class="addresses-list">
+                            <div class="address-card">
+                                <div class="address-badge default">Default</div>
+                                <h3>Home</h3>
+                                <p>Sarah Johnson</p>
+                                <p>123 Main Street, Apt 4B</p>
+                                <p>New York, NY 10001</p>
+                                <p>United States</p>
+                                <p>Phone: +1 (555) 123-4567</p>
+                                <div class="address-actions">
+                                    <button class="btn btn-outline btn-sm">Edit</button>
+                                    <button class="btn btn-outline btn-sm">Delete</button>
+                                </div>
+                            </div> -->
+
+                         
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ShopEase</h3>
+                    <p>Your one-stop shop for all your needs. Quality products, competitive prices, and exceptional service.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://github.com/Belal-Abdrabo?tab=repositories"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/belal__abdoo/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/belal-abdorabo-26370b1b9/"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../products.html">Products</a></li>
+                        <li><a href="../../pages/categories.html">Categories</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 6 of October, Egypt</li>
+                        <li><i class="fas fa-phone"></i>01556701123</li>
+                        <li><i class="fas fa-phone"></i>01279790818</li>
+                        <li><i class="fas fa-envelope"></i>belalabdrabosaid.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ShopEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabLinks = document.querySelectorAll('.profile-nav a');
+            const tabContents = document.querySelectorAll('.profile-tab');
+            
+            tabLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all tabs and links
+                    tabLinks.forEach(l => l.parentElement.classList.remove('active'));
+                    tabContents.forEach(tab => tab.classList.remove('active'));
+                    
+                    // Add active class to current tab and link
+                    this.parentElement.classList.add('active');
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Edit personal info functionality
+            const editBtn = document.getElementById('edit-personal-info');
+            const cancelBtn = document.getElementById('cancel-edit');
+            const formInputs = document.querySelectorAll('#personal-info-form input, #personal-info-form select');
+            const formActions = document.querySelector('.form-actions');
+            
+            editBtn.addEventListener('click', function() {
+                formInputs.forEach(input => input.disabled = false);
+                formActions.style.display = 'flex';
+                editBtn.style.display = 'none';
+            });
+            
+            cancelBtn.addEventListener('click', function() {
+                formInputs.forEach(input => input.disabled = true);
+                formActions.style.display = 'none';
+                editBtn.style.display = 'inline-flex';
+            });
+            
+            // Form submission (prevent default for demo)
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Form submitted successfully!');
+                    
+                    if (form.id === 'personal-info-form') {
+                        formInputs.forEach(input => input.disabled = true);
+                        formActions.style.display = 'none';
+                        editBtn.style.display = 'inline-flex';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

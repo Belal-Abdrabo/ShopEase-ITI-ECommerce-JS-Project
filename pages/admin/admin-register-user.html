@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase | Register</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../../images/favicon-32x32.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../images/favicon-32x32.png" type="image/x-icon">
+    <script src="../../Js/common.js"></script>
+    <script src = "../../Js/roles/admin-add-user.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="../../index.html">ShopEase</a>
+                </div>
+                <div class="nav-links">
+                    <a href="../../index.html">Home</a>
+                    <a href="../../pages/products.html">Products</a>
+                    <a href="../../pages/categories.html">Categories</a>
+                    <a href="admin-dashboard.html"  id="dashboard" class="dashboard-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="auth-section">
+            <div class="container">
+                <div class="auth-container">
+                    <div class="auth-image">
+                        <img src="../../images/register.png" alt="Register">
+                    </div>
+                    <div class="auth-form">
+                        <h1>Create New User</h1>
+                        <p>Join ShopEase to start shopping</p>
+                        
+                        <form id="register-form">
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" id="fullname" name="fullname" required>
+                                <span id="fullname-error" class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                                <span id="email-error" class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" required>
+                                <span id="password-error" class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm Password</label>
+                                <input type="password" id="confirm-password" name="confirm-password" required>
+                                <span id="confirm-password-error" class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="male" name="gender" value="male" checked>
+                                        <label for="male">male</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="female" name="gender" value="female">
+                                        <label for="female">female</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Account Type</label>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="customer" name="account-type" value="customer" checked>
+                                        <label for="customer">Customer</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="seller" name="account-type" value="seller">
+                                        <label for="seller">Seller</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="admin" name="account-type" value="admin">
+                                        <label for="admin">admin</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 ShopEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
