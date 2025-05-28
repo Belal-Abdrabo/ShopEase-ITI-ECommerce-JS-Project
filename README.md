@@ -83,9 +83,9 @@ A live demo will be available soon!
 
 ## 📸 Screenshots
 
-| Home Page                 | Product Details            | Admin Dashboard          |
+| Home Page                 | Login Page            | Admin Dashboard          |
 | ------------------------ | ------------------------- | ----------------------- |
-| ![Home](images/screenshots/home.png) | ![Product](images/screenshots/product-detail.png) | ![Admin](images/screenshots/admin-dashboard.png) |
+| ![Home](images/HomePage.png) | ![Login](images/LoginScreen.png) | ![Admin](images/AdminDashboard.png) |
 
 ---
 

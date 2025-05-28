@@ -159,7 +159,7 @@ window.addEventListener('load', function(){
                         }
                     } else {
                         loginErrorMessage.style.display = "block";
-                        loginErrorMessage.textContent = "❌ Wrong password.";
+                        loginErrorMessage.textContent = "❌ invalid login credentials";
                     }
                 } 
                 else {
@@ -175,4 +175,3 @@ window.addEventListener('load', function(){
     };
     
 });
-

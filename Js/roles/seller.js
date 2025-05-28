@@ -24,7 +24,8 @@
     .then(response => response.json())
     .then(data =>
     {
-        ordersCount = data.filter(order => order.items.some(item => item.sellerId == currentUser.id)).length;
+        let OrdersForCount  = data.filter(order => order.items.some(item => item.sellerId == currentUser.id));
+        ordersCount = OrdersForCount.length;
         cards[1].textContent = ordersCount;
     }
     ).catch(error => console.error('Error:', error));
@@ -36,7 +37,7 @@
     let product = null;
     ordersTableBody.innerHTML = ""; //clear table body
     getAllOrders().then(orders => {
-        let first6Orders  = orders.filter(order => order.items.some(item => item.sellerId == currentUser.id)).slice(0, 6); //get first 6 orders
+        let first6Orders  = orders.filter(order => order.items.some(item => item.sellerId == currentUser.id)).slice(-6); //get first 6 orders
         first6Orders.forEach(order =>{
             let row = document.createElement('tr');
             getUserById(order.customerId)
@@ -51,8 +52,7 @@
                 <td><span class="status-badge ${order.status}">${order.status}</span></td>
                 <td>
                     <div class="action-buttons">
-                        <button class="btn-icon"><i class="fas fa-eye"></i></button>   
-                        <a href="../editOrder.html?orderId=${order.id}"><button class="btn-icon"><i class="fas fa-edit"></i></button></a>
+                        <a href="./seller-view-order.html?orderId=${order.id}"><button class="btn-icon"><i class="fas fa-eye"></i></button></a>
                     </div>
                 </td>  
                 `
@@ -65,7 +65,7 @@
 // #region update recent products table
     recentProductsTableBody.innerHTML = ""; //clear table body
     getAllProducts().then(products =>{
-        let first6Products = products.filter(p => p.sellerId == currentUser.id).slice(0, 6); //get first 6 products
+        let first6Products = products.filter(p => p.sellerId == currentUser.id).slice(-6); //get first 6 products
         first6Products.forEach(product =>{
             getCategoryById(product.categoryId).then(data =>{
                 console.log(`category: ${data.name}`);

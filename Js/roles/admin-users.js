@@ -6,7 +6,7 @@ window.addEventListener('load', function(event){
     let userCount = 0;
     let start;
     let end;
-    let countPerPage = 0; // Number of users per page   
+    let countPerPage = 8; // Number of users per page   
     const filterSelectElement = document.querySelector('#role-filter');
     const nextButton = document.querySelector('#next');
     const previousButton = document.querySelector('#previous');
@@ -24,7 +24,6 @@ window.addEventListener('load', function(event){
         users = data;
         clondedUsers = users.slice(); //clone users array
         userCount = clondedUsers.length;
-        countPerPage = 10; // Number of users per page
         pageCount = Math.ceil(userCount / countPerPage);
         start = (currentPage - 1) * countPerPage; 
         end = start + countPerPage;
