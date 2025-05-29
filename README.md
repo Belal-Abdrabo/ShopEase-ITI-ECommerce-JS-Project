@@ -76,8 +76,9 @@ ITI_ECOMMERCE_JS_PROJECT/
 
 ## 🎬 Demo
 
-A live demo will be available soon!  
-*(Replace this section with your deployment URL once ready)*
+
+[![Watch the demo](https://img.youtube.com/vi/f3k7rpkUzaQ/0.jpg)](https://www.youtube.com/watch?v=f3k7rpkUzaQ)
+
 
 ---
 
