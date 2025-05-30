@@ -124,6 +124,17 @@
       "address": "",
       "phone": "",
       "registrationDate": "2025-05-27"
+    },
+    {
+      "id": "f457",
+      "userName": "abdoo undefined",
+      "email": "abdoo@gmail.com",
+      "password": "123456",
+      "role": "customer",
+      "gender": "male",
+      "address": "",
+      "phone": "",
+      "registrationDate": "2025-05-29"
     }
   ],
   "products": [
@@ -913,14 +924,7 @@
     {
       "id": "fff7",
       "customerId": "c56e",
-      "items": [
-        {
-          "productId": 3,
-          "quantity": 1,
-          "sellerId": "1",
-          "status": "pending"
-        }
-      ],
+      "items": [],
       "status": "pending"
     },
     {
@@ -943,6 +947,12 @@
       "id": "2ffb",
       "customerId": "a5fb",
       "items": []
+    },
+    {
+      "id": "3002",
+      "customerId": "f457",
+      "items": [],
+      "status": "pending"
     }
   ],
   "cartcheckout": [
@@ -966,6 +976,21 @@
       "amount": 80183.8,
       "status": "delivered",
       "orderdate": "27/05/2025"
+    },
+    {
+      "id": "5df0",
+      "customerId": "f457",
+      "items": [
+        {
+          "productId": 3,
+          "quantity": 1,
+          "sellerId": "1",
+          "status": "delivered"
+        }
+      ],
+      "amount": 78850,
+      "status": "delivered",
+      "orderdate": "29/05/2025"
     }
   ],
   "review": [
@@ -1012,6 +1037,15 @@
       "sellerId": "1",
       "rating": "1",
       "date": "17/05/2025"
+    },
+    {
+      "id": "94fb",
+      "orderReview": "a7a gamed neeeeeeeek",
+      "productId": "3",
+      "userId": "f457",
+      "sellerId": "1",
+      "rating": "3",
+      "date": "29/05/2025"
     }
   ]
 }
