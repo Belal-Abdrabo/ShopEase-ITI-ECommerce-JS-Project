@@ -20,6 +20,7 @@ Welcome to **ShopEase** — a modern, responsive e-commerce web application buil
 
 ---
 
+
 ## 🗂️ Project Structure
 
 ```
